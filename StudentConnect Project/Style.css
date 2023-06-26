@@ -1,0 +1,584 @@
+﻿* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Ubuntu',sans-serif;
+}
+
+:root {
+    --blue: #287bff;
+    --white: #fff;
+    --grey: #f5f5f5;
+    --black: #222;
+    --back2: #999;
+}
+
+body {
+    min-height: 100vh;
+    overflow-x: auto;
+}
+
+.Main-container {
+    position: absolute;
+    width: 100%;
+}
+
+
+.navigation {
+    position: fixed;
+    width: 80px;
+    height: 100%;
+    background: #1d1135;
+    border-left: 10px solid #1d1135;
+    transition: 0.5s;
+    overflow: hidden;
+}
+
+    .navigation.active {
+        width: 80px;
+    }
+
+    .navigation ul {
+        position: absolute;
+        top: 0;
+        left: 0;
+        width: 100%;
+    }
+
+        .navigation ul li {
+            position: relative;
+            width: 100%;
+            list-style: none;
+            border-top-left-radius: 30px;
+            border-bottom-left-radius: 30px;
+        }
+
+            .navigation ul li:hover,
+            .navigation ul li .hovered {
+                background: var(--white);
+            }
+
+            .navigation ul li:nth-child(1) {
+                margin-bottom: 40px;
+                pointer-events: none;
+            }
+
+            .navigation ul li a {
+                position: relative;
+                display: block;
+                width: 100%;
+                display: flex;
+                text-decoration: none;
+                color: white;
+            }
+
+
+            .navigation ul li:hover a,
+            .navigation ul li .hovered a {
+                color: var(--blue);
+            }
+
+                .navigation ul li:hover a::before,
+                .navigation ul li .hovered a::before {
+                    content: '';
+                    position: absolute;
+                    right: 0;
+                    top: -50px;
+                    width: 50px;
+                    height: 50px;
+                    background: transparent;
+                    border-radius: 50%;
+                    box-shadow: 35px 35px 0 10px var(--white);
+                    pointer-events: none;
+                }
+
+                .navigation ul li:hover a::after,
+                .navigation ul li .hovered a::after {
+                    content: '';
+                    position: absolute;
+                    right: 0;
+                    bottom: -50px;
+                    width: 50px;
+                    height: 50px;
+                    background: transparent;
+                    border-radius: 50%;
+                    box-shadow: 35px -35px 0 10px var(--white);
+                    pointer-events: none;
+                }
+
+
+            .navigation ul li a .icon {
+                position: relative;
+                display: block;
+                min-width: 60px;
+                height: 60px;
+                line-height: 67px;
+                text-align: center;
+            }
+
+                .navigation ul li a .icon ion-icon {
+                    font-size: 1.65rem;
+                }
+
+            .navigation ul li a .title {
+                position: relative;
+                display: block;
+                padding: 0 10px;
+                height: 60px;
+                line-height: 60px;
+                text-align: start;
+                white-space: nowrap;
+            }
+
+.container1{
+    display:flex;
+
+}
+
+.Left-Navigation{
+    position:relative;
+    width:120px;
+    height:100%;
+    background:blue
+}
+
+.main {
+    position: absolute;
+    width: calc(100% - 80px);
+    margin-left: 80px;
+    min-height: 100vh;
+    background: white;
+    transition: 0.5s;
+}
+
+    .main.active {
+        margin-left: 0;
+        width: calc(100% - 80px);
+        left: 80px;
+    }
+
+.topbar {
+    width: 100%;
+    height: 60px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 0 10px;
+    box-shadow: 0 3px 5px rgba(0,0,0,0.125);
+    
+}
+
+.toggle {
+    position: relative;
+    top: 0;
+    width: 60px;
+    height: 60px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-size: 2.5rem;
+    cursor: pointer;
+}
+
+.notification-icon {
+    margin-top: 2px;
+    cursor: pointer;
+}
+
+    .notification-icon ion-icon {
+        font-size: 33px
+    }
+
+.search {
+    position: relative;
+    width: 400px;
+    margin: 0 10px;
+}
+
+    .search label {
+        position: relative;
+        width: 100%;
+    }
+
+
+        .search label input {
+            width: 100%;
+            height: 40px;
+            border-radius: 40px;
+            padding: 5px 20px;
+            padding-left: 35px;
+            outline: none;
+            
+        }
+
+
+        .search label ion-icon {
+            position: absolute;
+            top: 0;
+            left: 10px;
+            font-size: 1.3rem;
+        }
+
+.user-container {
+    position: relative;
+    display: flex;
+}
+
+.user {
+    position: relative;
+    width: 40px;
+    height: 40px;
+    border: 2.5px solid black;
+    border-radius: 50px;
+    overflow: hidden;
+    cursor: pointer;
+}
+
+    .user img {
+        position: absolute;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+        object-fit: cover;
+    }
+
+.cardbox {
+    position: absolute;
+    width: 100%;
+    padding: 20px;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    /*grid-template-columns: repeat(4,1fr);*/
+    gap: 35px;
+}
+
+    .cardbox .card {
+        background: var(--white);
+        padding: 0px 150px 150px 0px;
+        max-width: 275px;
+        border-radius: 15px;
+        display: flex;
+        box-shadow: 0 7px 25px rgba(0,0,0,0.125);
+        justify-content: space-between;
+    }
+
+        .cardbox .card .back-card {
+            position: absolute;
+            background-image: url();
+            width: 275px;
+            height: 80px;
+            border-radius: 15px 10px 0px 0px;
+            object-fit: cover;
+        }
+
+            .cardbox .card .back-card img {
+                position: absolute;
+                top: 0;
+                left: 0;
+                width: 100%;
+                height: 100%;
+                object-fit: cover;
+                border-radius: 15px 15px 0px 0px;
+            }
+
+        .cardbox .card .carddetails {
+            height: 150px;
+            padding-top: 20px;
+        }
+
+.image {
+    position: relative;
+    width: 110px;
+    height: 110px;
+    border: 3px solid antiquewhite;
+    border-radius: 50px;
+    overflow: hidden;
+    cursor: pointer;
+    padding-bottom: 10px;
+    margin-left: 78px;
+    margin-top: 6px;
+}
+
+    .image .img-fluid {
+        position: absolute;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+        object-fit: cover;
+    }
+
+.numbers {
+    font-weight: 500;
+    color: transparent;
+    padding-left: 10px
+}
+
+.name {
+    text-align: center;
+    color: BLACK;
+    font-weight: 800;
+    padding-left: 98px;
+    display: block;
+    margin-block-start: 0px;
+    margin-block-end: 0px;
+    margin-inline-start: -17px;
+    margin-inline-end: 0px;
+}
+
+.course {
+    font-weight: 500;
+    color: #907175;
+    padding-left: 98px;
+    display: block;
+    margin-block-start: 5px;
+    margin-block-end: 0px;
+    margin-inline-start: 0px;
+    margin-inline-end: 0px;
+}
+
+.buttons {
+    position: absolute;
+    display: flex;
+    column-gap: 10px;
+    position: relative;
+    width: 80px;
+    margin: 0 1px;
+    padding: 10px 15px 10px 0px;
+}
+
+    .buttons .Addbtn {
+        position: absolute;
+        width: 100%;
+        height: 30px;
+        border-radius: 40px;
+        padding: 5px 110px;
+        padding-left: 45px;
+        margin-left: 57px;
+        outline: none;
+        border: 1px solid black;
+        text-align: center;
+        font-weight: bold;
+        color: initial;
+        cursor: pointer;
+        background: antiquewhite;
+    }
+
+
+
+        .buttons .Addbtn .Addbutton {
+            border: none;
+            background: none
+        }
+
+        .buttons .Addbtn:hover {
+            color: var(--white);
+            background: var(--blue);
+        }
+
+    .buttons .Removebtn {
+        position: absolute;
+        width: 100%;
+        height: 30px;
+        border-radius: 40px;
+        padding: 5px 70px;
+        padding-left: 16px;
+        outline: none;
+        border: 1px solid black;
+        text-align: center;
+        font-weight: bold;
+        color: var(--blue);
+        margin-left: 100px;
+    }
+
+        .buttons .Removebtn:hover {
+            color: var(--white);
+            background: var(--blue);
+        }
+
+    .buttons .Confirmbtn {
+        position: absolute;
+        width: 100%;
+        height: 30px;
+        border-radius: 40px;
+        padding: 5px 70px;
+        padding-left: 16px;
+        outline: none;
+        border: 1px solid black;
+        text-align: center;
+        font-weight: bold;
+        color: var(--blue);
+        margin-left: 100px;
+    }
+
+        .buttons .Confirmbtn:hover {
+            color: var(--white);
+            background: var(--blue);
+        }
+
+
+
+.popup {
+    width: 400px;
+    background: #fff;
+    border-radius: 6px;
+    position: absolute;
+    top: 0;
+    left: 50%;
+    transform: translate(-50%,-50%)scale(0.1);
+    text-align: center;
+    padding: 0 30px 30px;
+    color: #333;
+    visibility: hidden;
+    transition: transform 0.4s,top 0.4s;
+}
+
+.open-popup {
+    visibility: visible;
+    top: 50%;
+    transform: translate(-50%,-50%)scale(1);
+}
+
+.popup img {
+    width: 100px;
+    margin-top: -50px;
+    border-radius: 50%;
+    box-shadow: 0 2px 5px rgba(0,0,0,0.2);
+}
+
+.popup h2 {
+    font-size: 38px;
+    font-weight: 500;
+    margin: 30px 0 10px;
+}
+
+.popup button {
+    width: 100%;
+    margin-top: 50px;
+    padding: 10px 0;
+    background: #6fd649;
+    color: #fff;
+    border: 0;
+    outline: none;
+    font-size: 18px;
+    border-radius: 4px;
+    cursor: pointer;
+    box-shadow: 0 2px 5px rgba(0,0,0,0.2);
+}
+
+/*.card .icon {
+    position: absolute;
+    display: block;
+    height: 29px;
+    text-align: center;
+    color: black;
+    margin-left: 245px;
+    margin-top: 6px;
+    background: #eee;
+    border: 15px;
+    border-radius: 50px;
+    width: 29px;
+    padding-top:4px;
+}
+
+    .card .icon {
+        font-size: 20px;
+    }*/
+
+.card .icon2 {
+    position: absolute;
+    display: block;
+    height: 29px;
+    text-align: center;
+    color: black;
+    margin-left: 10px;
+    margin-top: 6px;
+    background: #eee;
+    border: 15px;
+    border-radius: 50px;
+    width: 29px;
+    padding-top: 4px;
+}
+
+    .card .icon2 i {
+        font-size: 20px;
+    }
+
+.card .icon3 {
+    position: absolute;
+    display: block;
+    height: 29px;
+    text-align: center;
+    color: black;
+    margin-left: 42px;
+    margin-top: 6px;
+    background: #eee;
+    border: 15px;
+    border-radius: 50px;
+    width: 29px;
+    padding-top: 4px;
+}
+
+    .card .icon3 i {
+        font-size: 20px;
+    }
+
+/*.card .back-card i {
+    position:absolute;
+    background-color: #eee;
+    padding: 10px;
+    border-radius: 50%;
+    color: #666;
+    font-size: 13px;
+    cursor: pointer;
+    transition: 0.3s;
+}
+*/
+
+.filter {
+    height: 29px;
+    color: black;
+    margin-left: 55px;
+    margin-top: 6px;
+    background: antiquewhite;
+    border: 15px;
+    border-radius: 5px;
+    width: 80px;
+    padding-top: 4px;
+    padding-left: 10px;
+    display: flex;
+    gap: 7px;
+}
+
+.notification-container {
+    position: absolute;
+    width: 100%;
+}
+
+.setting-container {
+    position: absolute;
+    width: 100%;
+}
+
+
+
+
+@media(max-width:700px) {
+}
+
+@media(max-width:750px) {
+
+    .main {
+        width: 100%;
+    }
+
+    .cardbox .card {
+        padding: 30px 12px;
+    }
+
+    .cardbox {
+        flex-direction: column;
+    }
+}
