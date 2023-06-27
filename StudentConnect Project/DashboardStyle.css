@@ -11,7 +11,6 @@
 
 body {
     min-height: 100vh;
-    background: url('Images/4K Photo.jpg');
 }
 
 /*.Main-container {
@@ -22,7 +21,7 @@ body {
 .row {
     display: flex;
     gap: 60px;
-    margin-left: 100px;
+    margin-left: 55px;
     margin-bottom: 50px;
     margin-top: 50px;
 }
@@ -130,6 +129,43 @@ body {
 
         .card .card-content .social-icons li a span {
             font-size: 1.3rem;
+        }
+
+.dark-mode-variables {
+    --color-background: #181a1e;
+    --color-white: #202528;
+    --color-dark: #edeffd;
+    --color-dark-variant: #a3bdcc;
+    --color-light: rgba(0, 0, 0, 0.4);
+    --box-shadow: 0 2rem 3rem var(--color-light);
+}
+
+.container2 .dark-mode {
+    background-color: #ddd;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    height: 1.6rem;
+    width: 4.2rem;
+    cursor: pointer;
+    border-radius: 25px;
+    margin-left: 400px;
+    margin-top:20px;
+}
+
+    .container2 .dark-mode span {
+        font-size: 1.2rem;
+        width: 50%;
+        height: 100%;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+    }
+
+        .container2 .dark-mode span.active {
+            background-color: var(--color-primary);
+            color: white;
+            border-radius: var(--border-radius-1);
         }
 
     

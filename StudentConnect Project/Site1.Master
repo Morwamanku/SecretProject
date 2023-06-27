@@ -6,11 +6,16 @@
 <head runat="server">
     <title></title>
     <link href="Style.css" rel="stylesheet" />
+    <link href="https://fonts.googleapis.com/icon?family=Material+Icons+Sharp" rel="stylesheet">
     <asp:ContentPlaceHolder ID="head" runat="server">
     </asp:ContentPlaceHolder>
 </head>
 <body>
+    <video autoplay loop muted plays-inline class="back-video">
+                <source src="Background-video/video (2160p).mp4" type="video/mp4" />
+            </video>
     <form id="form1" runat="server">
+        
         <div class="Main-container">
             <div class="navigation">
                 <ul>
@@ -90,10 +95,7 @@
                 </ul>
             </div>
         </div>
-         
-        <div class="main">
-            
-           <div class="topbar"> 
+         <div class="topbar"> 
                <div class="toggle">
                    <ion-icon name="grid-outline"></ion-icon>
                </div>
@@ -111,11 +113,18 @@
                    
                    
                    <img src="ProfileImage/Pholly.jpg" width="50" />
+
                </div>
                </div>
                
                
            </div>
+        <div class="main">
+            
+           
+
+            
+
             <asp:ContentPlaceHolder ID="ContentPlaceHolder1" runat="server">
             </asp:ContentPlaceHolder>
         </div>

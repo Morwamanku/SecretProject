@@ -6,6 +6,14 @@
 <asp:Content ID="Content2" ContentPlaceHolderID="ContentPlaceHolder1" runat="server">
     <div class="container1">
         <div class="container2">
+            <div class="dark-mode">
+                    <span class="material-icons-sharp active">
+                        light_mode
+                    </span>
+                    <span class="material-icons-sharp">
+                        dark_mode
+                    </span>
+                </div>
         <div class="container">
                 <div class="row">
                     <div class="col-lg-4">
@@ -445,5 +453,16 @@
 
 
         });
+    </script>
+
+    <script>
+        const darkMode = document.querySelector('.dark-mode');
+
+        darkMode.addEventListener('click', () => {
+            document.body.classList.toggle('dark-mode-variables');
+            darkMode.querySelector('span:nth-child(1)').classList.toggle('active');
+            darkMode.querySelector('span:nth-child(2)').classList.toggle('active');
+            
+        })
     </script>
 </asp:Content>
