@@ -26,12 +26,15 @@ body {
 
 .navigation {
     position: fixed;
-    width: 80px;
+    width: 240px;
     height: 100%;
     background: #1d1135;
     border-left: 10px solid #1d1135;
     transition: 0.5s;
     overflow: hidden;
+    border-radius: 25px;
+    margin-left: 10px;
+    margin-top: 10px;
 }
 
     .navigation.active {
@@ -144,8 +147,8 @@ body {
 
 .main {
     position: absolute;
-    width: calc(100% - 80px);
-    margin-left: 80px;
+    width: calc(100% - 500px);
+    margin-left: 259px;
     min-height: 100vh;
     background: white;
     transition: 0.5s;
