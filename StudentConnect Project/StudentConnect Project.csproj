@@ -95,6 +95,9 @@
     <Content Include="Dashboard.aspx" />
     <Content Include="Notifications.aspx" />
     <Content Include="Settings.aspx" />
+    <Content Include="Connections.aspx" />
+    <Content Include="Request.aspx" />
+    <Content Include="Blocked.aspx" />
   </ItemGroup>
   <ItemGroup>
     <Compile Include="Properties\AssemblyInfo.cs" />
@@ -125,6 +128,27 @@
     </Compile>
     <Compile Include="Settings.aspx.designer.cs">
       <DependentUpon>Settings.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Connections.aspx.cs">
+      <DependentUpon>Connections.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Connections.aspx.designer.cs">
+      <DependentUpon>Connections.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Request.aspx.cs">
+      <DependentUpon>Request.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Request.aspx.designer.cs">
+      <DependentUpon>Request.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Blocked.aspx.cs">
+      <DependentUpon>Blocked.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Blocked.aspx.designer.cs">
+      <DependentUpon>Blocked.aspx</DependentUpon>
     </Compile>
   </ItemGroup>
   <ItemGroup>
