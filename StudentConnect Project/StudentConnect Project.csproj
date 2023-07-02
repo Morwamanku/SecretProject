@@ -78,18 +78,43 @@
     <Content Include="Content\style.css" />
     <Content Include="Dashboard2Style.css" />
     <Content Include="DashboardStyle.css" />
+    <Content Include="ForgotPassword.aspx" />
     <Content Include="Images\4K Photo.jpg" />
     <Content Include="Images\camera-symbol-icon-25.png" />
     <Content Include="Images\signup-img.jpg" />
+    <Content Include="Login.aspx" />
     <Content Include="Notificationstyle.css" />
     <Content Include="pexels-aleksandar-pasaric-4505907.jpg" />
     <Content Include="pexels-alexander-kovalev-2847648.jpg" />
+    <Content Include="ProfileImage\boity.jpg" />
+    <Content Include="ProfileImage\Brittney.jpeg" />
+    <Content Include="ProfileImage\carie.jpeg" />
+    <Content Include="ProfileImage\chloe.jpeg" />
+    <Content Include="ProfileImage\Exercise2 Q1.png" />
+    <Content Include="ProfileImage\Fred.jpg" />
+    <Content Include="ProfileImage\IMG_9852.jpg" />
+    <Content Include="ProfileImage\Kalenga.jpg" />
+    <Content Include="ProfileImage\Kanya sunny.jpg" />
+    <Content Include="ProfileImage\Kanya2.jpg" />
+    <Content Include="ProfileImage\Me photo.jpg" />
+    <Content Include="ProfileImage\Mpati.jpg" />
+    <Content Include="ProfileImage\Mpumi.jpeg" />
+    <Content Include="ProfileImage\Patty.jpeg" />
+    <Content Include="ProfileImage\Pholly.jpg" />
+    <Content Include="ProfileImage\Pholly2.jpg" />
+    <Content Include="ProfileImage\slayer.jpg" />
+    <Content Include="ProfileImage\thabo.jpeg" />
+    <Content Include="ProfileImage\Tom.jpeg" />
+    <Content Include="ProfileImage\WeddingPhoto.jpg" />
+    <Content Include="ProfileImage\WhatsApp Image 2023-02-18 at 12.36.25.jpg" />
     <Content Include="SettingsStyle.css" />
+    <Content Include="Signup.aspx" />
     <Content Include="Signupimages\BackG.jpeg" />
     <Content Include="Signupimages\Connection.jpg" />
     <Content Include="Signupimages\our logo.jpg" />
     <Content Include="Signupimages\signin-image.jpg" />
     <Content Include="Signupimages\signup-image.jpg" />
+    <Content Include="SignupStyle.css" />
     <Content Include="Style.css" />
     <Content Include="Web.config" />
     <Content Include="Dashboard.aspx" />
@@ -100,7 +125,28 @@
     <Content Include="Blocked.aspx" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="ForgotPassword.aspx.cs">
+      <DependentUpon>ForgotPassword.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="ForgotPassword.aspx.designer.cs">
+      <DependentUpon>ForgotPassword.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Login.aspx.cs">
+      <DependentUpon>Login.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Login.aspx.designer.cs">
+      <DependentUpon>Login.aspx</DependentUpon>
+    </Compile>
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="Signup.aspx.cs">
+      <DependentUpon>Signup.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Signup.aspx.designer.cs">
+      <DependentUpon>Signup.aspx</DependentUpon>
+    </Compile>
     <Compile Include="Site1.Master.cs">
       <DependentUpon>Site1.Master</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>
@@ -161,6 +207,7 @@
     <Content Include="Images\3D Photo.avif" />
     <None Include="packages.config" />
     <Content Include="Site1.Master" />
+    <Content Include="ProfileImage\Morwamanku Lease.pdf" />
     <None Include="Web.Debug.config">
       <DependentUpon>Web.config</DependentUpon>
     </None>

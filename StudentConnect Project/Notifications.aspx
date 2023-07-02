@@ -7,7 +7,6 @@
 </asp:Content>
 <asp:Content ID="Content2" ContentPlaceHolderID="ContentPlaceHolder1" runat="server">
      <div class="notification-container">
-    <h3 class="m-b-50 heading-line">Notifications<i class="fa fa-bell text-muted"></i></h3>
     <div class="notification-ui_dd-content">
       <div class="notification-list notification-list--unread">
         <div class="notification-list_content">

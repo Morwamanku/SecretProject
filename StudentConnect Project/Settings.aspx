@@ -3,6 +3,7 @@
     <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js"></script>
 	<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js"></script>
 	<script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js"></script>
+	<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Material+Symbols+Sharp:opsz,wght,FILL,GRAD@48,400,0,0" />
 	<title> Settings</title>
 	<meta content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no" name="viewport"/>
     
@@ -13,24 +14,23 @@
 </asp:Content>
 <asp:Content ID="Content2" ContentPlaceHolderID="ContentPlaceHolder1" runat="server">
 	<div class="setting-container">
-			<h1 class="mb-5">Account Settings</h1>
-			<div class="bg-white shadow rounded-lg d-block d-sm-flex">
+			<div class="bg-white shadow  d-block d-sm-flex">
 				<div class="profile-tab-nav">
 					<div class="p-4">
 						<div class="img-circle text-center mb-3" >
-							<img  src="ProfileImage/Pholly2.jpg" alt="Image" class="shadow" " 
+							<img  src="ProfileImage/Pholly.jpg" alt="Image" class="shadow" " 
 							enctype="multipart/form-data"/>
-							   <input type="file" id="myfile" name="myfile" />
+							   
 						</div>
-						<h4 class="text-center">Sabelo Khumalo</h4>
+						<h4 class="text-center">Phogole Thobejnae</h4>
 					</div>
 					<div class="nav flex-column nav-pills" id="v-pills-tab" role="tablist" aria-orientation="vertical">
 						<a class="nav-link active" id="account-tab" data-toggle="pill" href="#account" role="tab" aria-controls="account" aria-selected="true">
-							<i class="fa fa-home text-center mr-1"></i> 
+							<span class="material-symbols-sharp">manage_accounts</span>
 							Account
 						</a>
 						<a class="nav-link" id="password-tab" data-toggle="pill" href="#password" role="tab" aria-controls="password" aria-selected="false">
-							<i class="fa fa-key text-center mr-1"></i> 
+							<span class="material-symbols-sharp">lock</span>
 							Password
 						</a>
 						<a class="nav-link" id="security-tab" data-toggle="pill" href="#security" role="tab" aria-controls="security" aria-selected="false">
@@ -38,8 +38,32 @@
 							Security
 						</a>
 						<a class="nav-link" id="notification-tab" data-toggle="pill" href="#notification" role="tab" aria-controls="notification" aria-selected="false">
-							<i class="fa fa-bell text-center mr-1"></i> 
+							<span class="material-symbols-sharp">notifications</span> 
 							Notification
+						</a>
+						<a class="nav-link" id="TimeSpent-tab" data-toggle="pill" href="#TimeSpent" role="tab" aria-controls="TimeSpent" aria-selected="false">
+							<span class="material-symbols-sharp">schedule</span> 
+							Time Spent
+						</a>
+						<a class="nav-link" id="Archive-tab" data-toggle="pill" href="#Archive" role="tab" aria-controls="Archive" aria-selected="false">
+							<span class="material-symbols-sharp">archive</span> 
+							Archive
+						</a>
+						<a class="nav-link" id="Favourite-tab" data-toggle="pill" href="#Favourite" role="tab" aria-controls="Favourite" aria-selected="false">
+							<span class="material-symbols-sharp">favorite</span> 
+							Favourite
+						</a>
+						<a class="nav-link" id="Option1-tab" data-toggle="pill" href="#Option1" role="tab" aria-controls="Option1" aria-selected="false">
+							<span class="material-symbols-sharp">bookmark</span> 
+							Option1
+						</a>
+						<a class="nav-link" id="Option2-tab" data-toggle="pill" href="#Option2" role="tab" aria-controls="Option2" aria-selected="false">
+							<span class="material-symbols-sharp">translate</span> 
+							Option2
+						</a>
+						<a class="nav-link" id="Option3-tab" data-toggle="pill" href="#Option3" role="tab" aria-controls="Option3" aria-selected="false">
+							<span class="material-symbols-sharp">wifi_protected_setup</span>
+							Option3
 						</a>
 					</div>
 				</div>
@@ -185,6 +209,30 @@
 							<button class="btn btn-primary">Update</button>
 							<button class="btn btn-light">Cancel</button>
 						</div>
+					</div>
+					<div class="tab-pane fade" id="TimeSpent" role="tabpanel" aria-labelledby="TimeSpent-tab">
+						<h3 class="mb-4">TimeSpent Settings</h3>
+						
+					</div>
+					<div class="tab-pane fade" id="Archive" role="tabpanel" aria-labelledby="Archive-tab">
+						<h3 class="mb-4">Archive</h3>
+						
+					</div>
+					<div class="tab-pane fade" id="Favourite" role="tabpanel" aria-labelledby="Favourite-tab">
+						<h3 class="mb-4">Favourite</h3>
+						
+					</div>
+					<div class="tab-pane fade" id="Option1" role="tabpanel" aria-labelledby="Option1-tab">
+						<h3 class="mb-4">Option1 Settings</h3>
+						
+					</div>
+					<div class="tab-pane fade" id="Option2" role="tabpanel" aria-labelledby="Option2-tab">
+						<h3 class="mb-4">Option2 Settings</h3>
+						
+					</div>
+					<div class="tab-pane fade" id="Option3" role="tabpanel" aria-labelledby="Option3-tab">
+						<h3 class="mb-4">Option3 Settings</h3>
+						
 					</div>
 				</div>
 			</div>
