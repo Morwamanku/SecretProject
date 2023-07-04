@@ -87,15 +87,28 @@ body {
         transform: rotateY(180deg);
     }
 
-        .card:hover .card-content h4,
-        .card:hover .card-content h5 {
+        .card:hover .card-content .Fullname,
+        .card:hover .card-content .QualificationName {
             transform: translateY(10px);
             opacity: 1;
-            
         }
 
-    .card .card-content h4,
-    .card .card-content h5 {
+    .card .card-content .Fullname {
+        display: flex;
+        flex-wrap: wrap;
+        gap: 2px;
+        font-size: 1rem;
+        text-transform: uppercase;
+        letter-spacing: 3px;
+        text-align: center;
+        align-items:center;
+        transition: 0.8s;
+        font-weight: 500;
+        opacity: 0;
+        transform: translateY(-40px);
+        transition-delay: 0.2s;
+    }
+    .card .card-content .QualificationName {
         font-size: 1.1rem;
         text-transform: uppercase;
         letter-spacing: 3px;
@@ -107,11 +120,16 @@ body {
         transition-delay: 0.2s;
     }
 
-    .card .card-content h5 {
+    .card .card-content .QualificationName {
         transition: 0.5s;
         font-weight: 200;
         font-size: 0.8rem;
         letter-spacing: 2px;
+    }
+
+    .card .card-content .Card-Studentnumber{
+        font-size:10px;
+        margin-top:100px;
     }
 
     .card .card-content .social-icons {
@@ -307,7 +325,12 @@ body {
         margin-top: 20px;
     }
 
-        .container .row .col-lg-4 {
-            margin: 20px 0px;
-        }
+    .card{
+        width:auto;
+    }
+
+    .container .row .col-lg-4 {
+        margin: 20px 0px;
+        width: auto;
+    }
 }

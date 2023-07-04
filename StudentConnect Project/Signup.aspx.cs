@@ -105,17 +105,17 @@ namespace StudentConnect_Project
             }
         }
 
-        protected void signupbtn_Click(object sender, EventArgs e)
-        {
-            if (checkMemberExists())
-            {
-                Response.Write("<script>alert('Book Already Exists, try some other Book ID');</script>");
-            }
-            else
-            {
-                signUpNewMember();
-                Response.Redirect("Login.aspx");
-            }
-        }
+        //protected void signupbtn_Click(object sender, EventArgs e)
+        //{
+        //    if (checkMemberExists())
+        //    {
+        //        Response.Write("<script>alert('Book Already Exists, try some other Book ID');</script>");
+        //    }
+        //    else
+        //    {
+        //        signUpNewMember();
+        //        Response.Redirect("Login.aspx");
+        //    }
+        //}
     }
 }

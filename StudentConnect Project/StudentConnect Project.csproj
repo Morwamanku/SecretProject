@@ -67,7 +67,9 @@
     </Reference>
   </ItemGroup>
   <ItemGroup>
+    <Content Include="Background-video\Blue space.mp4" />
     <Content Include="Background-video\solar_system %28720p%29.mp4" />
+    <Content Include="Background-video\Spacy.mp4" />
     <Content Include="Background-video\video %282160p%29.mp4" />
     <Content Include="Content\bootstrap-grid.css" />
     <Content Include="Content\bootstrap-grid.min.css" />
@@ -76,7 +78,6 @@
     <Content Include="Content\bootstrap.css" />
     <Content Include="Content\bootstrap.min.css" />
     <Content Include="Content\style.css" />
-    <Content Include="Dashboard2Style.css" />
     <Content Include="DashboardStyle.css" />
     <Content Include="ForgotPassword.aspx" />
     <Content Include="Images\4K Photo.jpg" />
@@ -107,6 +108,9 @@
     <Content Include="ProfileImage\Tom.jpeg" />
     <Content Include="ProfileImage\WeddingPhoto.jpg" />
     <Content Include="ProfileImage\WhatsApp Image 2023-02-18 at 12.36.25.jpg" />
+    <Content Include="RegisreScript.js" />
+    <Content Include="Register.aspx" />
+    <Content Include="RegisterStyle.css" />
     <Content Include="SettingsStyle.css" />
     <Content Include="Signup.aspx" />
     <Content Include="Signupimages\BackG.jpeg" />
@@ -140,6 +144,13 @@
       <DependentUpon>Login.aspx</DependentUpon>
     </Compile>
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="Register.aspx.cs">
+      <DependentUpon>Register.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Register.aspx.designer.cs">
+      <DependentUpon>Register.aspx</DependentUpon>
+    </Compile>
     <Compile Include="Signup.aspx.cs">
       <DependentUpon>Signup.aspx</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>

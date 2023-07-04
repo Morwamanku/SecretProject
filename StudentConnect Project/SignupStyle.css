@@ -19,6 +19,13 @@ list-type-ulli, .socials {
     width: 100%;
 }
 
+
+#signupform2 {
+    left: 450px;
+}
+
+
+
 /* poppins-300 - latin */
 @font-face {
     font-family: 'Poppins';
