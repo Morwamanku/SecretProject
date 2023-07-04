@@ -91,21 +91,32 @@
     <Content Include="ProfileImage\Brittney.jpeg" />
     <Content Include="ProfileImage\carie.jpeg" />
     <Content Include="ProfileImage\chloe.jpeg" />
+    <Content Include="ProfileImage\Dave.jpg" />
     <Content Include="ProfileImage\Exercise2 Q1.png" />
     <Content Include="ProfileImage\Fred.jpg" />
+    <Content Include="ProfileImage\harry.jpg" />
     <Content Include="ProfileImage\IMG_9852.jpg" />
+    <Content Include="ProfileImage\Jake.jpg" />
     <Content Include="ProfileImage\Kalenga.jpg" />
     <Content Include="ProfileImage\Kanya sunny.jpg" />
     <Content Include="ProfileImage\Kanya2.jpg" />
+    <Content Include="ProfileImage\Kris.jpg" />
+    <Content Include="ProfileImage\Logan.jpeg" />
     <Content Include="ProfileImage\Me photo.jpg" />
+    <Content Include="ProfileImage\Molemoo.jpg" />
     <Content Include="ProfileImage\Mpati.jpg" />
     <Content Include="ProfileImage\Mpumi.jpeg" />
+    <Content Include="ProfileImage\Neo.jpeg" />
+    <Content Include="ProfileImage\pako.jpg" />
     <Content Include="ProfileImage\Patty.jpeg" />
     <Content Include="ProfileImage\Pholly.jpg" />
     <Content Include="ProfileImage\Pholly2.jpg" />
+    <Content Include="ProfileImage\Samantha.jpg" />
     <Content Include="ProfileImage\slayer.jpg" />
     <Content Include="ProfileImage\thabo.jpeg" />
     <Content Include="ProfileImage\Tom.jpeg" />
+    <Content Include="ProfileImage\Tumi.jpg" />
+    <Content Include="ProfileImage\Unathi.jpg" />
     <Content Include="ProfileImage\WeddingPhoto.jpg" />
     <Content Include="ProfileImage\WhatsApp Image 2023-02-18 at 12.36.25.jpg" />
     <Content Include="RegisreScript.js" />
@@ -219,6 +230,7 @@
     <None Include="packages.config" />
     <Content Include="Site1.Master" />
     <Content Include="ProfileImage\Morwamanku Lease.pdf" />
+    <Content Include="ProfileImage\George.jpg.crdownload" />
     <None Include="Web.Debug.config">
       <DependentUpon>Web.config</DependentUpon>
     </None>

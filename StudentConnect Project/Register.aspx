@@ -37,59 +37,69 @@
 	<div class="flexformwrap">
 		<div class="form_wrap">
 		<div class="form_1 data_info">
-			<h2>Signup Info</h2>
-			
-				<div class="form_container">
-					<div class="input_wrap">
-						<label for="email">Email Address</label>
-						<input type="text" name="Email Address" class="input" id="email">
-					</div>
-					<div class="input_wrap">
-						<label for="password">Password</label>
-						<input type="password" name="password" class="input" id="password">
-					</div>
-					<div class="input_wrap">
-						<label for="confirm_password">Confirm Password</label>
-						<input type="password" name="confirm password" class="input" id="confirm_password">
-					</div>
-				</div>
-			
-		</div>
-		<div class="form_2 data_info" style="display: none;">
 			<h2>Personal Info</h2>
 			
 				<div class="form_container">
 					<div class="input_wrap">
-						<label for="user_name">User Name</label>
-						<input type="text" name="User Name" class="input" id="user_name">
+						<label for="Firstname"><i class="zmdi zmdi-account material-icons-name"></i></label>
+						<asp:TextBox ID="Firstnametxt" CssClass="input" placeholder="Firstname" runat="server"></asp:TextBox>
 					</div>
 					<div class="input_wrap">
-						<label for="first_name">First Name</label>
-						<input type="text" name="First Name" class="input" id="first_name">
+						<label for="Surname"><i class="zmdi zmdi-account material-icons-name"></i></label>
+						<asp:TextBox ID="Surnametxt" CssClass="input" placeholder="Surname" runat="server"></asp:TextBox>
 					</div>
+
+					<div class="input_wrap">         
+                        <label for="Gender"><i class="zmdi zmdi-account material-icons-name"></i></label>  
+						<asp:DropDownList CssClass="input" ID="GenderList" runat="server">
+                           <asp:ListItem Value="Male" >Male</asp:ListItem>    
+                           <asp:ListItem Value="Female">Female</asp:ListItem> 
+						</asp:DropDownList> 
+                    </div>
+				</div>
+			
+		</div>
+		<div class="form_2 data_info" style="display: none;">
+			<h2>Education Info</h2>
+			
+				<div class="form_container">
+					
 					<div class="input_wrap">
-						<label for="last_name">Last Name</label>
-						<input type="text" name="Last Name" class="input" id="last_name">
-					</div>
+						<label for="Course"><i class="zmdi zmdi-account material-icons-name"></i></label>
+						<asp:DropDownList CssClass="input" ID="UniversityList" runat="server">
+                           <asp:ListItem Value="Bcom Information Systems" >University of Johannesburg (UJ)</asp:ListItem>    
+                           <asp:ListItem Value="Bcom Accounting">University of Pretoria (UP) </asp:ListItem>
+                           <asp:ListItem Value="Bcom Law">University of Witwatersrand (WITS) </asp:ListItem>
+                       </asp:DropDownList> 
+                    </div>
+					<div class="input_wrap">
+							<label for="Qualification"><i class="zmdi zmdi-account material-icons-name"></i></label>
+							<asp:DropDownList CssClass="input" ID="DropDownList1" runat="server">
+								<asp:ListItem Value="Bcom Information Systems" >Bcom Information Systems</asp:ListItem>    
+								<asp:ListItem Value="Bcom Accounting">Bcom Accounting </asp:ListItem>
+								<asp:ListItem Value="Bcom Law">Bcom Law</asp:ListItem>
+							</asp:DropDownList>  
+                    </div>
+
+					
+				
 				</div>
 			
 		</div>
 		<div class="form_3 data_info" style="display: none;">
-			<h2>Professional Info</h2>
+			<h2>Accommodation Info</h2>
 			
 				<div class="form_container">
 					<div class="input_wrap">
-						<label for="company">Current Company</label>
-						<input type="text" name="Current Company" class="input" id="company">
-					</div>
-					<div class="input_wrap">
-						<label for="experience">Total Experience</label>
-						<input type="text" name="Total Experience" class="input" id="experience">
-					</div>
-					<div class="input_wrap">
-						<label for="designation">Designation</label>
-						<input type="text" name="Designation" class="input" id="designation">
-					</div>
+							<label for="Accommodation"><i class="zmdi zmdi-account material-icons-name"></i></label>
+							<asp:DropDownList CssClass="input" ID="DropDownList2" runat="server">
+								<asp:ListItem Value="Uni-stay" >Uni-stay</asp:ListItem>    
+                                <asp:ListItem Value="South Point">South Point</asp:ListItem>
+                                <asp:ListItem Value="Student Dicks">Student Dicks</asp:ListItem>
+							</asp:DropDownList>  
+                    </div>
+					
+					
 				</div>
 			
 		</div>
@@ -128,6 +138,7 @@
 
 
     </form>
+</section>
 </body>
 
 

@@ -27,6 +27,22 @@
     width: 100%;
 }
 
+.form-group {
+    position: relative;
+    margin-bottom: 25px;
+    overflow: hidden;
+}
+
+input {
+    width: 100%;
+    display: block;
+    border: none;
+    border-bottom: 1px solid #999;
+    padding: 6px 30px;
+    font-family: Poppins;
+    box-sizing: border-box;
+}
+
 body {
     background: var(--primary);
     color: var(--text-clr);
@@ -127,6 +143,8 @@ body {
             width: 350px;
             max-width: 100%;
             margin: 0 auto 20px;
+            position: relative;
+            overflow: hidden;
         }
 
             .wrapper .form_wrap .input_wrap:last-child {
