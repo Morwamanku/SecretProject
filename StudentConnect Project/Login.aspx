@@ -45,7 +45,7 @@
                             <input type="checkbox" name="remember-me" id="remember-me" class="agree-term" />
                             <label for="remember-me" class="label-agree-term"><span><span></span></span>Remember me</label>
                             <br />
-                            <a href="SignUp.aspx" class="signup-image-link">Don't have an account?</a>
+                            <a href="Register.aspx" class="signup-image-link">Don't have an account?</a>
                             <br />
                             <a href="Forgot Password.aspx" class="signup-image-link">Reset Password</a>
                         </div>

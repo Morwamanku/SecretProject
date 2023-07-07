@@ -1,90 +1,26 @@
 ﻿using System;
 using System.Collections.Generic;
-using System.Data.SqlClient;
-using System.Data;
 using System.Linq;
 using System.Web;
 using System.Web.UI;
 using System.Web.UI.WebControls;
-using System.IO;
-using System.Configuration;
 
 namespace StudentConnect_Project
 {
-    public partial class Register : System.Web.UI.Page
+    public partial class Practice_dropdownlist : System.Web.UI.Page
     {
-        string strcon = ConfigurationManager.ConnectionStrings["con"].ConnectionString;
         protected void Page_Load(object sender, EventArgs e)
         {
-            
-        }
-
-
-        bool checkMemberExists()
-        {
-            try
+            if (!IsPostBack)
             {
-                SqlConnection con = new SqlConnection(strcon);
-                if (con.State == ConnectionState.Closed)
-                {
-                    con.Open();
-                }
-                SqlCommand cmd = new SqlCommand("SELECT * FROM Student WHERE StudentNumber='" + studentnumbertxt.Text.Trim() + "';", con);
-                SqlDataAdapter da = new SqlDataAdapter(cmd);
-                DataTable dt = new DataTable();
-                da.Fill(dt);
-                if (dt.Rows.Count >= 1)
-                {
-                    return true;
-                }
-                else
-                {
-                    return false;
-                }
-            }
-            catch (Exception ex)
-            {
-                Response.Write("<script>alert('" + ex.Message + "');</script>");
-                return false;
-            }
-        }
-
-        void signUpNewMember()
-        {
-            //Response.Write("<script>alert('Testing');</script>");
-            try
-            {
-                string filepath = "~/ProfileImage/boity.jpg";
-                string filename = Path.GetFileName(FileUpload1.PostedFile.FileName);
-                FileUpload1.SaveAs(Server.MapPath("ProfileImage/" + filename));
-                filepath = "~/ProfileImage/" + filename;
-
-
-                SqlConnection con = new SqlConnection(strcon);
-                if (con.State == ConnectionState.Closed)
-                {
-                    con.Open();
-                }
-                SqlCommand cmd = new SqlCommand("INSERT INTO Student(StudentNumber,Firstname,Surname,Gender,Hometown,Password,image,UniversityName,QualificationName,Yearofstudy,AccommodationID) values(@StudentNumber,@Firstname,@Surname,@Gender,@Hometown,@Password,@image,@UniversityName,@QualificationName,@Yearofstudy,@AccommodationID)", con);
-                cmd.Parameters.AddWithValue("@StudentNumber", studentnumbertxt.Text.Trim());
-                cmd.Parameters.AddWithValue("@Firstname", Firstnametxt.Text.Trim());
-                cmd.Parameters.AddWithValue("@Surname", Surnametxt.Text.Trim());
-                cmd.Parameters.AddWithValue("@Gender", GenderList.SelectedItem.Value);
-                cmd.Parameters.AddWithValue("@Hometown", HometownList.SelectedItem.Value);
-                cmd.Parameters.AddWithValue("@Password", Passwordtxt.Text.Trim());
-                cmd.Parameters.AddWithValue("@image", filepath);
-                cmd.Parameters.AddWithValue("@UniversityName", UniversityIDList.SelectedItem.Value);
-                cmd.Parameters.AddWithValue("@QualificationName", ddlDegree.SelectedItem.Value);
-                cmd.Parameters.AddWithValue("@Yearofstudy", YearofstudyList.SelectedItem.Value);
-                cmd.Parameters.AddWithValue("@AccommodationID", AccommodationIDList.SelectedItem.Value);
-
-                cmd.ExecuteNonQuery();
-                con.Close();
-                Response.Write("<script>alert('Sign Up Successful. Go to User Login to Login');</script>");
-            }
-            catch (Exception ex)
-            {
-                Response.Write("<script>alert('" + ex.Message + "');</script>");
+                // Populate the first dropdown list with initial options
+                ddlFaculty.Items.Add(new ListItem("Faculty of Art, Design and Architecture", "ArtDesignArchitecture"));
+                ddlFaculty.Items.Add(new ListItem("School of Business and Economics", "BusinessEconomics"));
+                ddlFaculty.Items.Add(new ListItem("Faculty of Education", "Education"));
+                ddlFaculty.Items.Add(new ListItem("Faculty of Engineering & Built Environment", "EngineeringBuiltEnvironment"));
+                ddlFaculty.Items.Add(new ListItem("Faculty of Health Sciences", "HealthSciences"));
+                ddlFaculty.Items.Add(new ListItem("Faculty of Humanities", "Humanities"));
+                ddlFaculty.Items.Add(new ListItem("Faculty of Law", "Law"));
             }
         }
 
@@ -108,7 +44,6 @@ namespace StudentConnect_Project
                 ddlDegree.Items.Add(new ListItem("Diploma in Fashion Production"));
                 ddlDegree.Items.Add(new ListItem("Diploma in Jewellery Design and Manufacture"));
                 ddlDegree.Items.Add(new ListItem("Other"));
-
             }
             else if (ddlFaculty.SelectedValue == "BusinessEconomics")
             {
@@ -145,8 +80,6 @@ namespace StudentConnect_Project
                 ddlDegree.Items.Add(new ListItem("Diploma in Transportation Management"));
                 ddlDegree.Items.Add(new ListItem("International Accounting"));
                 ddlDegree.Items.Add(new ListItem("Human Resource Management"));
-                ddlDegree.Items.Add(new ListItem("Other"));
-                
             }
             else if (ddlFaculty.SelectedValue == "Education")
             {
@@ -164,7 +97,6 @@ namespace StudentConnect_Project
                 ddlDegree.Items.Add(new ListItem("Bachelor of Education in Mathematics"));
                 ddlDegree.Items.Add(new ListItem("Bachelor of Education in Life Sciences"));
                 ddlDegree.Items.Add(new ListItem("Bachelor of Education in Physical Sciences"));
-                ddlDegree.Items.Add(new ListItem("Other"));
             }
             else if (ddlFaculty.SelectedValue == "EngineeringBuiltEnvironment")
             {
@@ -177,7 +109,6 @@ namespace StudentConnect_Project
                 ddlDegree.Items.Add(new ListItem("Bachelor of in Urban and Regional Planning"));
                 ddlDegree.Items.Add(new ListItem("Diploma of Management services"));
                 ddlDegree.Items.Add(new ListItem("Diploma of Operations management"));
-                ddlDegree.Items.Add(new ListItem("Other"));
             }
             else if (ddlFaculty.SelectedValue == "HealthSciences")
             {
@@ -196,45 +127,10 @@ namespace StudentConnect_Project
                 ddlDegree.Items.Add(new ListItem("Bachelor of Optometry"));
                 ddlDegree.Items.Add(new ListItem("Bachelor of Arts Sport Psychology"));
                 ddlDegree.Items.Add(new ListItem("Bachelor of Arts Sport Development"));
-                ddlDegree.Items.Add(new ListItem("Other"));
 
 
             }
-            else if (ddlFaculty.SelectedValue == "Humanities")
-            {
-                // List F options for Faculty of Humanities
-                ddlDegree.Items.Add(new ListItem("Bachelor of Social Work"));
-                ddlDegree.Items.Add(new ListItem("Bachelor of Arts"));
-                ddlDegree.Items.Add(new ListItem("Bachelor of Art with specialization in Politics, Economics and Technology"));
-                ddlDegree.Items.Add(new ListItem("Bachelor of Art in Community Development and Leadership"));
-                ddlDegree.Items.Add(new ListItem("Diploma in Public Relations and Communication"));
-                ddlDegree.Items.Add(new ListItem("Bachelor of Arts in any two of these options: Anthropology, Development Studies"));
-                ddlDegree.Items.Add(new ListItem("Bachelor of English"));
-                ddlDegree.Items.Add(new ListItem("Bachelor of History"));
-                ddlDegree.Items.Add(new ListItem("Bachelor of Philosophy"));
-                ddlDegree.Items.Add(new ListItem("Bachelor of Politics"));
-                ddlDegree.Items.Add(new ListItem("Bachelor of Psychology "));
-                ddlDegree.Items.Add(new ListItem("Bachelor of Religion Studies"));
-                ddlDegree.Items.Add(new ListItem("Bachelor of Social Work"));
-                ddlDegree.Items.Add(new ListItem("Bachelor of Sociology"));
-                ddlDegree.Items.Add(new ListItem("Bachelor of Communication Studies"));
-                ddlDegree.Items.Add(new ListItem("Bachelor of Journalism"));
-                ddlDegree.Items.Add(new ListItem("Bachelor of Film & Television"));
-                ddlDegree.Items.Add(new ListItem("Bachelor of African Languages"));
-                ddlDegree.Items.Add(new ListItem("Bachelor of Strategic Communication"));
-                ddlDegree.Items.Add(new ListItem("Bachelor of  Cultural Studies"));
-                ddlDegree.Items.Add(new ListItem("Bachelor of Applied Linguistics"));
-                // Add other options
-                // ...
-            }
-            else if (ddlFaculty.SelectedValue == "Law")
-            {
-                // List G options for Faculty of Law
-                ddlDegree.Items.Add(new ListItem("Bachelor of Art in Law"));
-                ddlDegree.Items.Add(new ListItem("Bachelor of Commerce in Law"));
-                ddlDegree.Items.Add(new ListItem("LLB"));
-            }
-            else if (ddlFaculty.SelectedValue == "Science")
+            else if(ddlFaculty.SelectedValue == "Science")
             {
                 ddlDegree.Items.Add(new ListItem("BSc Biochemistry and Botany"));
                 ddlDegree.Items.Add(new ListItem("BSc Botany and Chemistry"));
@@ -268,21 +164,6 @@ namespace StudentConnect_Project
                 ddlDegree.Items.Add(new ListItem("BSc Chemistry and Mathematics"));
                 ddlDegree.Items.Add(new ListItem("BSc Chemistry and Physics"));
                 ddlDegree.Items.Add(new ListItem("BSc Geology and Chemistry"));
-                ddlDegree.Items.Add(new ListItem("Other"));
-            }
-        }
-
-        protected void Registerbtn_Click(object sender, EventArgs e)
-        {
-            if (checkMemberExists())
-            {
-                Response.Write("<script>alert('Book Already Exists, try some other Book ID');</script>");
-            }
-            else
-            {
-                signUpNewMember();
-                Response.Redirect("Login.aspx");
-                
             }
         }
     }

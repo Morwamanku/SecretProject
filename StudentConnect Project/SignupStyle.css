@@ -19,6 +19,9 @@ list-type-ulli, .socials {
     width: 100%;
 }
 
+.fa-brands{
+    font-size:30px;
+}
 
 #signupform2 {
     left: 450px;

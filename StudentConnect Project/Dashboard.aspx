@@ -16,12 +16,12 @@
                 </div>
         <div class="container">
                 <div class="row">
-                    <asp:Repeater ID="DashboardRepeater" runat="server">
+                    <asp:Repeater ID="DashboardRepeater" runat="server" OnItemCommand="DashboardRepeater_ItemCommand">
                         <ItemTemplate>
                             <div class="col-lg-4">
-                        <div class="card p-0 ">
+                        <div class="card p-0">
                             <div class="card-image">
-                                <asp:ImageButton ID="Image1" class="img-fluid" runat="server" ImageUrl='<%# Eval("image") %>' Width="100%" height="340px" object-fit="cover" />
+                                <asp:ImageButton ID="Image1" class="img-fluid" runat="server" ImageUrl='<%# Eval("image") %>' Width="100%" Height="340px"  object-fit="cover" OnClick="Image1_Click" />
                             </div>
                             <div class="card-content d-flex flex-column align-items-center">
                                 <div class="Fullname">
@@ -41,6 +41,7 @@
                 </div>
             </div>
         </div>
+        
          <div class="Left-Navigation">
             <div class="advertise-container">
                 <img src="https://tse2.mm.bing.net/th?id=OIP.GqS38d_qf8A4c1RGOs8AUgHaKF&amp;pid=Api&amp;P=0&amp;h=180" />

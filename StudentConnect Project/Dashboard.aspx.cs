@@ -16,7 +16,7 @@ namespace StudentConnect_Project
             string strcon = ConfigurationManager.ConnectionStrings["con"].ConnectionString;
             if (!IsPostBack)
             {
-                string query = string.Format("select StudentNumber,Firstname,Surname,QualificationName,image from Student left join Qualification on  Student.QualificationID= Qualification.QualificationID WHERE NOT StudentNumber='" + (string)Session["studentnumber"] + "'");
+                string query = string.Format("select StudentNumber,Firstname,Surname,QualificationName,image from Student WHERE NOT StudentNumber='" + (string)Session["studentnumber"] + "'");
 
                 SqlConnection con = new SqlConnection(strcon);
                 SqlCommand cmd = new SqlCommand(query, con);
@@ -27,6 +27,21 @@ namespace StudentConnect_Project
                 DashboardRepeater.DataBind();
                 con.Close();
             }
+        }
+
+        protected void DashboardRepeater_ItemCommand(object source, RepeaterCommandEventArgs e)
+        {
+
+        }
+
+        protected void Image1_Click(object sender, ImageClickEventArgs e)
+        {
+            ImageButton btn = (ImageButton)sender;
+            RepeaterItem item = (RepeaterItem)btn.NamingContainer;
+
+            string ProfileStudentNumber = ((Label)item.FindControl("StudentNumberLabel")).Text;
+            Session["profilestudentnumber"] = ProfileStudentNumber;
+            Response.Redirect("ViewProfile.aspx");
         }
     }
 }

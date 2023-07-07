@@ -16,16 +16,16 @@
 	<div class="setting-container">
 			<div class="bg-white shadow  d-block d-sm-flex">
 				<div class="profile-tab-nav">
-					<div class="p-4">
+					<%--<div class="p-4">
 						<div class="img-circle text-center mb-3" >
 							<img  src="ProfileImage/Pholly.jpg" alt="Image" class="shadow" " 
 							enctype="multipart/form-data"/>
 							   
 						</div>
 						<h4 class="text-center">Phogole Thobejnae</h4>
-					</div>
+					</div>--%>
 					<div class="nav flex-column nav-pills" id="v-pills-tab" role="tablist" aria-orientation="vertical">
-						<a class="nav-link active" id="account-tab" data-toggle="pill" href="#account" role="tab" aria-controls="account" aria-selected="true">
+						<a class="nav-link active" id="account-tab" data-toggle="pill" href="#account" role="tab" aria-controls="account" style="border-radius: 25px 0 0" aria-selected="true">
 							<span class="material-symbols-sharp">manage_accounts</span>
 							Account
 						</a>
