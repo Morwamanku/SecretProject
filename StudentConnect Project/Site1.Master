@@ -110,9 +110,12 @@
                         <ion-icon name="notifications-outline"></ion-icon>
                    </div>
                    <div class="user">
-                   
-                   
-                   <img src="ProfileImage/Pholly.jpg" width="50" />
+                       <asp:FormView ID="FormView1" runat="server">
+                           <ItemTemplate>  
+                       <asp:Image ID="Image1" runat="server" ImageUrl='<%# Eval("image") %>' Width="50" />
+                    
+                    </ItemTemplate>
+                       </asp:FormView>
 
                </div>
                </div>

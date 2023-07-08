@@ -220,9 +220,29 @@ body {
                     background: var(--next-btn-hover);
                 }
 
-                .wrapper .btns_wrap .common_btns button.btn_back:hover {
-                    background: var(--back-btn-hover);
-                }
+            .wrapper .btns_wrap .common_btns .btn_done {
+                border: 45px;
+                padding: 12px 15px;
+                background: var(--primary);
+                color: var(--white);
+                width: 135px;
+                justify-content: center;
+                display: flex;
+                align-items: center;
+                font-size: 16px;
+                border-radius: 3px;
+                transition: 0.5s ease;
+                cursor: pointer;
+                margin-top: 25px;
+            }
+
+            .wrapper .btns_wrap .common_btns .btn_done:hover {
+                background: var(--next-btn-hover);
+            }
+
+                    .wrapper .btns_wrap .common_btns button.btn_back:hover {
+                        background: var(--back-btn-hover);
+                    }
 
 .modal_wrapper {
     position: fixed;

@@ -13,169 +13,34 @@
                         dark_mode
                     </span>
                 </div>
-        
-           
-            <div class="container">
+        <div class="container">
                 <div class="row">
-                    
-                    <div class="col-lg-4">
+                    <asp:Repeater ID="DashboardRepeater" runat="server" OnItemCommand="DashboardRepeater_ItemCommand">
+                        <ItemTemplate>
+                            <div class="col-lg-4">
                         <div class="card p-0">
                             <div class="card-image">
-                                <img src="https://images.pexels.com/photos/381843/pexels-photo-381843.jpeg?auto=compress&cs=tinysrgb&dpr=1&w=500"
-                                    alt="">
+                                <asp:ImageButton ID="Image1" class="img-fluid" runat="server" ImageUrl='<%# Eval("image") %>' Width="100%" Height="340px"  object-fit="cover" OnClick="Image1_Click" />
                             </div>
                             <div class="card-content d-flex flex-column align-items-center">
-                                <h4 class="pt-2">SomeOne Famous</h4>
-                                <h5>Creative Desinger</h5>
-
-                                <ul class="social-icons d-flex justify-content-center">
-                                    <li style="--i:1">
-                                        <a href="#">
-                                            <span class="fab fa-facebook"></span>
-                                        </a>
-                                    </li>
-                                    <li style="--i:2">
-                                        <a href="#">
-                                            <span class="fab fa-twitter"></span>
-                                        </a>
-                                    </li>
-                                    <li style="--i:3">
-                                        <a href="#">
-                                            <span class="fab fa-instagram"></span>
-                                        </a>
-                                    </li>
-                                </ul>
+                                <div class="Fullname">
+                                    <asp:Label ID="FirstnameLabel" runat="server"  Text='<%# Eval("Firstname") %>'></asp:Label>
+                                    <asp:Label ID="SurnameLabel1" runat="server" Text='<%# Eval("Surname") %>'></asp:Label> 
+                                </div>
+                                
+                                <asp:Label ID="QualificationNameLabel1" runat="server" class="QualificationName" Text='<%# Eval("QualificationName") %>'></asp:Label>
+                                <div class="Card-Studentnumber">
+                                    <asp:Label ID="StudentNumberLabel" runat="server" class="StudentNumber" Text='<%# Eval("StudentNumber") %>'></asp:Label>
+                                </div>
                             </div>
                         </div>
                     </div>
-                    <div class="col-lg-4">
-                        <div class="card p-0">
-                            <div class="card-image">
-                                <img src="https://images.pexels.com/photos/139829/pexels-photo-139829.jpeg?auto=compress&cs=tinysrgb&dpr=1&w=500"
-                                    alt=""/>
-                            </div>
-                            <div class="card-content d-flex flex-column align-items-center">
-                                <h4 class="pt-2">SomeOne Famous</h4>
-                                <h5>Creative Desinger</h5>
-
-                                <ul class="social-icons d-flex justify-content-center">
-                                    <li style="--i:1">
-                                        <a href="#">
-                                            <span class="fab fa-facebook"></span>
-                                        </a>
-                                    </li>
-                                    <li style="--i:2">
-                                        <a href="#">
-                                            <span class="fab fa-twitter"></span>
-                                        </a>
-                                    </li>
-                                    <li style="--i:3">
-                                        <a href="#">
-                                            <span class="fab fa-instagram"></span>
-                                        </a>
-                                    </li>
-                                </ul>
-                            </div>
-                        </div>
-                    </div>
-
-                </div>
-            </div>
-            <div class="container">
-                <div class="row">
-                    <div class="col-lg-4">
-                        <div class="card p-0">
-                            <div class="card-image">
-                                <img src="https://images.pexels.com/photos/2746187/pexels-photo-2746187.jpeg?auto=compress&cs=tinysrgb&dpr=1&w=500"
-                                    alt=""/>
-                            </div>
-                            <div class="card-content d-flex flex-column align-items-center">
-                                <h4 class="pt-2">SomeOne Famous</h4>
-                                <h5>Creative Desinger</h5>
-
-                                <ul class="social-icons d-flex justify-content-center">
-                                    <li style="--i:1">
-                                        <a href="#">
-                                            <span class="fab fa-facebook"></span>
-                                        </a>
-                                    </li>
-                                    <li style="--i:2">
-                                        <a href="#">
-                                            <span class="fab fa-twitter"></span>
-                                        </a>
-                                    </li>
-                                    <li style="--i:3">
-                                        <a href="#">
-                                            <span class="fab fa-instagram"></span>
-                                        </a>
-                                    </li>
-                                </ul>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="col-lg-4">
-                        <div class="card p-0">
-                            <div class="card-image">
-                                <img src="https://i.pinimg.com/564x/04/ad/8d/04ad8d94c465aba235aed3f9d6ebf5dc.jpg"
-                                    alt=""/>
-                            </div>
-                            <div class="card-content d-flex flex-column align-items-center">
-                                <h4 class="pt-2">SomeOne Famous</h4>
-                                <h5>Creative Desinger</h5>
-
-                                <ul class="social-icons d-flex justify-content-center">
-                                    <li style="--i:1">
-                                        <a href="#">
-                                            <span class="fab fa-facebook"></span>
-                                        </a>
-                                    </li>
-                                    <li style="--i:2">
-                                        <a href="#">
-                                            <span class="fab fa-twitter"></span>
-                                        </a>
-                                    </li>
-                                    <li style="--i:3">
-                                        <a href="#">
-                                            <span class="fab fa-instagram"></span>
-                                        </a>
-                                    </li>
-                                </ul>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="col-lg-4">
-                        <div class="card p-0">
-                            <div class="card-image">
-                                <img src="https://i.pinimg.com/564x/e0/03/af/e003af19e7033b0e5d528235f18ad52f.jpg"
-                                    alt=""/>
-                            </div>
-                            <div class="card-content d-flex flex-column align-items-center">
-                                <h4 class="pt-2">SomeOne Famous</h4>
-                                <h5>Creative Desinger</h5>
-
-                                <ul class="social-icons d-flex justify-content-center">
-                                    <li style="--i:1">
-                                        <a href="#">
-                                            <span class="fab fa-facebook"></span>
-                                        </a>
-                                    </li>
-                                    <li style="--i:2">
-                                        <a href="#">
-                                            <span class="fab fa-twitter"></span>
-                                        </a>
-                                    </li>
-                                    <li style="--i:3">
-                                        <a href="#">
-                                            <span class="fab fa-instagram"></span>
-                                        </a>
-                                    </li>
-                                </ul>
-                            </div>
-                        </div>
-                    </div>
+                        </ItemTemplate>
+                    </asp:Repeater>
                 </div>
             </div>
         </div>
+        
          <div class="Left-Navigation">
             <div class="advertise-container">
                 <img src="https://tse2.mm.bing.net/th?id=OIP.GqS38d_qf8A4c1RGOs8AUgHaKF&amp;pid=Api&amp;P=0&amp;h=180" />

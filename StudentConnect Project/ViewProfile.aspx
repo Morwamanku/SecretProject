@@ -28,7 +28,7 @@
                     </div>
                     <div class="Profile-buttons">
                         <asp:Button ID="Backbtn" CssClass="p-btn" runat="server" Text="Back" OnClick="Backbtn_Click" />
-                        <asp:Button ID="Connectbtn" CssClass="p-btn" runat="server" Text="Connect" />
+                        <asp:Button ID="Connectbtn" CssClass="p-btn" runat="server" Text="Connect" OnClick="Connectbtn_Click" />
                     </div>
                 </div>
             </div>
