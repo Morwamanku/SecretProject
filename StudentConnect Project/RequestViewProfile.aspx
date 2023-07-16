@@ -1,10 +1,9 @@
-﻿<%@ Page Title="" Language="C#" MasterPageFile="~/Site1.Master" AutoEventWireup="true" CodeBehind="ViewProfile.aspx.cs" Inherits="StudentConnect_Project.WebForm7" %>
+﻿<%@ Page Title="" Language="C#" MasterPageFile="~/Site1.Master" AutoEventWireup="true" CodeBehind="RequestViewProfile.aspx.cs" Inherits="StudentConnect_Project.WebForm9" %>
 <asp:Content ID="Content1" ContentPlaceHolderID="head" runat="server">
-    <link href="ViewProfileStyle.css" rel="stylesheet" />
+        <link href="ViewProfileStyle.css" rel="stylesheet" />
 </asp:Content>
 <asp:Content ID="Content2" ContentPlaceHolderID="ContentPlaceHolder1" runat="server">
-    
-    <asp:FormView ID="FormView1" runat="server" OnPageIndexChanging="FormView1_PageIndexChanging">
+    <asp:FormView ID="FormView1" runat="server">
         <ItemTemplate>
             <div class="flex-wrapper">
                 <div class="Profile-image">
@@ -28,14 +27,14 @@
                     </div>
                     <div class="Profile-buttons">
                         <asp:Button ID="Backbtn" CssClass="p-btn" runat="server" Text="Back" OnClick="Backbtn_Click" />
-                        <asp:Button ID="Connectbtn" CssClass="p-btn" runat="server" Text="Request" OnClick="Connectbtn_Click" />
+                        <asp:Button ID="Connectbtn" CssClass="p-btn" runat="server" Text="Connect" OnClick="Connectbtn_Click"  />
                     </div>
                 </div>
             </div>
         </ItemTemplate>
-        
     </asp:FormView>
+        
+        
 
-   
     
 </asp:Content>

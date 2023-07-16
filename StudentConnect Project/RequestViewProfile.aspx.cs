@@ -1,22 +1,20 @@
 ﻿using System;
 using System.Collections.Generic;
-using System.Configuration;
-using System.Data;
 using System.Data.SqlClient;
+using System.Data;
 using System.Linq;
-using System.Reflection.Emit;
 using System.Web;
 using System.Web.UI;
 using System.Web.UI.WebControls;
+using System.Configuration;
 
 namespace StudentConnect_Project
 {
-    public partial class WebForm7 : System.Web.UI.Page
+    public partial class WebForm9 : System.Web.UI.Page
     {
         string strcon = ConfigurationManager.ConnectionStrings["con"].ConnectionString;
         protected void Page_Load(object sender, EventArgs e)
         {
-            
             if (!IsPostBack)
             {
                 string query = string.Format("select StudentNumber,Firstname,Surname,Hometown,UniversityName,QualificationName,image from Student Where StudentNumber ='" + (string)Session["profilestudentnumber"] + "'");
@@ -33,22 +31,15 @@ namespace StudentConnect_Project
             }
         }
 
-        protected void FormView1_PageIndexChanging(object sender, FormViewPageEventArgs e)
-        {
-
-        }
-
         protected void Backbtn_Click(object sender, EventArgs e)
         {
-            Response.Redirect("Dashboard.aspx");
+            Response.Redirect("Request.aspx");
         }
-        
 
         protected void Connectbtn_Click(object sender, EventArgs e)
         {
-            
             string StudentNumber = ((System.Web.UI.WebControls.Label)FormView1.FindControl("StudentNumberLabel")).Text;
-            
+
 
 
             try
@@ -58,21 +49,19 @@ namespace StudentConnect_Project
                 {
                     con.Open();
                 }
-                SqlCommand cmd = new SqlCommand("insert into ConnectRequest(Sender,Recipient)values(@Sender,@Recipient)", con);
-                
-                cmd.Parameters.AddWithValue("@Recipient",StudentNumber);
+                SqlCommand cmd = new SqlCommand("insert into Connected(Sender,Recipient)values(@Sender,@Recipient)", con);
+
+                cmd.Parameters.AddWithValue("@Recipient", StudentNumber);
                 cmd.Parameters.AddWithValue("@Sender", (string)Session["studentnumber"]);
 
                 cmd.ExecuteNonQuery();
                 con.Close();
-                Response.Write("<script>alert('Request Made');</script>");
+                Response.Write("<script>alert('Connection Made');</script>");
             }
             catch (Exception ex)
             {
                 Response.Write("<script>alert('" + ex.Message + "');</script>");
             }
         }
-
-        
     }
 }

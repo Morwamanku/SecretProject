@@ -16,13 +16,16 @@
                 </div>
         <div class="container">
                 <div class="row">
+                    
                     <asp:Repeater ID="DashboardRepeater" runat="server" OnItemCommand="DashboardRepeater_ItemCommand">
                         <ItemTemplate>
                             <div class="col-lg-4">
                         <div class="card p-0">
                             <div class="card-image">
                                 <asp:ImageButton ID="Image1" class="img-fluid" runat="server" ImageUrl='<%# Eval("image") %>' Width="100%" Height="340px"  object-fit="cover" OnClick="Image1_Click" />
+                                
                             </div>
+                            
                             <div class="card-content d-flex flex-column align-items-center">
                                 <div class="Fullname">
                                     <asp:Label ID="FirstnameLabel" runat="server"  Text='<%# Eval("Firstname") %>'></asp:Label>
@@ -30,10 +33,13 @@
                                 </div>
                                 
                                 <asp:Label ID="QualificationNameLabel1" runat="server" class="QualificationName" Text='<%# Eval("QualificationName") %>'></asp:Label>
+                                
                                 <div class="Card-Studentnumber">
                                     <asp:Label ID="StudentNumberLabel" runat="server" class="StudentNumber" Text='<%# Eval("StudentNumber") %>'></asp:Label>
                                 </div>
+                                
                             </div>
+                            
                         </div>
                     </div>
                         </ItemTemplate>

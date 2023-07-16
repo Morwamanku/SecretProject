@@ -13,9 +13,10 @@
                         dark_mode
                     </span>
                 </div>
+            
         <div class="container">
                 <div class="row">
-                    <asp:Repeater ID="DashboardRepeater" runat="server" OnItemCommand="DashboardRepeater_ItemCommand">
+                    <asp:Repeater ID="RequestRepeater" runat="server" >
                         <ItemTemplate>
                             <div class="col-lg-4">
                         <div class="card p-0">

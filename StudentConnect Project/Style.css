@@ -23,6 +23,10 @@
     --box-shadow: 0 2rem 3rem var(--color-light);
 }
 
+.connect-btn {
+   position:absolute
+}
+
 
 
 body {
@@ -366,86 +370,6 @@ body {
     margin-inline-start: 0px;
     margin-inline-end: 0px;
 }
-
-.buttons {
-    position: absolute;
-    display: flex;
-    column-gap: 10px;
-    position: relative;
-    width: 80px;
-    margin: 0 1px;
-    padding: 10px 15px 10px 0px;
-}
-
-    .buttons .Addbtn {
-        position: absolute;
-        width: 100%;
-        height: 30px;
-        border-radius: 40px;
-        padding: 5px 110px;
-        padding-left: 45px;
-        margin-left: 57px;
-        outline: none;
-        border: 1px solid black;
-        text-align: center;
-        font-weight: bold;
-        color: initial;
-        cursor: pointer;
-        background: antiquewhite;
-    }
-
-
-
-        .buttons .Addbtn .Addbutton {
-            border: none;
-            background: none
-        }
-
-        .buttons .Addbtn:hover {
-            color: var(--white);
-            background: var(--blue);
-        }
-
-    .buttons .Removebtn {
-        position: absolute;
-        width: 100%;
-        height: 30px;
-        border-radius: 40px;
-        padding: 5px 70px;
-        padding-left: 16px;
-        outline: none;
-        border: 1px solid black;
-        text-align: center;
-        font-weight: bold;
-        color: var(--blue);
-        margin-left: 100px;
-    }
-
-        .buttons .Removebtn:hover {
-            color: var(--white);
-            background: var(--blue);
-        }
-
-    .buttons .Confirmbtn {
-        position: absolute;
-        width: 100%;
-        height: 30px;
-        border-radius: 40px;
-        padding: 5px 70px;
-        padding-left: 16px;
-        outline: none;
-        border: 1px solid black;
-        text-align: center;
-        font-weight: bold;
-        color: var(--blue);
-        margin-left: 100px;
-    }
-
-        .buttons .Confirmbtn:hover {
-            color: var(--white);
-            background: var(--blue);
-        }
-
 
 
 .popup {

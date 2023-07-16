@@ -11,16 +11,16 @@ namespace StudentConnect_Project
 {
 
 
-    public partial class WebForm5
+    public partial class WebForm9
     {
 
         /// <summary>
-        /// RequestRepeater control.
+        /// FormView1 control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.Repeater RequestRepeater;
+        protected global::System.Web.UI.WebControls.FormView FormView1;
     }
 }

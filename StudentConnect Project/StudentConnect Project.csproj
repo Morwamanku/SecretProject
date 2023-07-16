@@ -71,6 +71,7 @@
     <Content Include="Background-video\solar_system %28720p%29.mp4" />
     <Content Include="Background-video\Spacy.mp4" />
     <Content Include="Background-video\video %282160p%29.mp4" />
+    <Content Include="Chat.aspx" />
     <Content Include="Content\bootstrap-grid.css" />
     <Content Include="Content\bootstrap-grid.min.css" />
     <Content Include="Content\bootstrap-reboot.css" />
@@ -84,6 +85,8 @@
     <Content Include="Images\camera-symbol-icon-25.png" />
     <Content Include="Images\signup-img.jpg" />
     <Content Include="Login.aspx" />
+    <Content Include="Message.aspx" />
+    <Content Include="MessageStyle.css" />
     <Content Include="Notificationstyle.css" />
     <Content Include="pexels-aleksandar-pasaric-4505907.jpg" />
     <Content Include="pexels-alexander-kovalev-2847648.jpg" />
@@ -142,8 +145,16 @@
     <Content Include="Request.aspx" />
     <Content Include="Blocked.aspx" />
     <Content Include="ViewProfile.aspx" />
+    <Content Include="RequestViewProfile.aspx" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Chat.aspx.cs">
+      <DependentUpon>Chat.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Chat.aspx.designer.cs">
+      <DependentUpon>Chat.aspx</DependentUpon>
+    </Compile>
     <Compile Include="ForgotPassword.aspx.cs">
       <DependentUpon>ForgotPassword.aspx</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>
@@ -157,6 +168,13 @@
     </Compile>
     <Compile Include="Login.aspx.designer.cs">
       <DependentUpon>Login.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Message.aspx.cs">
+      <DependentUpon>Message.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Message.aspx.designer.cs">
+      <DependentUpon>Message.aspx</DependentUpon>
     </Compile>
     <Compile Include="Practice dropdownlist.aspx.cs">
       <DependentUpon>Practice dropdownlist.aspx</DependentUpon>
@@ -235,6 +253,13 @@
     </Compile>
     <Compile Include="ViewProfile.aspx.designer.cs">
       <DependentUpon>ViewProfile.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="RequestViewProfile.aspx.cs">
+      <DependentUpon>RequestViewProfile.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="RequestViewProfile.aspx.designer.cs">
+      <DependentUpon>RequestViewProfile.aspx</DependentUpon>
     </Compile>
   </ItemGroup>
   <ItemGroup>
