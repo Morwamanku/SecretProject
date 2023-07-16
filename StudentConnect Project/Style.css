@@ -373,9 +373,9 @@ body {
 
 
 .popup {
-    width: 400px;
+    width: 380px;
     background: #fff;
-    border-radius: 6px;
+    border-radius: 25px;
     position: absolute;
     top: 0;
     left: 50%;
@@ -390,7 +390,7 @@ body {
 .open-popup {
     visibility: visible;
     top: 50%;
-    transform: translate(-50%,-50%)scale(1);
+    transform: translate(-50%,-280%)scale(1);
 }
 
 .popup img {
@@ -406,16 +406,21 @@ body {
     margin: 30px 0 10px;
 }
 
+.filter-content {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-evenly;
+    align-items: flex-start;
+    margin-left: 120px;
+}
+
 .popup button {
-    width: 100%;
-    margin-top: 50px;
-    padding: 10px 0;
-    background: #6fd649;
-    color: #fff;
-    border: 0;
-    outline: none;
-    font-size: 18px;
-    border-radius: 4px;
+    border-radius: 25px;
+    padding: 5px;
+    font-size: 14px;
+    min-width: 90px;
+    color: gray;
+    border: gray;
     cursor: pointer;
     box-shadow: 0 2px 5px rgba(0,0,0,0.2);
 }
@@ -492,16 +497,17 @@ body {
 .filter {
     height: 29px;
     color: black;
-    margin-left: 55px;
-    margin-top: 6px;
-    background: antiquewhite;
+    margin-left: 255px;
+    margin-top: 20px;
+    background: #ddd;
     border: 15px;
-    border-radius: 5px;
+    border-radius: 25px;
     width: 80px;
     padding-top: 4px;
     padding-left: 10px;
     display: flex;
     gap: 7px;
+    cursor:pointer;
 }
 
 .notification-container {

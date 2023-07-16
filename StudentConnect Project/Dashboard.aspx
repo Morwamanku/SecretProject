@@ -2,11 +2,14 @@
 <asp:Content ID="Content1" ContentPlaceHolderID="head" runat="server">
     <link href="DashboardStyle.css" rel="stylesheet" />
     <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Material+Symbols+Sharp:opsz,wght,FILL,GRAD@48,400,0,0" />
+    <link href="https://fonts.googleapis.com/icon?family=Material+Icons+Sharp" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css" />
 </asp:Content>
 <asp:Content ID="Content2" ContentPlaceHolderID="ContentPlaceHolder1" runat="server">
     <div class="container1">
         <div class="container2">
-            <div class="dark-mode">
+            <div class="flex-filter">
+                <div class="dark-mode">
                     <span class="material-icons-sharp active">
                         light_mode
                     </span>
@@ -14,9 +17,10 @@
                         dark_mode
                     </span>
                 </div>
+            <button  class="filter" type="button" onclick="openPopup()"><span style="font-size:17px">Filter</span><ion-icon name="funnel-outline" style="font-size:17px; margin-top:3px;"></ion-icon></button>
+            </div>
         <div class="container">
                 <div class="row">
-                    
                     <asp:Repeater ID="DashboardRepeater" runat="server" OnItemCommand="DashboardRepeater_ItemCommand">
                         <ItemTemplate>
                             <div class="col-lg-4">
@@ -88,13 +92,34 @@
     
    </div>
  </div>
- 
-    
-
-    
-
+    <div class="popup" id="popup">
+            <img src="ProfileImage/Me photo.jpg" />
+            <h3>Filter</h3>
+            <div class="filter-content">
+                <div class="filter-option">
+                <asp:CheckBox ID="CheckBox1" runat="server"/>
+                <asp:Label ID="Label1" runat="server" Text="Hometown"></asp:Label>
+            </div>
+            <div class="filter-option">
+                <asp:CheckBox ID="CheckBox2" runat="server"/>
+                <asp:Label ID="Label2" runat="server" Text="A-Z"></asp:Label>
+            </div>
+        <div class="filter-option">
+                <asp:CheckBox ID="CheckBox3" runat="server"/>
+                <asp:Label ID="Label3" runat="server" Text="Hobbies"></asp:Label>
+            </div>
+        <div class="filter-option">
+                <asp:CheckBox ID="CheckBox4" runat="server"/>
+                <asp:Label ID="Label4" runat="server" Text="University"></asp:Label>
+            </div>
+            </div>
+            
+            <button type="button" onclick="closePopup()">OK</button>
+        </div>
+  
     <script>
-            let Card = document.getElementById("Card");
+        let Card = document.getElementById("Card");
+        let popup = document.getElementById("popup");
 
             function Spincardforward() {
                 ProfileBox.classList.add("Spin-cardforward()");
@@ -103,6 +128,14 @@
             function spincardbackward() {
                 ProfileBox.classList.remove("spin-cardbackwar");
             }
+
+        function openPopup() {
+            popup.classList.add("open-popup");
+        }
+
+        function closePopup() {
+            popup.classList.remove("open-popup");
+        }
     </script>
 
     <script>
