@@ -7,6 +7,7 @@
 </asp:Content>
 <asp:Content ID="Content2" ContentPlaceHolderID="ContentPlaceHolder1" runat="server">
     <div class="container1">
+        
         <div class="container2">
             <div class="flex-filter">
                 <div class="dark-mode">
@@ -97,19 +98,19 @@
             <h3>Filter</h3>
             <div class="filter-content">
                 <div class="filter-option">
-                <asp:CheckBox ID="CheckBox1" runat="server"/>
+            <asp:RadioButton ID="RadioButton5" runat="server" OnCheckedChanged="RadioButton5_CheckedChanged" />
                 <asp:Label ID="Label1" runat="server" Text="Hometown"></asp:Label>
             </div>
             <div class="filter-option">
-                <asp:CheckBox ID="CheckBox2" runat="server"/>
+                <asp:RadioButton ID="RadioButton1" runat="server" />
                 <asp:Label ID="Label2" runat="server" Text="A-Z"></asp:Label>
             </div>
         <div class="filter-option">
-                <asp:CheckBox ID="CheckBox3" runat="server"/>
+            <asp:RadioButton ID="RadioButton2" runat="server" />
                 <asp:Label ID="Label3" runat="server" Text="Hobbies"></asp:Label>
             </div>
         <div class="filter-option">
-                <asp:CheckBox ID="CheckBox4" runat="server"/>
+                <asp:RadioButton ID="RadioButton4" runat="server" />
                 <asp:Label ID="Label4" runat="server" Text="University"></asp:Label>
             </div>
             </div>

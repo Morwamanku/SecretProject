@@ -11,9 +11,10 @@ namespace StudentConnect_Project
 {
     public partial class WebForm1 : System.Web.UI.Page
     {
+        string strcon = ConfigurationManager.ConnectionStrings["con"].ConnectionString;
         protected void Page_Load(object sender, EventArgs e)
         {
-            string strcon = ConfigurationManager.ConnectionStrings["con"].ConnectionString;
+            
             if (!IsPostBack)
             {
                 string query = string.Format("select StudentNumber,Firstname,Surname,QualificationName,image from Student WHERE NOT StudentNumber='" + (string)Session["studentnumber"] + "'");
@@ -42,6 +43,23 @@ namespace StudentConnect_Project
             string ProfileStudentNumber = ((Label)item.FindControl("StudentNumberLabel")).Text;
             Session["profilestudentnumber"] = ProfileStudentNumber;
             Response.Redirect("ViewProfile.aspx");
+        }
+
+        protected void RadioButton5_CheckedChanged(object sender, EventArgs e)
+        {
+            if (!IsPostBack)
+            {
+                string query = string.Format("select * from Student where QualificationName='Bachelor in Architecture'");
+
+                SqlConnection con = new SqlConnection(strcon);
+                SqlCommand cmd = new SqlCommand(query, con);
+
+                con.Open();
+                SqlDataReader reader = cmd.ExecuteReader();
+                DashboardRepeater.DataSource = reader;
+                DashboardRepeater.DataBind();
+                con.Close();
+            }
         }
     }
 }
