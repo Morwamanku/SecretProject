@@ -27,6 +27,7 @@
 .message {
     min-width: 80px;
     background: antiquewhite;
+    background-image: url('Images/camera-symbol-icon-25.png');
     height: 35px;
     margin-top: 20px;
     padding: 10px;
