@@ -74,10 +74,10 @@
                     <div class="message-wrapper">
                         <div class="message-flex">
                         <div class="message-user">
-                            <img src="pexels-alexander-kovalev-2847648.jpg"/>
+                            <asp:Image ID="Image1" runat="server" ImageUrl='<%# Eval("image") %>' Width="50" />
                         </div>
                             <div class="message">
-                                <p><asp:Label ID="Messagelabel" runat="server"  Text='<%# Eval("message") %>'></asp:Label><asp:Label ID="ConfirmedIDLabel" runat="server" class="ConnectConfirmed_ID" Text='<%# Eval("ConfirmedID") %>'></asp:Label> </p>
+                                <p><asp:Label ID="Messagelabel" runat="server"  Text='<%# Eval("message") %>'></asp:Label> </p>
                             </div>
                         </div>
                 
@@ -92,7 +92,7 @@
                     <div class="message-flex">
                         <asp:TextBox CssClass="text-box"  ID="messageTextBox" runat="server" ></asp:TextBox>
                     <div class="send-btn">
-                        <asp:Button ID="SButton" class="submit-button" runat="server" CausesValidation="True" Text="" OnClick="SButton_Click" />
+                        <asp:Button ID="SButton" class="submit-button" AutoPostBack="True" runat="server" CausesValidation="True" Text="" OnClick="SButton_Click" />
                         <i class="fa fa-paper-plane" aria-hidden="true"></i>
                     </div>
                     </div>                  
