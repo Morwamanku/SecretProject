@@ -16,7 +16,7 @@
             </video>
     <form id="form1" runat="server">
         
-        <div class="Main-container">
+        <div class="container-wrapper">
             <div class="navigation">
                 <ul>
                     <li>
@@ -94,43 +94,101 @@
                     
                 </ul>
             </div>
-        </div>
-         <div class="topbar"> 
-               <div class="toggle">
-                   <ion-icon name="grid-outline"></ion-icon>
-               </div>
-               <div class="search">
-                   <label>
-                       <input type="text" placeholder="Search here"/>
-                       <ion-icon name="search-outline"></ion-icon>
-                   </label>                  
-               </div>
-               <div class="user-container">
-                   <div class="notification-icon">
-                        <ion-icon name="notifications-outline"></ion-icon>
+            
+            <div class="main">
+                <div class="topbar"> 
+                   <div class="toggle">
+                       <ion-icon style="font-size:32px;" name="grid-outline"></ion-icon>
                    </div>
-                   <div class="user">
-                       <asp:FormView ID="FormView1" runat="server">
-                           <ItemTemplate>  
-                       <asp:Image ID="Image1" runat="server" ImageUrl='<%# Eval("image") %>' Width="50" />
+                   <div class="search">
+                       <label>
+                           <input type="text" placeholder="Search here"/>
+                           <ion-icon name="search-outline"></ion-icon>
+                       </label>                  
+                   </div>
+                   <div class="user-container">
+                       <div class="notification-icon">
+                            <ion-icon name="notifications-outline"></ion-icon>
+                       </div>
+                       <div class="user">
+                           <asp:FormView ID="FormView1" runat="server">
+                               <ItemTemplate>  
+                           <asp:Image ID="Image1" runat="server" ImageUrl='<%# Eval("image") %>' Width="50" />
                     
-                    </ItemTemplate>
-                       </asp:FormView>
+                        </ItemTemplate>
+                           </asp:FormView>
 
-               </div>
+                   </div>
                </div>
                
                
            </div>
-        <div class="main">
-            
+            <%--<div class="dark-mode">
+                    <span class="material-icons-sharp active">
+                        light_mode
+                    </span>
+                    <span class="material-icons-sharp">
+                        dark_mode
+                    </span>
+            </div>--%>
+            <div class="flex-filter">
+                <div class="dark-mode">
+                    <span class="material-icons-sharp active">
+                        light_mode
+                    </span>
+                    <span class="material-icons-sharp">
+                        dark_mode
+                    </span>
+                </div>
+            <button  class="filter" type="button" onclick="openPopup()"><span style="font-size:17px">Filter</span><ion-icon name="funnel-outline" style="font-size:17px; margin-top:3px;"></ion-icon></button>
+            </div>
+
            
 
             
 
-            <asp:ContentPlaceHolder ID="ContentPlaceHolder1" runat="server">
-            </asp:ContentPlaceHolder>
-        </div>
+                <asp:ContentPlaceHolder ID="ContentPlaceHolder1" runat="server">
+                </asp:ContentPlaceHolder>
+            </div>
+            <div class="Left-Navigation">
+                <div class="advertise-container">
+                    <img src="https://tse2.mm.bing.net/th?id=OIP.GqS38d_qf8A4c1RGOs8AUgHaKF&amp;pid=Api&amp;P=0&amp;h=180" />
+                </div>
+
+                 <ul>
+    
+                        <li>
+                            <a href="/Advertise/Advertise.aspx">
+                                <span class="icon"><ion-icon name="rocket-outline"></ion-icon></span>
+                                <span class="title">Advertise</span> 
+                            
+                            </a>
+                        </li>
+                    
+                        <li>
+                            <a href="#">
+                                <span class="icon"><ion-icon name="earth-outline"></ion-icon></span>
+                                <span class="title">Blog</span>
+                            
+                            </a>
+                        </li>
+                        <li>
+                            <a href="#">
+                                <span class="icon"><ion-icon name="school-outline"></ion-icon></span>
+                                <span class="title">Tutoring</span>
+                            
+                            </a>
+                        </li>
+
+                        <li>
+                            <a href="#">
+                                <span class="icon"><ion-icon name="ribbon-outline"></ion-icon></span>
+                                <span class="title">Bursury</span>                
+                            </a>
+                        </li>
+                    </ul>
+                </div>
+            </div>
 
         
         

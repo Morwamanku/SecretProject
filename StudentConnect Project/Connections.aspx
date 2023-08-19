@@ -5,14 +5,7 @@
 <asp:Content ID="Content2" ContentPlaceHolderID="ContentPlaceHolder1" runat="server">
     <div class="container1">
         <div class="container2">
-            <div class="dark-mode">
-                    <span class="material-icons-sharp active">
-                        light_mode
-                    </span>
-                    <span class="material-icons-sharp">
-                        dark_mode
-                    </span>
-                </div>
+            
             
         <div class="container">
                 <div class="row">
@@ -42,45 +35,7 @@
             </div>
         </div>
         
-         <div class="Left-Navigation">
-            <div class="advertise-container">
-                <img src="https://tse2.mm.bing.net/th?id=OIP.GqS38d_qf8A4c1RGOs8AUgHaKF&amp;pid=Api&amp;P=0&amp;h=180" />
-            </div>
-
-             <ul>
-    
-                    <li>
-                        <a href="#">
-                            <span class="icon"><ion-icon name="rocket-outline"></ion-icon></span>
-                            <span class="title">Advertise</span> 
-                            
-                        </a>
-                    </li>
-                    
-                    <li>
-                        <a href="#">
-                            <span class="icon"><ion-icon name="earth-outline"></ion-icon></span>
-                            <span class="title">Blog</span>
-                            
-                        </a>
-                    </li>
-                    <li>
-                        <a href="#">
-                            <span class="icon"><ion-icon name="school-outline"></ion-icon></span>
-                            <span class="title">Tutoring</span>
-                            
-                        </a>
-                    </li>
-
-                    <li>
-                        <a href="#">
-                            <span class="icon"><ion-icon name="ribbon-outline"></ion-icon></span>
-                            <span class="title">Bursury</span>                
-                        </a>
-                    </li>
-                </ul>
-    
-   </div>
+         
  </div>
  
     

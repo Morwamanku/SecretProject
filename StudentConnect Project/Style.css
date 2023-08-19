@@ -2,7 +2,13 @@
     margin: 0;
     padding: 0;
     box-sizing: border-box;
-    font-family: 'Ubuntu',sans-serif;
+    font-family: 'Poppins';
+    font-style: normal;
+    font-weight: 300;
+    src: url("../fonts/poppins/poppins-v5-latin-300.eot");
+    /* IE9 Compat Modes */
+    src: local("Poppins Light"), local("Poppins-Light"), url("../fonts/poppins/poppins-v5-latin-300.eot?#iefix") format("embedded-opentype"), url("../fonts/poppins/poppins-v5-latin-300.woff2") format("woff2"), url("../fonts/poppins/poppins-v5-latin-300.woff") format("woff"), url("../fonts/poppins/poppins-v5-latin-300.ttf") format("truetype"), url("../fonts/poppins/poppins-v5-latin-300.svg#Poppins") format("svg");
+    /* Legacy iOS */
 }
 
 :root {
@@ -24,7 +30,7 @@
 }
 
 .connect-btn {
-   position:absolute
+    position: absolute
 }
 
 
@@ -34,16 +40,17 @@ body {
     overflow-x: auto;
 }
 
-.back-video{
-    position:fixed;
-    right:0;
-    bottom:0;
-    z-index:-1;
+.back-video {
+    position: fixed;
+    right: 0;
+    bottom: 0;
+    z-index: -1;
 }
 
-.Main-container {
-    position: absolute;
+.container-wrapper {
     width: 100%;
+    display: flex;
+    flex-wrap: nowrap;
 }
 
 
@@ -62,7 +69,7 @@ body {
 
     .navigation.active {
         width: 80px;
-        margin-right:20px;
+        margin-right: 20px;
     }
 
     .navigation ul {
@@ -157,9 +164,132 @@ body {
                 white-space: nowrap;
             }
 
-.container1{
-    display:flex;
+.Left-Navigation {
+    width: 200px;
+    height: 500px;
+    background: var(--color-background);
+    border-radius: 25px;
+    margin-top: 125px;
+    margin-left: auto;
+    margin-right: 20px;
+}
 
+
+
+    /*.Left-Navigation.active {
+        margin-left: 1020px;
+    }*/
+
+    .Left-Navigation ul {
+        margin-top: 265px;
+        left: 0;
+        width: 100%;
+    }
+
+        .Left-Navigation ul li {
+            position: relative;
+            width: 100%;
+            list-style: none;
+            border-top-left-radius: 30px;
+            border-bottom-left-radius: 30px;
+        }
+
+            .Left-Navigation ul li:hover,
+            .Left-Navigation ul li .hovered {
+                background: var(--white);
+            }
+
+
+
+            .Left-Navigation ul li a {
+                position: relative;
+                display: block;
+                width: 100%;
+                display: flex;
+                text-decoration: none;
+                color: var(--color-dark);
+            }
+
+
+            .Left-Navigation ul li:hover a,
+            .Left-Navigation ul li .hovered a {
+                color: var(--blue);
+            }
+
+                .Left-Navigation ul li:hover a::before,
+                .Left-Navigation ul li .hovered a::before {
+                    content: '';
+                    position: absolute;
+                    right: 0;
+                    top: -50px;
+                    width: 50px;
+                    height: 50px;
+                    background: transparent;
+                    border-radius: 50%;
+                    box-shadow: 35px 35px 0 10px var(--white);
+                    pointer-events: none;
+                }
+
+                .Left-Navigation ul li:hover a::after,
+                .Left-Navigation ul li .hovered a::after {
+                    content: '';
+                    position: absolute;
+                    right: 0;
+                    bottom: -50px;
+                    width: 50px;
+                    height: 50px;
+                    background: transparent;
+                    border-radius: 50%;
+                    box-shadow: 35px -35px 0 10px var(--white);
+                    pointer-events: none;
+                }
+
+
+            .Left-Navigation ul li a .icon {
+                position: relative;
+                display: block;
+                min-width: 60px;
+                height: 60px;
+                line-height: 67px;
+                text-align: center;
+            }
+
+                .Left-Navigation ul li a .icon ion-icon {
+                    font-size: 1.65rem;
+                }
+
+            .Left-Navigation ul li a .title {
+                position: relative;
+                display: block;
+                padding: 0 10px;
+                height: 60px;
+                line-height: 60px;
+                text-align: start;
+                white-space: nowrap;
+            }
+
+.advertise-container {
+    position: absolute;
+    background: orange;
+    width: 200px;
+    height: 250px;
+    border-radius: 15px 15px 0px 0px;
+    display: block;
+}
+
+
+    .advertise-container img {
+        position: absolute;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+        object-fit: cover;
+        border-radius: 15px 15px 0px 0px;
+    }
+
+.container1 {
+    display: flex;
 }
 
 
@@ -169,10 +299,13 @@ body {
     width: calc(100% - 500px);
     margin-left: 270px;
     min-height: 100vh;
-    background: var(--color-background);
+    background: transparent;
     transition: 0.5s;
     border-radius: 25px;
-    margin-top: 120px;
+    margin-top: 0px;
+    display: flex;
+    flex-direction: column;
+    flex-wrap: nowrap;
 }
 
     .main.active {
@@ -191,12 +324,12 @@ body {
     box-shadow: 0 3px 5px rgba(0,0,0,0.125);
     background: var(--color-background);
     border-radius: 25px;
-    position: absolute;
     margin-top: 20px;
-    margin-left: 270px;
+    margin-left: 0px;
 }
 
-   
+
+
 
 .toggle {
     position: relative;
@@ -218,10 +351,11 @@ body {
 
     .notification-icon ion-icon {
         font-size: 33px;
-        color:var(--color-dark);
+        color: var(--color-dark);
     }
 
 .search {
+    display: block;
     position: relative;
     width: 400px;
     margin: 0 10px;
@@ -240,7 +374,6 @@ body {
             padding: 5px 20px;
             padding-left: 35px;
             outline: none;
-            
         }
 
 
@@ -250,6 +383,8 @@ body {
             left: 10px;
             font-size: 1.3rem;
         }
+
+
 
 .user-container {
     position: relative;
@@ -390,7 +525,13 @@ body {
 .open-popup {
     visibility: visible;
     top: 50%;
-    transform: translate(-50%,-280%)scale(1);
+    transform: translate(-50%,-1120%)scale(1);
+}
+
+.open-Requestpopup {
+    visibility: visible;
+    top: 50%;
+    transform: translate(-50%,-1120%)scale(1);
 }
 
 .popup img {
@@ -494,10 +635,23 @@ body {
 }
 */
 
+.dark-mode {
+    background-color: #ddd;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    height: 1.6rem;
+    width: 4.2rem;
+    cursor: pointer;
+    border-radius: 25px;
+    margin-left: 400px;
+    margin-top: 20px;
+    margin-inline: auto;
+}
+
 .filter {
     height: 29px;
     color: black;
-    margin-left: 255px;
     margin-top: 20px;
     background: #ddd;
     border: 15px;
@@ -507,7 +661,8 @@ body {
     padding-left: 10px;
     display: flex;
     gap: 7px;
-    cursor:pointer;
+    cursor: pointer;
+    margin-right: 20px;
 }
 
 .notification-container {
@@ -519,16 +674,72 @@ body {
 }
 
 
+@media only screen and (max-width:960px) {
+    .advertise-container {
+        display: none;
+    }
+
+    .topbar {
+        min-width: 260px;
+    }
+
+    .Left-Navigation {
+        width: 70px;
+        height: 250px;
+    }
+
+        .Left-Navigation ul {
+            margin-top: 0px;
+            left: 0;
+            width: 100%;
+        }
+
+            .Left-Navigation ul li a .title {
+                display: none;
+            }
+}
+
+@media only screen and (max-width:1322px) {
+    .topbar {
+        width: auto;
+    }
 
 
-@media(max-width:700px) {
+    .navigation {
+        min-width: auto;
+    }
+
+    .flex-wrapper {
+        display: flex;
+        margin-top: 30px;
+        flex-direction: column;
+        flex-wrap: nowrap;
+    }
 }
 
 @media(max-width:750px) {
 
-    .main {
-        width: 100%;
+
+    .navigation {
+        width: 1px;
+        visibility: hidden;
     }
+
+        .navigation.active {
+            width: 80px;
+            margin-right: 20px;
+            visibility: inherit;
+        }
+
+        .navigation ul li a .title {
+            display: none;
+        }
+
+    .container-wrapper {
+        margin-left: 0px;
+    }
+
+
 
     .cardbox .card {
         padding: 30px 12px;
@@ -536,5 +747,56 @@ body {
 
     .cardbox {
         flex-direction: column;
+    }
+
+    .container1 {
+        margin: auto;
+    }
+
+    .Main-container {
+        margin: auto;
+    }
+
+    .Left-Navigation ul {
+        margin-top: 0px;
+        left: 0;
+        width: 100%;
+    }
+
+    .Left-Navigation {
+        width: 70px;
+        height: 250px;
+        margin-left: 800px;
+        display: none;
+    }
+
+    .main {
+        margin-left: 0px;
+        width: 100%;
+    }
+}
+
+/*@media(max-width:500px) {
+    
+
+    .topbar {
+        width: auto;
+        min-width: 300px;
+    }
+}*/
+
+@media(min-width: 500px) {
+    .topbar {
+        margin-left: 0px;
+    }
+
+    .row {
+        margin-left: 70px;
+    }
+}
+
+@media(max-width:350px) {
+    .navigation {
+        display: none;
     }
 }

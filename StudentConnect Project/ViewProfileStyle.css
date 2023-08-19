@@ -1,5 +1,5 @@
 ﻿
-*{
+* {
     font-family: 'Poppins';
     font-style: normal;
     font-weight: 300;
@@ -8,11 +8,13 @@
     src: local("Poppins Light"), local("Poppins-Light"), url("../fonts/poppins/poppins-v5-latin-300.eot?#iefix") format("embedded-opentype"), url("../fonts/poppins/poppins-v5-latin-300.woff2") format("woff2"), url("../fonts/poppins/poppins-v5-latin-300.woff") format("woff"), url("../fonts/poppins/poppins-v5-latin-300.ttf") format("truetype"), url("../fonts/poppins/poppins-v5-latin-300.svg#Poppins") format("svg");
     /* Legacy iOS */
 }
+
 .Profile-container {
     width: 500px;
     background: #fff;
     box-shadow: 0px 15px 16.83px 0.17px rgba(0, 0, 0, 0.05);
     border-radius: 0 25px 25px 0;
+    height: 400px;
 }
 
 .Profile-image {
@@ -20,17 +22,20 @@
     height: 400px;
     margin-left: 20px;
 }
+
 .img-fluid {
     border-radius: 25px 0 0 25px;
+    width: 320px;
 }
+
 .flex-wrapper {
     display: flex;
-    margin-top: 100px;
+    margin-top: 50px;
 }
 
 .Profile-container h1 {
-    display:flex;
-    gap:4px;
+    display: flex;
+    gap: 4px;
     font-size: 27px;
     margin-left: 7px;
     margin-top: 10px;
@@ -42,15 +47,15 @@
     color: darkslategrey;
 }
 
-.Profile-container .content{
-    display:block;
-    margin-top:30px;
+.Profile-container .content {
+    display: block;
+    margin-top: 30px;
 }
 
 .Profile-buttons {
     display: block;
     margin-left: 10px;
-    margin-top: 30px;
+    margin-top: 0px;
     gap: 4px;
 }
 
@@ -62,5 +67,37 @@
     cursor: pointer;
     color: gray;
     border: gray;
-   
+}
+
+
+
+@media(max-width: 880px) {
+}
+
+@media only screen and (max-width: 1322px) {
+    .flex-wrapper {
+        display: flex;
+        margin-top: 30px;
+        flex-direction: column;
+        flex-wrap: nowrap;
+        margin-inline: auto;
+        margin: 50px;
+    }
+
+    .Profile-container {
+        width: 320px;
+        border-radius: 0 0px 25px 25px;
+    }
+
+    .Profile-image {
+        border-radius: 25px;
+        height: 300px;
+        margin-left: 0px;
+        width: 350px;
+    }
+
+    .img-fluid {
+        border-radius: 25px 25px 0 0;
+        width: 320px;
+    }
 }

@@ -47,7 +47,7 @@ a {
 .notification-ui_dd-content {
     margin-bottom: 30px;
     margin-left: 30px;
-    margin-top:40px;
+    margin-top: 40px;
 }
 
 .notification-list {
@@ -64,7 +64,7 @@ a {
     box-shadow: 0 3px 10px rgba(0, 0, 0, 0.06);
 }
 
-.notification-list--unread {  
+.notification-list--unread {
     border-left: 2px solid white;
     background: white;
     border-radius: 30px;

@@ -51,11 +51,24 @@ namespace StudentConnect_Project
                 }
                 SqlCommand cmd = new SqlCommand("insert into Connected(Sender,Recipient)values(@Sender,@Recipient)", con);
 
-                cmd.Parameters.AddWithValue("@Recipient", StudentNumber);
-                cmd.Parameters.AddWithValue("@Sender", (string)Session["studentnumber"]);
+                cmd.Parameters.AddWithValue("@Recipient", (string)Session["studentnumber"] );
+                cmd.Parameters.AddWithValue("@Sender", StudentNumber);
 
                 cmd.ExecuteNonQuery();
                 con.Close();
+                if (con.State == ConnectionState.Closed)
+                {
+                    con.Open();
+                }
+
+                SqlCommand cmd2 = new SqlCommand("DELETE FROM ConnectRequest WHERE Sender=@Sender and Recipient=@Recipient", con);
+
+                cmd2.Parameters.AddWithValue("@Recipient", (string)Session["studentnumber"] );
+                cmd2.Parameters.AddWithValue("@Sender", StudentNumber);
+
+                cmd2.ExecuteNonQuery();
+                con.Close();
+
                 Response.Write("<script>alert('Connection Made');</script>");
             }
             catch (Exception ex)

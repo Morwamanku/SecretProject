@@ -51,12 +51,12 @@ body {
 }
 
 .signup-image img {
+    display: block;
     width: 400px;
 }
 
 .flexformwrap {
     display: flex;
-    margin-left: 50px;
 }
 
 .wrapper {
@@ -74,7 +74,7 @@ body {
         margin-bottom: 35px;
         display: flex;
         justify-content: center;
-        margin-left: -390px;
+        margin-left: 0px;
     }
 
         .wrapper .header ul {
@@ -173,7 +173,6 @@ body {
     .wrapper .btns_wrap {
         width: 350px;
         max-width: 100%;
-        
     }
 
         .wrapper .btns_wrap .common_btns {
@@ -236,13 +235,13 @@ body {
                 margin-top: 25px;
             }
 
-            .wrapper .btns_wrap .common_btns .btn_done:hover {
-                background: var(--next-btn-hover);
-            }
+                .wrapper .btns_wrap .common_btns .btn_done:hover {
+                    background: var(--next-btn-hover);
+                }
 
-                    .wrapper .btns_wrap .common_btns button.btn_back:hover {
-                        background: var(--back-btn-hover);
-                    }
+            .wrapper .btns_wrap .common_btns button.btn_back:hover {
+                background: var(--back-btn-hover);
+            }
 
 .modal_wrapper {
     position: fixed;
@@ -302,3 +301,23 @@ body {
         .modal_wrapper.active .success_wrap {
             transform: translate(-50%,-50%);
         }
+
+@media(max-width: 860px) {
+    .signup-image img {
+        display: none;
+    }
+
+    .wrapper {
+        width: 400px;
+    }
+
+    .signup-image a {
+        display: none
+    }
+}
+
+@media(max-width: 450px) {
+    .wrapper {
+        width: 400px;
+    }
+}

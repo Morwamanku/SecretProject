@@ -71,6 +71,10 @@
     <Content Include="Background-video\solar_system %28720p%29.mp4" />
     <Content Include="Background-video\Spacy.mp4" />
     <Content Include="Background-video\video %282160p%29.mp4" />
+    <Content Include="bin\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.dll" />
+    <Content Include="bin\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.xml" />
+    <Content Include="bin\StudentConnect Project.dll" />
+    <Content Include="bin\StudentConnect Project.pdb" />
     <Content Include="Chat.aspx" />
     <Content Include="Content\bootstrap-grid.css" />
     <Content Include="Content\bootstrap-grid.min.css" />
@@ -88,42 +92,76 @@
     <Content Include="Message.aspx" />
     <Content Include="MessageStyle.css" />
     <Content Include="Notificationstyle.css" />
+    <Content Include="obj\Debug\StudentConnect Project.csproj.FileListAbsolute.txt" />
+    <Content Include="obj\Debug\StudentConnect Project.dll" />
+    <Content Include="obj\Debug\StudentConnect Project.pdb" />
     <Content Include="pexels-aleksandar-pasaric-4505907.jpg" />
     <Content Include="pexels-alexander-kovalev-2847648.jpg" />
     <Content Include="Practice dropdown list.html" />
     <Content Include="Practice dropdownlist.aspx" />
+    <Content Include="ProfileImage\1ce03086f6a3e4539bb918ba66e8ecf4.jpg" />
+    <Content Include="ProfileImage\286c760f394af0190adb44a1134c0790.jpg" />
+    <Content Include="ProfileImage\41f022e6ea3dbf82735e906a5a7ed560.jpg" />
+    <Content Include="ProfileImage\51e1248ced3bc4441f8f92c75a5dee40.jpg" />
+    <Content Include="ProfileImage\5976fcd8e1929518e6a9818ef3f06295.jpg" />
+    <Content Include="ProfileImage\6649764fbf1302b12704c1fef22cddf2.jpg" />
+    <Content Include="ProfileImage\70c624afe5720a3a4a14b3e143cca4ba.jpg" />
+    <Content Include="ProfileImage\79240503_large.jpg" />
+    <Content Include="ProfileImage\973f77f36d15f7408a75249f0554fc4a.jpg" />
+    <Content Include="ProfileImage\acce5faea34722057eac09122ecb0264.jpg" />
+    <Content Include="ProfileImage\Beyonce.jpg" />
     <Content Include="ProfileImage\boity.jpg" />
     <Content Include="ProfileImage\Brittney.jpeg" />
+    <Content Include="ProfileImage\c3b175cd491deb8353a4f453b4d12439.jpg" />
+    <Content Include="ProfileImage\c3db2ef5b2aae1efb72067a44c48af3b--senior-portraits.jpg" />
     <Content Include="ProfileImage\carie.jpeg" />
     <Content Include="ProfileImage\chloe.jpeg" />
+    <Content Include="ProfileImage\Ciara.jpg" />
     <Content Include="ProfileImage\Dave.jpg" />
+    <Content Include="ProfileImage\e71c3363adce9157cb0ddfcc906ef882.jpg" />
     <Content Include="ProfileImage\Exercise2 Q1.png" />
     <Content Include="ProfileImage\Fred.jpg" />
     <Content Include="ProfileImage\harry.jpg" />
     <Content Include="ProfileImage\IMG_9852.jpg" />
     <Content Include="ProfileImage\Jake.jpg" />
+    <Content Include="ProfileImage\Jin sau.jpg" />
+    <Content Include="ProfileImage\Jonah.jpg" />
+    <Content Include="ProfileImage\Jung ho yeon.jpg" />
     <Content Include="ProfileImage\Kalenga.jpg" />
+    <Content Include="ProfileImage\Kam0.jpg" />
     <Content Include="ProfileImage\Kanya sunny.jpg" />
     <Content Include="ProfileImage\Kanya2.jpg" />
+    <Content Include="ProfileImage\Khumo.jpg" />
     <Content Include="ProfileImage\Kris.jpg" />
+    <Content Include="ProfileImage\Lebo.jpg" />
+    <Content Include="ProfileImage\Leo.jpg" />
+    <Content Include="ProfileImage\Lerato.jpg" />
+    <Content Include="ProfileImage\Lesiba.jpg" />
     <Content Include="ProfileImage\Logan.jpeg" />
     <Content Include="ProfileImage\Me photo.jpg" />
     <Content Include="ProfileImage\Molemoo.jpg" />
     <Content Include="ProfileImage\Mpati.jpg" />
     <Content Include="ProfileImage\Mpumi.jpeg" />
     <Content Include="ProfileImage\Neo.jpeg" />
+    <Content Include="ProfileImage\Neo.jpg" />
     <Content Include="ProfileImage\pako.jpg" />
     <Content Include="ProfileImage\Patty.jpeg" />
     <Content Include="ProfileImage\Pholly.jpg" />
     <Content Include="ProfileImage\Pholly2.jpg" />
+    <Content Include="ProfileImage\Rea.jpg" />
     <Content Include="ProfileImage\Samantha.jpg" />
+    <Content Include="ProfileImage\Shumbu.jpg" />
     <Content Include="ProfileImage\slayer.jpg" />
+    <Content Include="ProfileImage\Tapelo.jpg" />
     <Content Include="ProfileImage\thabo.jpeg" />
     <Content Include="ProfileImage\Tom.jpeg" />
+    <Content Include="ProfileImage\Tshego.jpg" />
+    <Content Include="ProfileImage\Tshiamo.jpg" />
     <Content Include="ProfileImage\Tumi.jpg" />
     <Content Include="ProfileImage\Unathi.jpg" />
     <Content Include="ProfileImage\WeddingPhoto.jpg" />
     <Content Include="ProfileImage\WhatsApp Image 2023-02-18 at 12.36.25.jpg" />
+    <Content Include="ProfileImage\Yaza.jpg" />
     <Content Include="RegisreScript.js" />
     <Content Include="Register.aspx" />
     <Content Include="RegisterStyle.css" />
@@ -176,6 +214,7 @@
     <Compile Include="Message.aspx.designer.cs">
       <DependentUpon>Message.aspx</DependentUpon>
     </Compile>
+    <Compile Include="obj\Debug\.NETFramework,Version=v4.8.AssemblyAttributes.cs" />
     <Compile Include="Practice dropdownlist.aspx.cs">
       <DependentUpon>Practice dropdownlist.aspx</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>
@@ -270,6 +309,11 @@
     <Content Include="Content\bootstrap.css.map" />
     <Content Include="Content\bootstrap.min.css.map" />
     <Content Include="Images\3D Photo.avif" />
+    <Content Include="bin\StudentConnect Project.dll.config" />
+    <Content Include="obj\Debug\DesignTimeResolveAssemblyReferencesInput.cache" />
+    <Content Include="obj\Debug\StudentConnect Project.csproj.AssemblyReference.cache" />
+    <Content Include="obj\Debug\StudentConnect Project.csproj.CopyComplete" />
+    <Content Include="obj\Debug\StudentConnect Project.csproj.CoreCompileInputs.cache" />
     <None Include="packages.config" />
     <Content Include="Site1.Master" />
     <Content Include="ProfileImage\Morwamanku Lease.pdf" />
@@ -280,6 +324,9 @@
     <None Include="Web.Release.config">
       <DependentUpon>Web.config</DependentUpon>
     </None>
+  </ItemGroup>
+  <ItemGroup>
+    <Folder Include="obj\Debug\TempPE\" />
   </ItemGroup>
   <PropertyGroup>
     <VisualStudioVersion Condition="'$(VisualStudioVersion)' == ''">10.0</VisualStudioVersion>
