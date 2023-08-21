@@ -3,7 +3,7 @@
     <link href="ViewProfileStyle.css" rel="stylesheet" />
 </asp:Content>
 <asp:Content ID="Content2" ContentPlaceHolderID="ContentPlaceHolder1" runat="server">
-    
+    <div class="bodywrapper" id="bodywrapper"></div>
     <asp:FormView ID="FormView1" runat="server" OnPageIndexChanging="FormView1_PageIndexChanging">
         <ItemTemplate>
             <div class="flex-wrapper">
@@ -28,14 +28,44 @@
                     </div>
                     <div class="Profile-buttons">
                         <asp:Button ID="Backbtn" CssClass="p-btn" runat="server" Text="Back" OnClick="Backbtn_Click" />
-                        <asp:Button ID="Connectbtn" CssClass="p-btn" runat="server" Text="Request" OnClick="Connectbtn_Click" />
+                        <button  class="p-btn" type="button" onclick="openPopup()">Request</button>
                     </div>
                 </div>
             </div>
         </ItemTemplate>
         
+
     </asp:FormView>
 
-   
+    <asp:FormView ID="FormView2" runat="server">
+        <ItemTemplate>
+            <div class="popup" id="popup">
+            <asp:ImageButton ID="Image1" class="popup-img" runat="server" ImageUrl='<%# Eval("image") %>'  object-fit="cover"   />
+            <h3>Are you sure you would like to request</h3>
+            
+            <div class="Profile-buttons">
+                <button class="p-btn" type="button" onclick="closePopup()">Back</button>
+                <asp:Button ID="Connectbtn" CssClass="p-btn" runat="server" Text="Request" OnClick="Connectbtn_Click" />
+            </div>
+            
+        </div>
+        </ItemTemplate>
+
+    </asp:FormView>
     
+    
+    <script>
+        let popup = document.getElementById("popup");
+        let bodywrapper = document.getElementById("bodywrapper");
+
+        function openPopup() {
+            popup.classList.add("open-popup");
+            bodywrapper.classList.add("bodywrapper");
+        }
+
+        function closePopup() {
+            popup.classList.remove("open-popup");
+            bodywrapper.classList.remove("bodywrapper");
+        }
+    </script>
 </asp:Content>

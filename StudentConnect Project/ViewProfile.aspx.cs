@@ -1,4 +1,5 @@
 ﻿using System;
+using System.Collections;
 using System.Collections.Generic;
 using System.Configuration;
 using System.Data;
@@ -30,7 +31,21 @@ namespace StudentConnect_Project
                 FormView1.DataSource = reader;
                 FormView1.DataBind();
                 con.Close();
+
+
+                
             }
+            string query2 = string.Format("select StudentNumber,image from Student Where StudentNumber ='" + (string)Session["profilestudentnumber"] + "'");
+
+            SqlConnection con2 = new SqlConnection(strcon);
+            SqlCommand cmd2 = new SqlCommand(query2, con2);
+
+            con2.Open();
+            SqlDataReader reader2 = cmd2.ExecuteReader();
+
+            FormView2.DataSource = reader2;
+            FormView2.DataBind();
+            con2.Close();
         }
 
         protected void FormView1_PageIndexChanging(object sender, FormViewPageEventArgs e)

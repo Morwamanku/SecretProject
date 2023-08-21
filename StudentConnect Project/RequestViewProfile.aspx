@@ -3,6 +3,7 @@
         <link href="ViewProfileStyle.css" rel="stylesheet" />
 </asp:Content>
 <asp:Content ID="Content2" ContentPlaceHolderID="ContentPlaceHolder1" runat="server">
+    <div class="bodywrapper" id="bodywrapper"></div>
     <asp:FormView ID="FormView1" runat="server">
         <ItemTemplate>
             <div class="flex-wrapper">
@@ -28,13 +29,55 @@
                     <div class="Profile-buttons">
                         <asp:Button ID="Backbtn" CssClass="p-btn" runat="server" Text="Back" OnClick="Backbtn_Click" />
                         <asp:Button ID="Connectbtn" CssClass="p-btn" runat="server" Text="Connect" OnClick="Connectbtn_Click"  />
+                        <button  class="filter" type="button" onclick="openPopup()"><span style="font-size:17px">Filter</span><ion-icon name="funnel-outline" style="font-size:17px; margin-top:3px;"></ion-icon></button>
                     </div>
                 </div>
             </div>
         </ItemTemplate>
     </asp:FormView>
         
-        
+     
 
+        <div class="popup" id="popup">
+            <img src="ProfileImage/Me photo.jpg" />
+            <h3>Filter</h3>
+            <div class="filter-content">
+                <div class="filter-option">
+            <asp:RadioButton ID="RadioButton5" runat="server"  />
+                <asp:Label ID="Label1" runat="server" Text="Hometown"></asp:Label>
+            </div>
+            <div class="filter-option">
+                <asp:RadioButton ID="RadioButton1" runat="server" />
+                <asp:Label ID="Label2" runat="server" Text="A-Z"></asp:Label>
+            </div>
+        <div class="filter-option">
+            <asp:RadioButton ID="RadioButton2" runat="server" />
+                <asp:Label ID="Label3" runat="server" Text="Hobbies"></asp:Label>
+            </div>
+        <div class="filter-option">
+                <asp:RadioButton ID="RadioButton4" runat="server" />
+                <asp:Label ID="Label4" runat="server" Text="University"></asp:Label>
+            </div>
+            </div>
+            
+            <button type="button" onclick="closePopup()">OK</button>
+        </div>
+       
+    
+    
+    <script>
+        let popup = document.getElementById("popup");
+        let bodywrapper = document.getElementById("bodywrapper");
+        
+        function openPopup() {
+            popup.classList.add("open-popup");
+            bodywrapper.classList.add("bodywrapper");
+        }
+
+        function closePopup() {
+            popup.classList.remove("open-popup");
+            bodywrapper.classList.remove("bodywrapper");
+        }
+    </script>
     
 </asp:Content>
