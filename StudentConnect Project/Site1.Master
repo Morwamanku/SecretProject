@@ -7,6 +7,9 @@
     <title></title>
     <link href="Style.css" rel="stylesheet" />
     <link href="https://fonts.googleapis.com/icon?family=Material+Icons+Sharp" rel="stylesheet">
+    <script src="https://unpkg.com/swup@4"></script>
+    
+    <link href="swupstyle.css" rel="stylesheet" />
     <asp:ContentPlaceHolder ID="head" runat="server">
     </asp:ContentPlaceHolder>
 </head>
@@ -16,7 +19,7 @@
             </video>
     <form id="form1" runat="server">
         
-        <div class="container-wrapper">
+        <div class="container-wrapper "  >
             <div class="navigation">
                 <ul>
                     <li>
@@ -95,7 +98,7 @@
                 </ul>
             </div>
             
-            <div class="main">
+            <div class="main" >
                 <div class="topbar"> 
                    <div class="toggle">
                        <ion-icon style="font-size:32px;" name="grid-outline"></ion-icon>
@@ -198,6 +201,9 @@
     <script nomodule src="https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.js"></script>
     
     <script>
+             swup = new Swup();
+   
+
         let toggle = document.querySelector('.toggle');
         let navigation = document.querySelector('.navigation');
         let main = document.querySelector('.main');

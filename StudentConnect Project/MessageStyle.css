@@ -7,6 +7,13 @@
     font-family: 'open sans',sans-serif;
 }
 
+.back-video {
+    position: fixed;
+    right: 0;
+    bottom: 0;
+    z-index: -1;
+}
+
 .right-container {
     position:absolute;
     margin: 80px 30px;
@@ -27,7 +34,7 @@
 .message {
     min-width: 80px;
     background: antiquewhite;
-    background-image: url('Images/camera-symbol-icon-25.png');
+    
     height: 35px;
     margin-top: 20px;
     padding: 10px;
@@ -61,8 +68,8 @@
     border-radius: 25px;
 }
 .input-text {
-    position: absolute;
-    margin: 510px 17px;
+    
+    margin: 540px 17px;
     
 }
 
@@ -115,10 +122,10 @@ body {
     }
 
 .container {
-    position: relative;
-    width: 1200px;
-    max-width: 60%;
-    height: calc(100vh - 70px);
+    position: fixed;
+    width: 800px;
+    max-width: 800px;
+    height: 600px;
     background: #fff;
     box-shadow: 0 1px 1px 0 rgba(0,0,0,0.06),0 2px 5px 0 rgba(0,0,0,0.06);
     display: flex;
@@ -131,7 +138,7 @@ body {
     position: relative;
     flex: 30%;
     background-color: white;
-    width: 30%;
+    width: 100px;
     border-right: 1px solid #000;
     border-radius: 15px 15px 15px 15px
 }
@@ -340,3 +347,5 @@ body {
     .Chatblock_unread:hover {
         background: #f5f5f5;
     }
+
+

@@ -41,7 +41,19 @@
                         <div class="form-group form-button">
                             <input type="submit" name="Resetpass" id="Resetpass" class="form-submit" value="Reset Password" />
                         </div>
+                        <div class="form-group">
+                            <a href="LogIn.aspx" class="signup-image-link"  >Already have an account?</a>
+                        </div>
                     </form>
+                    <div class="social-login">
+                        <span class="social-label">See more on our</span>
+                        <ul class="socials">
+                            <li><a href="#"><i class="fa-brands fa-instagram"></i></a></li>
+                            <li><a href="#"><i class="fa-brands fa-facebook"></i></a></li>
+                            <li><a href="#"><i class="fa-brands fa-twitter"></i></a></li>
+                            <li><a href="#"><i class="fa-brands fa-linkedin"></i></a></li>
+                        </ul>
+                    </div>
                 </div>
             </div>
         </div>

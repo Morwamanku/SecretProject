@@ -47,7 +47,7 @@
                             <br />
                             <a href="Register.aspx" class="signup-image-link">Don't have an account?</a>
                             <br />
-                            <a href="Forgot Password.aspx" class="signup-image-link">Reset Password</a>
+                            <a href="ForgotPassword.aspx" class="signup-image-link">Reset Password</a>
                         </div>
                         <div class="form-group form-button">
                             <asp:Button ID="BtnLogIn" runat="server" class="form-submit" Text="Log In" OnClick="BtnLogIn_Click" />

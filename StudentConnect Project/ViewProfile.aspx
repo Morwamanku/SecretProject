@@ -8,7 +8,7 @@
         <ItemTemplate>
             <div class="flex-wrapper">
                 <div class="Profile-image">
-                    <asp:ImageButton ID="Image1" class="img-fluid" runat="server" ImageUrl='<%# Eval("image") %>' Height="400px" Width="100%" object-fit="cover"   />
+                    <asp:ImageButton ID="Image1" class="img-fluid" runat="server" ImageUrl='<%# Eval("image") %>' Height="400px" object-fit="cover"   />
                 </div>
                 
                 <div class="Profile-container ">
@@ -60,12 +60,12 @@
 
         function openPopup() {
             popup.classList.add("open-popup");
-            bodywrapper.classList.add("bodywrapper");
+            bodywrapper.classList.add("open-bodywrapper");
         }
 
         function closePopup() {
             popup.classList.remove("open-popup");
-            bodywrapper.classList.remove("bodywrapper");
+            bodywrapper.classList.remove("open-bodywrapper");
         }
     </script>
 </asp:Content>
