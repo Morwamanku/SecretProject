@@ -10,10 +10,59 @@
     <script src="https://unpkg.com/swup@4"></script>
     
     <link href="swupstyle.css" rel="stylesheet" />
+    <%--Preload--%>
+    <link
+      href="https://fonts.googleapis.com/icon?family=Material+Icons|Material+Icons+Outlined|Material+Icons+Round|Material+Icons+Sharp|Material+Icons+Two+Tone"
+      rel="stylesheet"
+    />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Foldit:wght@100;200;300;400;500;600;700;800;900&display=swap"
+      rel="stylesheet"
+    />
+
     <asp:ContentPlaceHolder ID="head" runat="server">
     </asp:ContentPlaceHolder>
 </head>
 <body>
+    <div class="cursor big"></div>
+    <div class="cursor small"></div>
+     <div class="preloader">
+      <div class="loader">
+        <div class="box box1">
+          <div class="cube-preloader">
+            <div class="side front"></div>
+            <div class="side back"></div>
+            <div class="side right"></div>
+            <div class="side left"></div>
+            <div class="side top"></div>
+            <div class="side bottom"></div>
+          </div>
+        </div>
+        <div class="box box2">
+          <div class="cube-preloader">
+            <div class="side front"></div>
+            <div class="side back"></div>
+            <div class="side right"></div>
+            <div class="side left"></div>
+            <div class="side top"></div>
+            <div class="side bottom"></div>
+          </div>
+        </div>
+        <div class="box box3">
+          <div class="cube-preloader">
+            <div class="side front"></div>
+            <div class="side back"></div>
+            <div class="side right"></div>
+            <div class="side left"></div>
+            <div class="side top"></div>
+            <div class="side bottom"></div>
+          </div>
+        </div>
+      </div>
+      <div class="text">Loading...</div>
+    </div>
     <video autoplay loop muted plays-inline class="back-video">
                 <source src="Background-video/Spacy.mp4" type="video/mp4" />
             </video>
@@ -229,7 +278,42 @@
 
     </script>
 
+    <script>
+        window.addEventListener("load", () => {
+            const preloader = document.querySelector(".preloader");
 
+            preloader.classList.add("preloader--hidden");
+
+            preloader.addEventListener("transitionend", () => {
+                document.body.removeChild(preloader);
+            });
+        });
+
+    </script>
+    <script>
+        var cursor = document.querySelectorAll(".cursor");
+        document.addEventListener("mousemove", (event) => {
+            cursor.forEach((item) => {
+                item.style.top = event.clientY + "px";
+                item.style.left = event.clientX + "px";
+            });
+        });
+
+        var links = document.querySelectorAll("a");
+        links.forEach((item) => {
+            item.addEventListener("mouseenter", () => {
+                cursor.forEach((point) => {
+                    point.classList.add("hover");
+                });
+            });
+
+            item.addEventListener("mouseleave", () => {
+                cursor.forEach((point) => {
+                    point.classList.remove("hover");
+                });
+            });
+        });
+    </script>
    
 </body>
 </html>

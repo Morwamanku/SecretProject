@@ -24,6 +24,33 @@ namespace StudentConnect_Project
         protected global::System.Web.UI.WebControls.TextBox StudentNumbertxt;
 
         /// <summary>
+        /// FormView1 control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.FormView FormView1;
+
+        /// <summary>
+        /// FirstNametxt control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.TextBox FirstNametxt;
+
+        /// <summary>
+        /// Lastnametxt control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.TextBox Lastnametxt;
+
+        /// <summary>
         /// Biotxt control.
         /// </summary>
         /// <remarks>
@@ -33,12 +60,66 @@ namespace StudentConnect_Project
         protected global::System.Web.UI.WebControls.TextBox Biotxt;
 
         /// <summary>
-        /// FormView1 control.
+        /// UniversityIDList control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.FormView FormView1;
+        protected global::System.Web.UI.WebControls.DropDownList UniversityIDList;
+
+        /// <summary>
+        /// ddlFaculty control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.DropDownList ddlFaculty;
+
+        /// <summary>
+        /// ddlDegree control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.DropDownList ddlDegree;
+
+        /// <summary>
+        /// YearofstudyList control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.DropDownList YearofstudyList;
+
+        /// <summary>
+        /// HometownList control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.DropDownList HometownList;
+
+        /// <summary>
+        /// AccommodationIDList control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.DropDownList AccommodationIDList;
+
+        /// <summary>
+        /// Updatebtn control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.Button Updatebtn;
     }
 }

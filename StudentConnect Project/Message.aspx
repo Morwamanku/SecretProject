@@ -94,7 +94,8 @@
             <div class="input-text ">
                 <asp:Label ID="ConfirmedIDLabel" runat="server" class="ConnectConfirmed_ID" Text='<%# Eval("ConfirmedID") %>'></asp:Label>
                     <div class="message-flex">
-                        <asp:TextBox CssClass="text-box"  ID="messageTextBox" runat="server" ></asp:TextBox>
+             
+                        <asp:TextBox ID="messageTextBox" CssClass="text-box" runat="server"></asp:TextBox>
                     <div class="send-btn">
                         <asp:Button ID="SButton" class="submit-button" AutoPostBack="True" runat="server" CausesValidation="True" Text="" OnClick="SButton_Click" />
                         <i class="fa fa-paper-plane" aria-hidden="true"></i>
