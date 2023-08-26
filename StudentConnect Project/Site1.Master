@@ -18,7 +18,7 @@
       rel="stylesheet"
     />
     <link rel="preconnect" href="https://fonts.googleapis.com" />
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link rel="preconnect" href="https://fonts.gstatic.com"  />
     <link
       href="https://fonts.googleapis.com/css2?family=Foldit:wght@100;200;300;400;500;600;700;800;900&display=swap"
       rel="stylesheet"
@@ -68,6 +68,7 @@
     <video autoplay loop muted plays-inline class="back-video">
                 <source src="Background-video/Spacy.mp4" type="video/mp4" />
             </video>
+
     <form id="form1" runat="server">
         
         <div class="container-wrapper "  >

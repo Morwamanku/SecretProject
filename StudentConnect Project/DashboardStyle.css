@@ -110,6 +110,7 @@ body {
     margin-bottom: 50px;
     margin-top: 50px;
     margin-right: 25px;
+    justify-content: center;
 }
 
     .row .active {
@@ -352,7 +353,7 @@ body {
         display: flex;
         flex-wrap: wrap;
         width: 320px;
-        margin-left: 70px;
+        justify-content: center;
     }
 
     .navigation.active {
@@ -373,5 +374,6 @@ body {
         display: flex;
         flex-wrap: wrap;
         margin-right: 0px;
+        justify-content: center;
     }
 }

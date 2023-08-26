@@ -11,7 +11,7 @@
         
         <div class="container2">
             
-        <div class="container" style="transform:translate(10px,10px)">
+        <div class="container" >
                 <div class="row">
                     <asp:Repeater ID="DashboardRepeater" runat="server" OnItemCommand="DashboardRepeater_ItemCommand">
                         <ItemTemplate>
