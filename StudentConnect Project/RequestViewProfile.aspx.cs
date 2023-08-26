@@ -40,6 +40,8 @@ namespace StudentConnect_Project
             FormView2.DataSource = reader2;
             FormView2.DataBind();
             con2.Close();
+
+          
         }
 
         protected void Backbtn_Click(object sender, EventArgs e)
@@ -75,6 +77,34 @@ namespace StudentConnect_Project
                 SqlCommand cmd2 = new SqlCommand("DELETE FROM ConnectRequest WHERE Sender=@Sender and Recipient=@Recipient", con);
 
                 cmd2.Parameters.AddWithValue("@Recipient", (string)Session["studentnumber"] );
+                cmd2.Parameters.AddWithValue("@Sender", StudentNumber);
+
+                cmd2.ExecuteNonQuery();
+                con.Close();
+
+                Response.Write("<script>alert('Connection Made');</script>");
+            }
+            catch (Exception ex)
+            {
+                Response.Write("<script>alert('" + ex.Message + "');</script>");
+            }
+        }
+
+        protected void Declinebtn_Click(object sender, EventArgs e)
+        {
+            string StudentNumber = ((System.Web.UI.WebControls.Label)FormView1.FindControl("StudentNumberLabel")).Text;
+            try
+            {
+                SqlConnection con = new SqlConnection(strcon);
+                
+                if (con.State == ConnectionState.Closed)
+                {
+                    con.Open();
+                }
+
+                SqlCommand cmd2 = new SqlCommand("DELETE FROM ConnectRequest WHERE Sender=@Sender and Recipient=@Recipient", con);
+
+                cmd2.Parameters.AddWithValue("@Recipient", (string)Session["studentnumber"]);
                 cmd2.Parameters.AddWithValue("@Sender", StudentNumber);
 
                 cmd2.ExecuteNonQuery();

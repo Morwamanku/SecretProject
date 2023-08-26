@@ -48,24 +48,42 @@
  </div>
     <div class="popup" id="popup">
 
-            <h3>Filter</h3>
             <div class="filter-content">
-                <div class="filter-option">
-            <asp:RadioButton ID="RadioButton5" runat="server" OnCheckedChanged="RadioButton5_CheckedChanged" />
-                <asp:Label ID="Label1" runat="server" Text="Hometown"></asp:Label>
-            </div>
-            <div class="filter-option">
-                <asp:RadioButton ID="RadioButton1" runat="server" />
-                <asp:Label ID="Label2" runat="server" Text="A-Z"></asp:Label>
-            </div>
-        <div class="filter-option">
-            <asp:RadioButton ID="RadioButton2" runat="server" />
-                <asp:Label ID="Label3" runat="server" Text="Hobbies"></asp:Label>
-            </div>
-        <div class="filter-option">
-                <asp:RadioButton ID="RadioButton4" runat="server" />
-                <asp:Label ID="Label4" runat="server" Text="University"></asp:Label>
-            </div>
+                <div class="icons">
+  <div class="icon">
+    <span class="symbol">
+      <i class="fa-solid fa-arrow-up-a-z"></i>
+    </span>
+    <span class="optionname">A-Z</span>
+  </div>
+  <div class="icon">
+    <span class="symbol">
+      <i class="fa-solid fa-graduation-cap"></i>
+    </span>
+    <span class="optionname">University</span>
+  </div>
+  <div class="icon">
+    <span class="symbol">
+      <i class="fa-solid fa-house"></i>
+    </span>
+    <span class="optionname">Accommodation</span>
+  </div>
+  <div class="icon">
+    <span class="symbol">
+      <i class="fa-solid fa-book-open-reader"></i>
+    </span>
+    <span class="optionname">Course</span>
+  </div>
+  <div class="icon">
+    <span class="symbol">
+      <i class="fa-solid fa-person-running"></i>
+    </span>
+    <span class="optionname">Hobbies</span>
+  </div>
+  
+  
+  
+</div>
             </div>
             
             <button type="button" onclick="closePopup()">OK</button>

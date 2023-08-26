@@ -9,6 +9,9 @@
     /* Legacy iOS */
 }
 
+
+
+
 .Profile-container {
     width: 500px;
     background: #fff;
@@ -101,4 +104,5 @@
         border-radius: 25px 25px 0 0;
         width: 320px;
     }
+
 }

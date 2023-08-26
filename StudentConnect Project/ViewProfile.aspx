@@ -18,23 +18,26 @@
 </asp:Content>
 <asp:Content ID="Content2" ContentPlaceHolderID="ContentPlaceHolder1" runat="server">
     <style>
-      
+
+        .filter {
+            display:none;
+        }
       
       .folder {
         width: 350px;
         height: 450px;
         backdrop-filter: blur(10px) saturate(0);
         -webkit-backdrop-filter: blur(10px) saturate(0);
-        background: rgba(57, 61, 68, 0.58);
         border-radius: 10mm;
         border: 1px solid rgba(255, 255, 255, 0.125);
         box-shadow: rgba(38, 57, 77, 0.5) 0px 20px 30px -10px;
         box-sizing: border-box;
         padding: 20px;
         transition: 0.25s ease;
-        margin-left: 440px;
-        margin-top: 5px;
+        margin-left: 460px;
+        margin-top: 25px;
         position: absolute;
+        transform: translate(-50%,-50%)scale(1);
       }
       .folder .icons {
         width: 100%;
@@ -75,10 +78,10 @@
         font-size: 23px;
         cursor: pointer;
       }
-      .folder .icons .icon .name {
+      .folder .icons .icon .optionname {
         font-family: poppins;
         font-size: 14px;
-        color: white;
+        color: #e89797;
         margin-top: 3px;
         cursor: pointer;
       }
@@ -87,6 +90,14 @@
         height: 50px;
         border-radius: 6mm;
         padding: 5px;
+      }
+      .folder.close .preview {
+            width: 100%;
+            height: 100%;
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            grid-template-rows: repeat(3, 1fr);
+            cursor: pointer;
       }
       .folder.close .icons {
         display: none;
@@ -97,18 +108,16 @@
       .folder.close .preview {
         width: 100%;
         height: 100%;
-        display: grid;
-        grid-template-columns: repeat(3, 1fr);
-        grid-template-rows: repeat(3, 1fr);
         cursor: pointer;
       }
-      .folder.close .dot {
+      .folder.close i {
         width: 30px;
         height: 30px;
         position: relative;
         z-index: -1;
+
       }
-      .folder.close .dot::before {
+      .folder.close i::before {
         position: absolute;
         content: "";
         width: 12px;
@@ -123,6 +132,10 @@
         width: 400px;
         height: 400px;
         padding: 20px;
+        z-index: 1;
+        top:50%;     
+        left: 0;
+        
       }
       .folder.open .icons {
         animation: displayIcons 0.5s ease;
@@ -140,6 +153,13 @@
           transform: scale(1);
         }
       }
+
+      @media(max-width: 1322px) {
+          
+            .folder{
+                margin-left:290px;
+            }
+      }
     </style>
     <div class="bodywrapper" id="bodywrapper"></div>
     <asp:FormView ID="FormView1" runat="server" OnPageIndexChanging="FormView1_PageIndexChanging">
@@ -151,61 +171,43 @@
                 <div class="Profile-container ">
                   
                       <div class="folder close">
+                        
                         <div class="title">My Folder</div>
                         
                         <div class="icons">
                           <div class="icon">
                             <span class="symbol">
-                              <i class="fa-brands fa-google"></i>
+                              <i class="fa-sharp fa-solid fa-ban"></i>
                             </span>
-                            <span class="name">Google</span>
+                            <span class="optionname">Blocked</span>
                           </div>
                           <div class="icon">
                             <span class="symbol">
                               <i class="fa-solid fa-envelope"></i>
                             </span>
-                            <span class="name">Mail</span>
+                            <span class="optionname">Mail</span>
                           </div>
                           <div class="icon">
                             <span class="symbol">
-                              <i class="fa-solid fa-location-dot"></i>
+                              <i class="fa-brands fa-linkedin"></i>
                             </span>
-                            <span class="name">Maps</span>
+                            <span class="optionname">LinkedIn</span>
                           </div>
                           <div class="icon">
                             <span class="symbol">
-                              <i class="fa-brands fa-youtube"></i>
+                              <i class="fa-brands fa-instagram"></i>
                             </span>
-                            <span class="name">Youtube</span>
+                            <span class="optionname">Instagram</span>
                           </div>
                           <div class="icon">
                             <span class="symbol">
-                              <i class="fa-brands fa-google-drive"></i
-                            ></span>
-                            <span class="name">Drive</span>
-                          </div>
-                          <div class="icon">
-                            <span class="symbol">
-                              <i class="fa-solid fa-circle-play"></i>
+                              <i class="fa-brands fa-twitter"></i>
                             </span>
-                            <span class="name">Music</span>
+                            <span class="optionname">Twitter</span>
                           </div>
-                          <div class="icon">
-                            <span class="symbol">
-                              <i class="fa-brands fa-google-play"></i>
-                            </span>
-                            <span class="name">Play Store</span>
-                          </div>
-                          <div class="icon">
-                            <span class="symbol"> <i class="fa-brands fa-google-pay"></i> </span
-                            ><span class="name">GPay</span>
-                          </div>
-                          <div class="icon">
-                            <span class="symbol">
-                              <i class="fa-solid fa-tv"></i>
-                            </span>
-                            <span class="name">Google TV</span>
-                          </div>
+                          
+                          
+                          
                         </div>
                   </div>
 
