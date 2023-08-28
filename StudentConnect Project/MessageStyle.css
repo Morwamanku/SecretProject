@@ -63,9 +63,10 @@
 
 .text-box {
     min-width: 500px;
-    background: antiquewhite;
+    background: white;
     height: 40px;
     border-radius: 25px;
+    z-index: 1;
 }
 .input-text {
     

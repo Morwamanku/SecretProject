@@ -432,7 +432,7 @@ body {
         max-width: 275px;
         border-radius: 15px;
         display: flex;
-        box-shadow: 0 7px 25px rgba(0,0,0,0.125);
+        box-shadow: rgba(0, 0, 0, 0.19) 0px 10px 20px, rgba(0, 0, 0, 0.23) 0px 6px 6px;
         justify-content: space-between;
     }
 
@@ -640,6 +640,17 @@ body {
 }
 
 .popup button {
+    border-radius: 25px;
+    padding: 5px;
+    font-size: 14px;
+    min-width: 90px;
+    color: gray;
+    border: gray;
+    cursor: pointer;
+    box-shadow: 0 2px 5px rgba(0,0,0,0.2);
+}
+
+.filter-button {
     border-radius: 25px;
     padding: 5px;
     font-size: 14px;
@@ -1034,7 +1045,7 @@ body {
 }
 
 .big {
-    background: white;
+    background: black;
     width: 30px;
     height: 30px;
     transition: width 0.3s, height 0.15s;
@@ -1043,7 +1054,7 @@ body {
 .small {
     width: 15px;
     height: 15px;
-    border: 0.5mm solid white;
+    border: 0.5mm solid black;
     transition: 0.05s ease-in;
 }
 

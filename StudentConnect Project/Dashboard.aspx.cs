@@ -45,21 +45,76 @@ namespace StudentConnect_Project
             Response.Redirect("ViewProfile.aspx");
         }
 
-        protected void RadioButton5_CheckedChanged(object sender, EventArgs e)
+        
+
+       
+
+        protected void Button1_Click(object sender, EventArgs e)
         {
-            if (!IsPostBack)
-            {
-                string query = string.Format("select * from Student where QualificationName='Bachelor in Architecture'");
+            Response.Redirect("Login.aspx");
+        }
 
-                SqlConnection con = new SqlConnection(strcon);
-                SqlCommand cmd = new SqlCommand(query, con);
+        protected void Accommodationbtn_Click(object sender, EventArgs e)
+        {
+            string query = string.Format("select * from Student where AccommodationID='" + AccommodationIDList.Text + "'");
 
-                con.Open();
-                SqlDataReader reader = cmd.ExecuteReader();
-                DashboardRepeater.DataSource = reader;
-                DashboardRepeater.DataBind();
-                con.Close();
-            }
+            SqlConnection con = new SqlConnection(strcon);
+            SqlCommand cmd = new SqlCommand(query, con);
+
+            con.Open();
+            SqlDataReader reader = cmd.ExecuteReader();
+            DashboardRepeater.DataSource = reader;
+            DashboardRepeater.DataBind();
+            con.Close();
+        }
+
+        protected void Coursebtn_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        protected void University_Click(object sender, EventArgs e)
+        {
+            string query = string.Format("select * from Student where UniversityName='"+ UniversityNameList.Text +"'");
+
+            SqlConnection con = new SqlConnection(strcon);
+            SqlCommand cmd = new SqlCommand(query, con);
+
+            con.Open();
+            SqlDataReader reader = cmd.ExecuteReader();
+            DashboardRepeater.DataSource = reader;
+            DashboardRepeater.DataBind();
+            con.Close();
+        }
+
+       
+
+        protected void Hometown_Click(object sender, EventArgs e)
+        {
+            string query = string.Format("select * from Student where Hometown='" + HometownList.Text + "'");
+
+            SqlConnection con = new SqlConnection(strcon);
+            SqlCommand cmd = new SqlCommand(query, con);
+
+            con.Open();
+            SqlDataReader reader = cmd.ExecuteReader();
+            DashboardRepeater.DataSource = reader;
+            DashboardRepeater.DataBind();
+            con.Close();
+        }
+
+        protected void Default_Click(object sender, EventArgs e)
+        {
+            string query = string.Format("select StudentNumber,Firstname,Surname,QualificationName,image from Student WHERE NOT StudentNumber='" + (string)Session["studentnumber"] + "'");
+
+            SqlConnection con = new SqlConnection(strcon);
+            SqlCommand cmd = new SqlCommand(query, con);
+
+            con.Open();
+            SqlDataReader reader = cmd.ExecuteReader();
+            DashboardRepeater.DataSource = reader;
+            DashboardRepeater.DataBind();
+            con.Close();
         }
     }
 }

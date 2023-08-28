@@ -42,6 +42,7 @@
             <div class="search_chat">
                 <div>
                     <input type="text" placeholder="Search or start new chat" />
+                    <asp:TextBox ID="TextBox1" runat="server"></asp:TextBox>
               </div>
                 <ion-icon name="search-outline"></ion-icon>
             </div>
@@ -96,10 +97,11 @@
                     <div class="message-flex">
              
                         <asp:TextBox ID="messageTextBox" CssClass="text-box" runat="server"></asp:TextBox>
-                    <div class="send-btn">
-                        <asp:Button ID="SButton" class="submit-button" AutoPostBack="True" runat="server" CausesValidation="True" Text="" OnClick="SButton_Click" />
-                        <i class="fa fa-paper-plane" aria-hidden="true"></i>
-                    </div>
+                        
+                        <div class="send-btn">
+                            <asp:Button ID="SButton" class="submit-button" AutoPostBack="True" runat="server" CausesValidation="True" Text="" OnClick="SButton_Click" />
+                            <i class="fa fa-paper-plane" aria-hidden="true"></i>
+                        </div>
                     </div>                  
 
 

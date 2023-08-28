@@ -28,6 +28,9 @@ namespace StudentConnect_Project
                 FormView1.DataBind();
                 con.Close();
             }
+            string University = UniversityIDList.Text;
+            Session["university"] = University;
+
             try
             {
                 SqlConnection con = new SqlConnection(strcon);

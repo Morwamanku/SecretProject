@@ -44,7 +44,7 @@ input {
 }
 
 body {
-    background: var(--primary);
+    background: #fff;
     color: var(--text-clr);
     font-size: 16px;
     position: relative;
@@ -130,6 +130,8 @@ body {
 
     .wrapper .form_wrap {
         margin-bottom: 35px;
+        margin-top: 80px;
+    
     }
 
         .wrapper .form_wrap h2 {
