@@ -42,7 +42,7 @@
 				<div class="form_container">
 					<div class="input_wrap">
 						<label for="StudentNumber"><i class="zmdi zmdi-account material-icons-name"></i></label>
-						<asp:TextBox ID="studentnumbertxt" CssClass="input" placeholder="StudentNumber" runat="server"></asp:TextBox>
+						<asp:TextBox ID="studentnumbertxt" CssClass="input" placeholder="StudentNumber" AutoComplete="off" runat="server"></asp:TextBox>
 					</div>
 					<div class="input_wrap">
 						<label for="Course"><i class="zmdi zmdi-account material-icons-name"></i></label>
@@ -227,11 +227,28 @@
                     </div>
 					<div class="input_wrap">
 						<label for="Firstname"><i class="zmdi zmdi-account material-icons-name"></i></label>
-						<asp:TextBox ID="Passwordtxt1" CssClass="input" placeholder="Password" runat="server"></asp:TextBox>
+						<asp:TextBox ID="Passwordtxt1" CssClass="input" placeholder="Password" Autocomplete="off" TextMode="Password" runat="server"></asp:TextBox>
 					</div>
 					<div class="input_wrap">
 						<label for="Surname"><i class="zmdi zmdi-account material-icons-name"></i></label>
-						<asp:TextBox ID="Passwordtxt" CssClass="input" placeholder="Password" runat="server"></asp:TextBox>
+						<asp:TextBox ID="Passwordtxt" CssClass="input" placeholder="Password" AutoComplete="off"  TextMode="Password" runat="server"></asp:TextBox>
+						<span id="togglePassword" class="toggle-password">Show</span>
+                                            <script type="text/javascript">
+                                                document.addEventListener('DOMContentLoaded', function () {
+                                                    var passwordField = document.getElementById('<%= Passwordtxt.ClientID %>');
+                                                    var toggleIcon = document.getElementById('togglePassword');
+
+                                                    toggleIcon.addEventListener('click', function () {
+                                                        if (passwordField.type === 'password') {
+                                                            passwordField.type = 'text';
+                                                            toggleIcon.textContent = 'Hide';
+                                                        } else {
+                                                            passwordField.type = 'password';
+                                                            toggleIcon.textContent = 'Show';
+                                                        }
+                                                    });
+                                                });
+                                            </script>
 					</div>
 					
 					

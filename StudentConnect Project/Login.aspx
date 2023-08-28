@@ -35,11 +35,28 @@
 					</div>--%>
 					<div class="input_wrap">
 						<label for="studentnumber"><i class="zmdi zmdi-account material-icons-name"></i></label>
-						<asp:TextBox ID="studentnumbertxt" placeholder="Student Number" runat="server"></asp:TextBox>
+						<asp:TextBox ID="studentnumbertxt" placeholder="Student Number" AutoComplete="off" runat="server"></asp:TextBox>
 					</div>
 					<div class="input_wrap">
 						<label for="Password"><i class="zmdi zmdi-lock"></i></label>
-						<asp:TextBox ID="Passwordtxt" placeholder="Password" runat="server"></asp:TextBox>
+						<asp:TextBox ID="Passwordtxt" placeholder="Password" TextMode="Password" AutoComplete="off" runat="server"></asp:TextBox>
+						<span id="togglePassword" class="toggle-password">Show</span>
+                                            <script type="text/javascript">
+                                                document.addEventListener('DOMContentLoaded', function () {
+                                                    var passwordField = document.getElementById('<%= Passwordtxt.ClientID %>');
+                                                    var toggleIcon = document.getElementById('togglePassword');
+
+                                                    toggleIcon.addEventListener('click', function () {
+                                                        if (passwordField.type === 'password') {
+                                                            passwordField.type = 'text';
+                                                            toggleIcon.textContent = 'Hide';
+                                                        } else {
+                                                            passwordField.type = 'password';
+                                                            toggleIcon.textContent = 'Show';
+                                                        }
+                                                    });
+                                                });
+                                            </script>
 					</div>
 				</div>
 
