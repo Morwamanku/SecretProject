@@ -737,13 +737,12 @@ body {
 .dark-mode {
     background-color: #ddd;
     display: flex;
-    justify-content: space-between;
     align-items: center;
     height: 1.6rem;
     width: 4.2rem;
     cursor: pointer;
     border-radius: 25px;
-    margin-left: 400px;
+    justify-content: space-around;
     margin-top: 20px;
     margin-inline: auto;
 }

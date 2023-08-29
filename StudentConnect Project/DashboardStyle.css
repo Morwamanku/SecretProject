@@ -306,7 +306,107 @@ body {
             border-radius: var(--border-radius-1);
         }
 
+.Left-Navigation2 {
+    width: 70px;
+    height: 250px;
+    background: var(--color-background);
+    border-radius: 25px;
+    margin-top: 125px;
+    margin-left: auto;
+    margin-right: 20px;
+    visibility:hidden;
+}
 
+
+
+    /*.Left-Navigation.active {
+        margin-left: 1020px;
+    }*/
+
+    .Left-Navigation2 ul {
+        margin-top: 0px;
+        left: 0;
+        width: 100%;
+    }
+
+        .Left-Navigation2 ul li {
+            position: relative;
+            width: 100%;
+            list-style: none;
+            border-top-left-radius: 30px;
+            border-bottom-left-radius: 30px;
+        }
+
+            .Left-Navigation2 ul li:hover,
+            .Left-Navigation2 ul li .hovered {
+                background: var(--white);
+            }
+
+
+
+            .Left-Navigation2 ul li a {
+                position: relative;
+                display: block;
+                width: 100%;
+                display: flex;
+                text-decoration: none;
+                color: var(--color-dark);
+            }
+
+
+            .Left-Navigation2 ul li:hover a,
+            .Left-Navigation2 ul li .hovered a {
+                color: var(--blue);
+            }
+
+                .Left-Navigation2 ul li:hover a::before,
+                .Left-Navigation2 ul li .hovered a::before {
+                    content: '';
+                    position: absolute;
+                    right: 0;
+                    top: -50px;
+                    width: 50px;
+                    height: 50px;
+                    background: transparent;
+                    border-radius: 50%;
+                    box-shadow: 35px 35px 0 10px var(--white);
+                    pointer-events: none;
+                }
+
+                .Left-Navigation2 ul li:hover a::after,
+                .Left-Navigation2 ul li .hovered a::after {
+                    content: '';
+                    position: absolute;
+                    right: 0;
+                    bottom: -50px;
+                    width: 50px;
+                    height: 50px;
+                    background: transparent;
+                    border-radius: 50%;
+                    box-shadow: 35px -35px 0 10px var(--white);
+                    pointer-events: none;
+                }
+
+
+            .Left-Navigation2 ul li a .icon {
+                position: relative;
+                display: block;
+                min-width: 60px;
+                height: 60px;
+                line-height: 67px;
+                text-align: center;
+            }
+
+                .Left-Navigation2 ul li a .icon ion-icon {
+                    font-size: 1.65rem;
+                }
+
+    .Left-Navigation2 .active {
+        display: none;
+    }
+    
+
+            
 
 
 
@@ -324,6 +424,18 @@ body {
 
     .topbar {
         width: auto;
+    }
+
+    .Left-Navigation2 {
+        visibility: visible
+    }
+
+        
+
+    
+
+    .Left-Navigation2 ul li a .title {
+        display: none;
     }
 
 
@@ -364,6 +476,10 @@ body {
         margin-right: 20px;
         visibility: inherit;
     }
+
+
+    
+    
 }
 
 
@@ -371,6 +487,8 @@ body {
     .topbar {
         width: auto;
     }
+
+ 
 
     .row {
         margin-inline: auto;

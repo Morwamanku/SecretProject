@@ -44,7 +44,42 @@
             </div>
         </div>
          
+        <div class="Left-Navigation2">
+    
+
+     <ul>
+    
+            <li>
+                <a href="/Advertise/Advertise.aspx">
+                    <span class="icon"><ion-icon name="rocket-outline"></ion-icon></span>
+                    <span class="title">Advertise</span> 
+                
+                </a>
+            </li>
         
+            <li>
+                <a href="#">
+                    <span class="icon"><ion-icon name="earth-outline"></ion-icon></span>
+                    <span class="title">Blog</span>
+                
+                </a>
+            </li>
+            <li>
+                <a href="#">
+                    <span class="icon"><ion-icon name="school-outline"></ion-icon></span>
+                    <span class="title">Tutoring</span>
+                
+                </a>
+            </li>
+
+            <li>
+                <a href="#">
+                    <span class="icon"><ion-icon name="ribbon-outline"></ion-icon></span>
+                    <span class="title">Bursury</span>                
+                </a>
+            </li>
+        </ul>
+    </div>
  </div>
     <div class="popup" id="popup">
 

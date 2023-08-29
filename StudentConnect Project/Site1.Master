@@ -260,12 +260,15 @@
         let navigation = document.querySelector('.navigation');
         let main = document.querySelector('.main');
         let LeftNavigation = document.querySelector('.Left-Navigation');
+        let LeftNavigation2 = document.querySelector('.Left-Navigation2');
         let row = document.querySelector('.row');
+
 
         toggle.onclick = function () {
             navigation.classList.toggle('active');
             main.classList.toggle('active');
             LeftNavigation.classList.toggle('active');
+            LeftNavigation2.classList.toggle('active');
             row.classList.toggle('active');
         }
     
