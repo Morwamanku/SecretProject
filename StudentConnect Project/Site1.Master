@@ -65,9 +65,9 @@
       </div>
       <div class="text">Loading...</div>
     </div>
-    <video autoplay loop muted plays-inline class="back-video">
+    <div class="back-video">
                 <source src="Background-video/Spacy.mp4" type="video/mp4" />
-            </video>
+            </div>
 
     <form id="form1" runat="server">
         
