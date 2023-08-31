@@ -16,9 +16,7 @@
     <title>Login</title>
 </head>
 <body>
-    <video autoplay loop muted plays-inline class="back-video">
-                <source src="Background-video/solar_system (720p).mp4" type="video/mp4" />
-            </video>
+    
         <section class="sign-in">
     <form id="form1" runat="server">
         <div class="wrapper">

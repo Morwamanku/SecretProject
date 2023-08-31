@@ -1,11 +1,10 @@
-﻿<%@ Page Language="C#" AutoEventWireup="true" CodeBehind="Register.aspx.cs" Inherits="StudentConnect_Project.Register" %>
+﻿<%@ Page Language="C#" AutoEventWireup="true" CodeBehind="Advertise.aspx.cs" Inherits="StudentConnect_Project.Advertise" %>
 
 <!DOCTYPE html>
 
 <html xmlns="http://www.w3.org/1999/xhtml">
 <head runat="server">
     <title></title>
-	
     <link href="RegisterStyle.css" rel="stylesheet" />
 </head>
 <body>
@@ -263,7 +262,7 @@
 		</div>
 		<div class="common_btns form_3_btns" style="display: none;">
 			<button type="button" class="btn_back"><span class="icon"><ion-icon name="arrow-back-sharp"></ion-icon></span>Back</button>
-			<asp:Button ID="Registerbtn" class="btn_done" runat="server" Text="Register" OnClick="Registerbtn_Click"  />
+			<%--<asp:Button ID="Registerbtn" class="btn_done" runat="server" Text="Register" OnClick="Registerbtn_Click"  />--%>
 		</div>
 	</div>
 	</div>
