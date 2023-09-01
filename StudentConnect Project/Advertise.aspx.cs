@@ -34,7 +34,7 @@ namespace StudentConnect_Project
                 {
                     con.Open();
                 }
-                SqlCommand cmd = new SqlCommand("INSERT INTO Student(StudentNumber,CategoryName,Product,Productimage,Hometown,Password,image,UniversityName,QualificationName,Yearofstudy,AccommodationID) values(@StudentNumber,@CategoryName,@Product,@Productimage,@Hometown,@Password,@image,@UniversityName,@QualificationName,@Yearofstudy,@AccommodationID)", con);
+                SqlCommand cmd = new SqlCommand("INSERT INTO Student(StudentNumber,CategoryName,Product,Productimage,Price,ProductDescription) values(@StudentNumber,@CategoryName,@Product,@Productimage,@Price,@ProductDescription)", con);
                 cmd.Parameters.AddWithValue("@StudentNumber", (string)Session["studentnumber"]);
                 cmd.Parameters.AddWithValue("@CategoryName", CategoryList.Text.Trim());
                 cmd.Parameters.AddWithValue("@Product", ProductName.Text.Trim());

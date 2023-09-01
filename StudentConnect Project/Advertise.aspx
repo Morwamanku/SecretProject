@@ -72,12 +72,7 @@
 						<label for="ProductDescription"><i class="zmdi zmdi-account material-icons-name"></i></label>
 						<asp:TextBox ID="ProductDescription" CssClass="input" placeholder="Description"  runat="server" TextMode="MultiLine"></asp:TextBox>
 					</div>
-					
-					
-					
-			
-			
-		</div>	
+				</div>	
 		</div>
 		<div class="form_3 data_info" style="display: none;">
 			<h2>Product</h2>
