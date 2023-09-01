@@ -24,7 +24,7 @@
 	<div class="flexformwrap">
 		<div class="form_wrap">
 		<div class="form_1 data_info">
-			<h2>Sign up</h2>
+			<h2>Login</h2>
 			
 				<div class="form_container">
 					<%--<div class="input_wrap">
@@ -38,7 +38,7 @@
 					<div class="input_wrap">
 						<label for="Password"><i class="zmdi zmdi-lock"></i></label>
 						<asp:TextBox ID="Passwordtxt" placeholder="Password" TextMode="Password" AutoComplete="off" runat="server"></asp:TextBox>
-						<span id="togglePassword" class="toggle-password">Show</span>
+						<span id="togglePassword" class="toggle-password" style="cursor: pointer;">Show</span>
                                             <script type="text/javascript">
                                                 document.addEventListener('DOMContentLoaded', function () {
                                                     var passwordField = document.getElementById('<%= Passwordtxt.ClientID %>');
@@ -63,6 +63,15 @@
 				<div class="common_btns form_1_btns">
 					<asp:Button ID="BtnLogIn" runat="server" class="form-submit" Text="Log In" OnClick="BtnLogIn_Click" />
 				</div>
+			</div>
+
+			<div class="form-group2">
+				<input type="checkbox" name="remember-me" id="remember-me2" class="agree-term" />
+				<label for="remember-me" style="display:block;text-align:center;" class="label-agree-term"><span><span></span></span>Remember me</label>
+				<br />
+				<a href="Register.aspx" class="signup-image-link">Don't have an account?</a>
+				<br />
+				<a href="ForgotPassword.aspx" class="signup-image-link">Reset Password</a>
 			</div>
 		</div>
 		

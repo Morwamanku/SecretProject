@@ -356,6 +356,8 @@ figure {
     -ms-border-radius: 5px;
     margin-top: 25px;
     cursor: pointer;
+    margin-right: auto;
+    margin-inline: auto;
 }
 
     .form-submit:hover {
@@ -394,6 +396,14 @@ figure {
 
 .register-form {
     width: 100%;
+}
+
+.form-group2 {
+    position: relative;
+    margin-bottom: 25px;
+    overflow: hidden;
+    display: none;
+    margin-top: 25px;
 }
 
 .form-group {
@@ -743,6 +753,16 @@ label.valid {
         text-align: center;
     }
 }
+
+
+@media(max-width: 860px) {
+   
+
+    .form-group2 {
+        display: block;
+    }
+}
+
 
 @media screen and (max-width: 400px) {
     .social-login {

@@ -314,11 +314,18 @@ body {
 
     .wrapper {
         width: 400px;
+        margin: auto;
+        margin-top: 20px;
+    
     }
 
-    .signup-image a {
+
+
+    .signup-image  {
         display: none
     }
+
+    
 }
 
 @media(max-width: 450px) {
