@@ -102,6 +102,8 @@
     <Content Include="Notificationstyle.css" />
     <Content Include="pexels-aleksandar-pasaric-4505907.jpg" />
     <Content Include="pexels-alexander-kovalev-2847648.jpg" />
+    <Content Include="ProductImage\Atomic habits image.jpg" />
+    <Content Include="ProductImage\Nike-Air-Force-1-Low-07-Sail-University-Red-6.jpeg" />
     <Content Include="ProfileImage\1ce03086f6a3e4539bb918ba66e8ecf4.jpg" />
     <Content Include="ProfileImage\286c760f394af0190adb44a1134c0790.jpg" />
     <Content Include="ProfileImage\41f022e6ea3dbf82735e906a5a7ed560.jpg" />
@@ -336,9 +338,7 @@
       <DependentUpon>Web.config</DependentUpon>
     </None>
   </ItemGroup>
-  <ItemGroup>
-    <Folder Include="ProductImage\" />
-  </ItemGroup>
+  <ItemGroup />
   <PropertyGroup>
     <VisualStudioVersion Condition="'$(VisualStudioVersion)' == ''">10.0</VisualStudioVersion>
     <VSToolsPath Condition="'$(VSToolsPath)' == ''">$(MSBuildExtensionsPath32)\Microsoft\VisualStudio\v$(VisualStudioVersion)</VSToolsPath>

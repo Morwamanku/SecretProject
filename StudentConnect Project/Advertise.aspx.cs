@@ -26,7 +26,7 @@ namespace StudentConnect_Project
                 string filepath = "~/ProductImage/boity.jpg";
                 string filename = Path.GetFileName(FileUpload1.PostedFile.FileName);
                 FileUpload1.SaveAs(Server.MapPath("ProductImage/" + filename));
-                filepath = "~/ProfileImage/" + filename;
+                filepath = "~/ProductImage/" + filename;
 
 
                 SqlConnection con = new SqlConnection(strcon);
@@ -34,8 +34,8 @@ namespace StudentConnect_Project
                 {
                     con.Open();
                 }
-                SqlCommand cmd = new SqlCommand("INSERT INTO Student(StudentNumber,CategoryName,Product,Productimage,Price,ProductDescription) values(@StudentNumber,@CategoryName,@Product,@Productimage,@Price,@ProductDescription)", con);
-                cmd.Parameters.AddWithValue("@StudentNumber", (string)Session["studentnumber"]);
+                SqlCommand cmd = new SqlCommand("INSERT INTO Product(Student,CategoryName,Product,Productimage,Price,ProductDescription) values(@Student,@CategoryName,@Product,@Productimage,@Price,@ProductDescription)", con);
+                cmd.Parameters.AddWithValue("@Student", (string)Session["studentnumber"]);
                 cmd.Parameters.AddWithValue("@CategoryName", CategoryList.Text.Trim());
                 cmd.Parameters.AddWithValue("@Product", ProductName.Text.Trim());
                 cmd.Parameters.AddWithValue("@Productimage", filepath);
@@ -45,6 +45,7 @@ namespace StudentConnect_Project
                 cmd.ExecuteNonQuery();
                 con.Close();
                 Response.Write("<script>alert('Sign Up Successful. Go to User Login to Login');</script>");
+                Response.Redirect("Dashboard.aspx");
             }
             catch (Exception ex)
             {

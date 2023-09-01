@@ -16,7 +16,7 @@ namespace StudentConnect_Project
         {
             if (!IsPostBack)
             {
-                string query = string.Format("select Productimage from Product WHERE NOT StudentNumber='" + (string)Session["studentnumber"] + "'");
+                string query = string.Format("select Productimage from Product");
 
                 SqlConnection con = new SqlConnection(strcon);
                 SqlCommand cmd = new SqlCommand(query, con);
