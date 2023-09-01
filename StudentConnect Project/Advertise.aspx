@@ -41,7 +41,7 @@
 						<label for="Course"><i class="zmdi zmdi-account material-icons-name"></i></label>
 						<asp:DropDownList CssClass="input" ID="CategoryList" runat="server">
 							<asp:ListItem Value="" >--Choose Category--</asp:ListItem> 
-                           <asp:ListItem Value="Books" >Books</asp:ListItem>    
+                           <asp:ListItem Value="Book" >Books</asp:ListItem>    
                            <asp:ListItem Value="Shoes">Shoes </asp:ListItem>
                            <asp:ListItem Value="Clothes">Clothes</asp:ListItem>
 							<asp:ListItem Value="Technology">Technology</asp:ListItem>

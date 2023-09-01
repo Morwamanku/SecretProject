@@ -8,30 +8,19 @@
         <div class="container2">
             <div class="container" >
                 <div class="row">
-                    <div class="card">
-                      <div class="bg">
-                          <div class="card-image">
-                                <img src="ProfileImage/Leo.jpg"  class="img-fluid" alt="" />
+                    <asp:Repeater ID="MarketPlaceRepeater" runat="server">
+                        <ItemTemplate>
+                            <div class="card">
+                              <div class="bg">
+                                  <div class="card-image">
+                                        <img src="ProfileImage/Leo.jpg"  class="img-fluid" alt="" />
+                                        <asp:ImageButton ID="Image1" class="img-fluid" runat="server" ImageUrl='<%# Eval("Productimage") %>' Width="100%" Height="340px"  object-fit="cover" />
+                                    </div>
+                              </div>
+                              <div class="blob"></div>
                             </div>
-                      </div>
-                      <div class="blob"></div>
-                    </div>
-                    <div class="card">
-                      <div class="bg"></div>
-                      <div class="blob"></div>
-                    </div>
-                    <div class="card">
-                      <div class="bg"></div>
-                      <div class="blob"></div>
-                    </div>
-                    <div class="card">
-                      <div class="bg"></div>
-                      <div class="blob"></div>
-                    </div>
-                    <div class="card">
-                      <div class="bg"></div>
-                      <div class="blob"></div>
-                    </div>
+                        </ItemTemplate>
+                    </asp:Repeater>
                 </div>
             </div>
 
