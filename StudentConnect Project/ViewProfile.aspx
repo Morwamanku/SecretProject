@@ -244,7 +244,7 @@
             
             <div class="Profile-buttons">
                 <button class="p-btn" type="button" onclick="closePopup()">Back</button>
-                <asp:Button ID="Connectbtn" CssClass="p-btn" runat="server" Text="Request" OnClick="Connectbtn_Click" />
+                <asp:Button ID="Connectbtn" class="connectbtn_done" CssClass="p-btn" runat="server" Text="Request" OnClick="Connectbtn_Click" />
             </div>
             
         </div>
@@ -252,6 +252,28 @@
 
     </asp:FormView>
     
+
+    <div class="modal_wrapper">
+	<div class="shadow"></div>
+	    <div class="success_wrap">
+		    <span class="modal_icon"><ion-icon name="checkmark-sharp"></ion-icon></span>
+		    <p>Request Made</p>
+	    </div>
+    </div>
+
+    <script>
+        var connectbtn_done = document.querySelector(".connectbtn_done");
+        var modal_wrapper = document.querySelector(".modal_wrapper");
+        var shadow = document.querySelector(".shadow");
+
+        connectbtn_done.addEventListener("click", function () {
+            modal_wrapper.classList.add("active");
+        })
+
+        shadow.addEventListener("click", function () {
+            modal_wrapper.classList.remove("active");
+        })
+    </script>
     
     <script>
         let popup = document.getElementById("popup");

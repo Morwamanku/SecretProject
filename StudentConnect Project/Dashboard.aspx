@@ -50,7 +50,7 @@
          <ul>
     
                 <li>
-                    <a href="/Advertise/Advertise.aspx">
+                    <a href="Advertise.aspx">
                         <span class="icon"><ion-icon name="rocket-outline"></ion-icon></span>
                         <span class="title">Advertise</span> 
                 
@@ -58,7 +58,7 @@
                 </li>
         
                 <li>
-                    <a href="#">
+                    <a href="MarketPlace.aspx">
                         <span class="icon"><ion-icon name="earth-outline"></ion-icon></span>
                         <span class="title">MarketPlace</span>
                 

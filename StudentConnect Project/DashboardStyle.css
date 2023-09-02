@@ -306,6 +306,8 @@ body {
             border-radius: var(--border-radius-1);
         }
 
+
+
 .Left-Navigation2 {
     width: 70px;
     height: 250px;
@@ -313,11 +315,13 @@ body {
     border-radius: 25px;
     margin-top: 125px;
     margin-left: auto;
-    margin-right: 20px;
     visibility:hidden;
+    display:block;
 }
 
-
+    .Left-Navigation2.active {
+        display: none;
+    }
 
     .Left-Navigation2 ul {
         margin-top: 0px;
@@ -397,9 +401,7 @@ body {
                     font-size: 1.65rem;
                 }
 
-    .Left-Navigation2 .active {
-        display: none;
-    }
+    
     
 
             
@@ -422,11 +424,14 @@ body {
         width: auto;
     }
 
+   
+
     .Left-Navigation2 {
-        visibility: visible
+        visibility: visible;
+        display:block;
     }
 
-        
+       
 
     
 
