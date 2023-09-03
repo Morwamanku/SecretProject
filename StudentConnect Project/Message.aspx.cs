@@ -20,12 +20,14 @@ namespace StudentConnect_Project
             {
                 string query = string.Format("select Firstname,image,ConnectConfirmed_ID,StudentNumber  from Student left join Connected on Student.StudentNumber=Connected.Sender or Student.StudentNumber=Connected.Recipient WHERE NOT StudentNumber='" + (string)Session["studentnumber"] + "' and Sender='" + (string)Session["studentnumber"] + "' or NOT StudentNumber='" + (string)Session["studentnumber"] + "' and Recipient='" + (string)Session["studentnumber"] + "'");
                 string query2 = string.Format("select image,message from messages left join Student on messages.Student=Student.StudentNumber where ConfirmedID='" + (string)Session["MessageConfirmID"] + "'");
-              
+                
+
 
                 SqlConnection con = new SqlConnection(strcon);
                 SqlCommand cmd = new SqlCommand(query, con);
                 SqlCommand cmd2 = new SqlCommand(query2, con);
-
+                SqlCommand cmd3 = new SqlCommand(query, con);
+                SqlCommand cmd4 = new SqlCommand(query2, con);
                 con.Open();
                 SqlDataReader reader = cmd.ExecuteReader();
                 ChataRepeater.DataSource = reader;
@@ -37,6 +39,24 @@ namespace StudentConnect_Project
                 SqlDataReader reader2 = cmd2.ExecuteReader();
                 InboxRepeater.DataSource = reader2;
                 InboxRepeater.DataBind();
+
+                con.Close();
+
+                con.Open();
+                SqlDataReader reader3 = cmd3.ExecuteReader();
+                ChataRepeater2.DataSource = reader3;
+                ChataRepeater2.DataBind();
+
+                con.Close();
+
+                con.Open();
+                SqlDataReader reader4 = cmd4.ExecuteReader();
+                InboxRepeater2.DataSource = reader4;
+                InboxRepeater2.DataBind();
+
+                con.Close();
+
+
             }
 
         }
@@ -78,6 +98,43 @@ namespace StudentConnect_Project
             string MessageConfirmID = ((Label)item.FindControl("ConnectConfirmed_IDLabel")).Text;
             Session["MessageConfirmID"] = MessageConfirmID;
             Response.Redirect("Message.aspx");
+        }
+
+        
+
+        protected void Image2_Click(object sender, ImageClickEventArgs e)
+        {
+            ImageButton btn = (ImageButton)sender;
+            RepeaterItem item = (RepeaterItem)btn.NamingContainer;
+
+            string MessageConfirmID = ((Label)item.FindControl("ConnectConfirmed_IDLabel")).Text;
+            Session["MessageConfirmID"] = MessageConfirmID;
+            Response.Redirect("Message.aspx");
+        }
+
+        protected void SButton2_Click(object sender, EventArgs e)
+        {
+            try
+            {
+                SqlConnection con = new SqlConnection(strcon);
+                if (con.State == ConnectionState.Closed)
+                {
+                    con.Open();
+                }
+                SqlCommand cmd = new SqlCommand("insert into messages(ConfirmedID,Student,message)values(@ConfirmedID,@Student,@message)", con);
+                cmd.Parameters.AddWithValue("@ConfirmedID", (string)Session["MessageConfirmID"]);
+                cmd.Parameters.AddWithValue("@Student", (string)Session["studentnumber"]);
+                cmd.Parameters.AddWithValue("@message", messageTextBox.Text.Trim());
+
+                cmd.ExecuteNonQuery();
+                con.Close();
+                Response.Write("<script>alert('Message sent');</script>");
+                Response.Redirect("Message.aspx");
+            }
+            catch (Exception ex)
+            {
+                Response.Write("<script>alert('" + ex.Message + "');</script>");
+            }
         }
     }
 }

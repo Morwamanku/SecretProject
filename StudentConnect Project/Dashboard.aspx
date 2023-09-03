@@ -4,6 +4,7 @@
     <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Material+Symbols+Sharp:opsz,wght,FILL,GRAD@48,400,0,0" />
     <link href="https://fonts.googleapis.com/icon?family=Material+Icons+Sharp" rel="stylesheet">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css" />
+  
 
   </asp:Content>
 <asp:Content ID="Content2" ContentPlaceHolderID="ContentPlaceHolder1" runat="server">
@@ -130,7 +131,7 @@
 
         <h1>University</h1>
         <label for="Course"><i class="zmdi zmdi-account material-icons-name"></i></label>
-        <asp:DropDownList CssClass="form-control" ID="UniversityNameList" runat="server">
+        <asp:DropDownList class="textboxfilter" ID="UniversityNameList" runat="server">
                         <asp:ListItem Value="" >--Choose Institution--</asp:ListItem> 
                         <asp:ListItem Value="University of Johannesburg (UJ)" >University of Johannesburg (UJ)</asp:ListItem>    
                         <asp:ListItem Value="University of Pretoria (UP)">University of Pretoria (UP) </asp:ListItem>
@@ -143,7 +144,7 @@
             <asp:Button ID="University" class="filter-button" runat="server" Text="Select" OnClick="University_Click" />
         </div>
         
-        <button type="button" onclick="universityclosePopup()">OK</button>
+        <button type="button" style="margin-top:10px;" onclick="universityclosePopup()">Cancel</button>
         </div>
 
     <div class="popup" id="accommodationpopup">
@@ -152,7 +153,7 @@
     <div class="form-group">
     <label for="inputAccommodation">Accommodation</label>
     <label for="Accommodation"><i class="zmdi zmdi-account material-icons-name"></i></label>
-    <asp:DropDownList CssClass="form-control" ID="AccommodationIDList" runat="server">
+    <asp:DropDownList CssClass="textboxfilter" ID="AccommodationIDList" runat="server">
                     <asp:ListItem Value="" >--Choose Accommodation--</asp:ListItem> 
                     <asp:ListItem Value="1">South Point 56</asp:ListItem>
                     <asp:ListItem Value="2" >Uni-stay</asp:ListItem> 
@@ -173,7 +174,7 @@
         <asp:Button class="filter-button" ID="Accommodationbtn" runat="server" Text="select" OnClick="Accommodationbtn_Click" />
     </div>
     
-    <button type="button" onclick="accommodationclosePopup()">OK</button>
+    <button type="button" style="margin-top:10px;" onclick="accommodationclosePopup()">Cancel</button>
     </div>
 
         <div class="popup" id="hometownpopup">
@@ -182,7 +183,7 @@
     <div class="form-group">
     <label for="inputHometown">Hometown</label>
     <label for="Hometown"><i class="zmdi zmdi-account material-icons-name"></i></label>  
-        <asp:DropDownList CssClass="form-control" placeholder="Hometown" ID="HometownList" runat="server">
+        <asp:DropDownList CssClass="textboxfilter" placeholder="Hometown" ID="HometownList" runat="server">
                         <asp:ListItem Value="" >--Choose Hometown--</asp:ListItem> 
                         <asp:ListItem Value="Alice" >Alice</asp:ListItem>    
                         <asp:ListItem Value="Bethlehem">Bethlehem</asp:ListItem> 
@@ -262,7 +263,7 @@
         <asp:Button ID="Hometown" class="filter-button" runat="server" Text="Select" OnClick="Hometown_Click" />
     </div>
     
-    <button type="button" onclick="hometownclosePopup()">OK</button>
+    <button type="button" style="margin-top:10px;" onclick="hometownclosePopup()">Cancel</button>
     </div>
             
             

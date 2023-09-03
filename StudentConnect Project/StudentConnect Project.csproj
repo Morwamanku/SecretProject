@@ -79,6 +79,7 @@
   <ItemGroup>
     <Content Include="Advertise.aspx" />
     <Content Include="Background-video\Blue space.mp4" />
+    <Content Include="Background-video\cyber-monday-retail-sales.jpg" />
     <Content Include="Background-video\solar_system %28720p%29.mp4" />
     <Content Include="Background-video\Spacy.mp4" />
     <Content Include="Background-video\video %282160p%29.mp4" />
@@ -99,6 +100,7 @@
     <Content Include="MarketplaceStyle.css" />
     <Content Include="Message.aspx" />
     <Content Include="MessageStyle.css" />
+    <Content Include="MessageView.aspx" />
     <Content Include="Notificationstyle.css" />
     <Content Include="pexels-aleksandar-pasaric-4505907.jpg" />
     <Content Include="pexels-alexander-kovalev-2847648.jpg" />
@@ -227,6 +229,13 @@
     </Compile>
     <Compile Include="Message.aspx.designer.cs">
       <DependentUpon>Message.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="MessageView.aspx.cs">
+      <DependentUpon>MessageView.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="MessageView.aspx.designer.cs">
+      <DependentUpon>MessageView.aspx</DependentUpon>
     </Compile>
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="Register.aspx.cs">

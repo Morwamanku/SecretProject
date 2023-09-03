@@ -7,6 +7,10 @@
     font-family: 'open sans',sans-serif;
 }
 
+.ConnectConfirmed_ID{
+    visibility:hidden;
+}
+
 .back-video {
     position: fixed;
     right: 0;
@@ -62,7 +66,7 @@
     }
 
 .text-box {
-    min-width: 500px;
+    min-width: 400px;
     background: white;
     height: 40px;
     border-radius: 25px;
@@ -76,7 +80,7 @@
 
 .submit-button {
     position: absolute;
-    width: 40px;
+    width: 80px;
     background: antiquewhite;
     height: 40px;
     border-radius: 25px;
@@ -123,16 +127,17 @@ body {
     }
 
 .container {
-    position: fixed;
     width: 800px;
     max-width: 800px;
     height: 600px;
     background: #fff;
-    box-shadow: 0 1px 1px 0 rgba(0,0,0,0.06),0 2px 5px 0 rgba(0,0,0,0.06);
     display: flex;
-    margin-left: 300px;
+    margin: auto;
+    margin-top:50px;
     border-radius: 15px;
-    margin-bottom: 50px;
+    box-shadow: 0px 3px 5px 7px rgba(0,0,0,0.49);
+    -webkit-box-shadow: 0px 3px 5px 7px rgba(0,0,0,0.49);
+    -moz-box-shadow: 0px 3px 5px 7px rgba(0,0,0,0.49);
 }
 
 .leftside {
@@ -219,7 +224,6 @@ body {
 
 
     .search_chat div input {
-        width: 100%;
         outline: none;
         border: none;
         background: #fff;
@@ -247,6 +251,27 @@ body {
     height: calc(100% - 100px );
     overflow-y: auto;
 }
+
+
+
+.chatlist2 {
+    position: relative;
+    overflow-y: auto;
+    display: flex;
+}
+
+.Phoneviewcontainer {
+    position: relative;
+    flex: 30%;
+    background-color: white;
+    min-width: 400px;
+    border-right: 1px solid #000;
+    border-radius: 25px;
+    display: none;
+    height: 100vh;
+}
+
+
 
 .block {
     position: relative;
@@ -291,6 +316,7 @@ body {
 .time {
     font-size: 0.75em;
     color: lightgray;
+    visibility:hidden;
 }
 
 .message_P {
@@ -309,7 +335,7 @@ body {
         text-overflow: ellipsis;
     }
 
-.b {
+.btn {
     background-color: aqua;
     color: #fff;
     min-width: 20px;
@@ -348,5 +374,29 @@ body {
     .Chatblock_unread:hover {
         background: #f5f5f5;
     }
+
+@media(max-width:750px) {
+    .container {
+        display:none;
+    }
+    .Phoneviewcontainer {
+        display:block;
+    }
+
+    .btn{
+        display:none;
+    }
+
+    .input-text {
+        margin: 0px;
+        position: absolute;
+    }
+
+    .right-container {
+        position: absolute;
+       
+        height: 500px;
+    }
+}
 
 
