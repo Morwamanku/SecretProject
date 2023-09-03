@@ -13,7 +13,8 @@
 	
     <section class="sign-in">
     <form id="form1" runat="server">
-        <div class="wrapper">
+        <div class="wrapper" style="padding-top:0px;">
+			<img src="Signupimages/our logo.jpg" class="LoginImage" alt="Alternate Text" />
 	<div class="header">
 		<ul>
 			<li class="active form_1_progessbar">
@@ -282,9 +283,9 @@
 		<div class="common_btns form_1_btns">
 			<button type="button" class="btn_next">Next <span class="icon"><ion-icon name="arrow-forward-sharp"></ion-icon></span></button>
 		</div>
-		<div class="common_btns form_2_btns" style="display: none;">
-			<button type="button" class="btn_back"><span class="icon"><ion-icon name="arrow-back-sharp"></ion-icon></span>Back</button>
-			<button type="button" class="btn_next">Next <span class="icon"><ion-icon name="arrow-forward-sharp"></ion-icon></span></button>
+		<div class="common_btns form_2_btns" style="display: none; ">
+			<button type="button" class="btn_back" style="margin-top:0px;"><span class="icon"><ion-icon name="arrow-back-sharp"></ion-icon></span>Back</button>
+			<button type="button" class="btn_next" style="margin-top:0px;">Next <span class="icon"><ion-icon name="arrow-forward-sharp"></ion-icon></span></button>
 		</div>
 		<div class="common_btns form_3_btns" style="display: none;">
 			<button type="button" class="btn_back"><span class="icon"><ion-icon name="arrow-back-sharp"></ion-icon></span>Back</button>
