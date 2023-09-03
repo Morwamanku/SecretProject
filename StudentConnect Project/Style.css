@@ -41,6 +41,11 @@
     display: flex;
 }
 
+.flex-filter.active {
+    display: flex;
+    gap:100px;
+}
+
 
 
 body {

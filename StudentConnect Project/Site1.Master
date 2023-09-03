@@ -262,6 +262,7 @@
         let LeftNavigation = document.querySelector('.Left-Navigation');
         let LeftNavigation2 = document.querySelector('.Left-Navigation2');
         let row = document.querySelector('.row');
+        let flexfilter = document.querySelector('.flex-filter');
 
 
         toggle.onclick = function () {
@@ -270,6 +271,7 @@
             LeftNavigation.classList.toggle('active');
             LeftNavigation2.classList.toggle('active');
             row.classList.toggle('active');
+            flexfilter.classList.toggle('active');
         }
     
 
