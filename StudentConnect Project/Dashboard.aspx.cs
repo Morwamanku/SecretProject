@@ -17,7 +17,7 @@ namespace StudentConnect_Project
             
             if (!IsPostBack)
             {
-                string query = string.Format("select StudentNumber,Firstname,Surname,QualificationName,image from Student WHERE NOT StudentNumber='" + (string)Session["studentnumber"] + "'");
+                string query = string.Format("select StudentNumber,Firstname,Surname,QualificationName,image from Student WHERE NOT StudentNumber='" + (string)Session["studentnumber"] + "' order by NEWID()");
 
                 SqlConnection con = new SqlConnection(strcon);
                 SqlCommand cmd = new SqlCommand(query, con);
