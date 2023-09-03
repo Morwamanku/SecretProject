@@ -61,9 +61,54 @@ namespace StudentConnect_Project
 
         protected void Connectbtn_Click(object sender, EventArgs e)
         {
-            
+
+            if (checkRequestExists())
+            {
+                Response.Write("<script>alert('Request is already made');</script>");
+            }
+            else
+            {
+                RequestMade();
+                Response.Redirect("ViewProfile.aspx");
+
+            }
+        }
+
+        bool checkRequestExists()
+        {
             string StudentNumber = ((System.Web.UI.WebControls.Label)FormView1.FindControl("StudentNumberLabel")).Text;
-            
+
+            try
+            {
+                SqlConnection con = new SqlConnection(strcon);
+                if (con.State == ConnectionState.Closed)
+                {
+                    con.Open();
+                }
+                SqlCommand cmd = new SqlCommand("SELECT * FROM ConnectRequest WHERE Sender='"+(string)Session["studentnumber"]+ "' and Recipient='"+ StudentNumber + "' ;", con);
+                SqlDataAdapter da = new SqlDataAdapter(cmd);
+                DataTable dt = new DataTable();
+                da.Fill(dt);
+                if (dt.Rows.Count >= 1)
+                {
+                    return true;
+                }
+                else
+                {
+                    return false;
+                }
+            }
+            catch (Exception ex)
+            {
+                Response.Write("<script>alert('" + ex.Message + "');</script>");
+                return false;
+            }
+        }
+
+        void RequestMade()
+        {
+            string StudentNumber = ((System.Web.UI.WebControls.Label)FormView1.FindControl("StudentNumberLabel")).Text;
+
 
 
             try
@@ -74,8 +119,8 @@ namespace StudentConnect_Project
                     con.Open();
                 }
                 SqlCommand cmd = new SqlCommand("insert into ConnectRequest(Sender,Recipient)values(@Sender,@Recipient)", con);
-                
-                cmd.Parameters.AddWithValue("@Recipient",StudentNumber);
+
+                cmd.Parameters.AddWithValue("@Recipient", StudentNumber);
                 cmd.Parameters.AddWithValue("@Sender", (string)Session["studentnumber"]);
 
                 cmd.ExecuteNonQuery();
@@ -88,6 +133,6 @@ namespace StudentConnect_Project
             }
         }
 
-        
+
     }
 }

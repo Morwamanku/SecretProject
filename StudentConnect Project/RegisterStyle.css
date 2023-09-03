@@ -85,7 +85,7 @@ body {
         }
 
             .wrapper .header ul li {
-                margin-right: 50px;
+                margin-right: 20px;
                 position: relative;
             }
 
@@ -330,6 +330,19 @@ body {
 
 @media(max-width: 450px) {
     .wrapper {
-        width: 400px;
+        width: 330px;
+        margin: auto;
+        margin-top: 20px;
+    }
+
+        .wrapper .form_wrap .input_wrap {
+            width: 250px;
+           
+            
+        }
+
+    .flexformwrap {
+        display: flex;
+        flex-direction: column;
     }
 }
