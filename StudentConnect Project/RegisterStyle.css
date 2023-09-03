@@ -134,6 +134,7 @@ body {
     .wrapper .form_wrap {
         margin-bottom: 35px;
         margin-top: 80px;
+      
     
     }
 
@@ -307,6 +308,12 @@ body {
             transform: translate(-50%,-50%);
         }
 
+.LoginImage{
+    width:160px;
+    align-items:center;
+    display:none;
+}
+
 @media(max-width: 860px) {
     .signup-image img {
         display: none;
@@ -319,10 +326,20 @@ body {
     
     }
 
+        .wrapper .form_wrap {
+            
+            margin-top: 0px;
+        }
+
 
 
     .signup-image  {
         display: none
+    }
+
+    .LoginImage {
+        margin-inline: auto;
+        display: block;
     }
 
     

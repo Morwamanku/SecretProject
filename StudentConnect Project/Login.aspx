@@ -24,6 +24,7 @@
 	<div class="flexformwrap">
 		<div class="form_wrap">
 		<div class="form_1 data_info">
+            <img src="Signupimages/our logo.jpg" class="LoginImage" alt="Alternate Text" />
 			<h2>Login</h2>
 			
 				<div class="form_container">
