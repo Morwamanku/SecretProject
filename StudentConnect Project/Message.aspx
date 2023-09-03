@@ -124,7 +124,7 @@
     <!--search_bar-->
     <div class="search_chat">
         <div>
-            <input type="text" style="min-width:400px;" placeholder="Search or start new chat" />
+            <input type="text" style="min-width:300px;" placeholder="Search or start new chat" />
           
       </div>
         <ion-icon name="search-outline"></ion-icon>
@@ -170,7 +170,7 @@
                 <asp:Label ID="Label1" runat="server" class="ConnectConfirmed_ID" Text='<%# Eval("ConfirmedID") %>'></asp:Label>
                     <div class="message-flex">
  
-                        <asp:TextBox ID="TextBox1" CssClass="text-box" runat="server"></asp:TextBox>
+                        <asp:TextBox ID="messageTextBox2" CssClass="text-box" runat="server"></asp:TextBox>
     
                         <div class="send-btn">
                             <%--<asp:Button ID="SButton" class="submit-button" AutoPostBack="True" runat="server" CausesValidation="True" Text="" OnClick="SButton_Click" />--%>

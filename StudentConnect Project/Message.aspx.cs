@@ -124,7 +124,7 @@ namespace StudentConnect_Project
                 SqlCommand cmd = new SqlCommand("insert into messages(ConfirmedID,Student,message)values(@ConfirmedID,@Student,@message)", con);
                 cmd.Parameters.AddWithValue("@ConfirmedID", (string)Session["MessageConfirmID"]);
                 cmd.Parameters.AddWithValue("@Student", (string)Session["studentnumber"]);
-                cmd.Parameters.AddWithValue("@message", messageTextBox.Text.Trim());
+                cmd.Parameters.AddWithValue("@message", messageTextBox2.Text.Trim());
 
                 cmd.ExecuteNonQuery();
                 con.Close();
