@@ -150,7 +150,7 @@
         </asp:Repeater>
 
     </div>
-    <div class="right-container" style="margin:0px; height:460px; position: relative; overflow-y:scroll;">
+    <div class="right-container" style="margin:0px; height:530px; position: relative; overflow-y:scroll;">
         <asp:Repeater ID="InboxRepeater2" runat="server">
             <ItemTemplate>
                 <div class="message-wrapper">
