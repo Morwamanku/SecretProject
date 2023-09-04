@@ -128,7 +128,6 @@
     <Content Include="ProfileImage\Ciara.jpg" />
     <Content Include="ProfileImage\Dave.jpg" />
     <Content Include="ProfileImage\e71c3363adce9157cb0ddfcc906ef882.jpg" />
-    <Content Include="ProfileImage\Exercise2 Q1.png" />
     <Content Include="ProfileImage\f31824286a34bb74d23a2624008fa336.jpg" />
     <Content Include="ProfileImage\Fred.jpg" />
     <Content Include="ProfileImage\harry.jpg" />
@@ -148,6 +147,7 @@
     <Content Include="ProfileImage\Lerato.jpg" />
     <Content Include="ProfileImage\Lesiba.jpg" />
     <Content Include="ProfileImage\Logan.jpeg" />
+    <Content Include="ProfileImage\Mayibuye.jpg" />
     <Content Include="ProfileImage\Me photo.jpg" />
     <Content Include="ProfileImage\Molemoo.jpg" />
     <Content Include="ProfileImage\Mpati.jpg" />
@@ -169,8 +169,6 @@
     <Content Include="ProfileImage\Tshiamo.jpg" />
     <Content Include="ProfileImage\Tumi.jpg" />
     <Content Include="ProfileImage\Unathi.jpg" />
-    <Content Include="ProfileImage\WeddingPhoto.jpg" />
-    <Content Include="ProfileImage\WhatsApp Image 2023-02-18 at 12.36.25.jpg" />
     <Content Include="ProfileImage\Yaza.jpg" />
     <Content Include="RegisreScript.js" />
     <Content Include="Register.aspx" />
@@ -340,7 +338,6 @@
     </None>
     <None Include="packages.config" />
     <Content Include="Site1.Master" />
-    <Content Include="ProfileImage\Morwamanku Lease.pdf" />
     <None Include="Properties\PublishProfiles\StudentConnect - Web Deploy.pubxml" />
     <None Include="Properties\PublishProfiles\StudentConnection - Web Deploy.pubxml" />
     <None Include="Web.Debug.config">
