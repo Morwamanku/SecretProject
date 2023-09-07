@@ -138,7 +138,13 @@
     </div>
     <!--chat list-->
     <div class="Topright" style="border-radius:0px;">
-
+        <div class="userimage">
+    <asp:FormView ID="FormView2" runat="server">
+        <ItemTemplate>
+             <asp:Image ID="Image1" runat="server" ImageUrl='<%# Eval("image") %>' Width="50" />
+        </ItemTemplate>
+    </asp:FormView>
+</div>
     </div>
     
     <div class="chatlist2">
@@ -160,7 +166,7 @@
         </asp:Repeater>
 
     </div>
-    <div class="right-container" style="margin:0px; height: 410px; position: relative; overflow-y:scroll;">
+    <div class="right-container" style="margin:0px; height: 460px; position: relative; overflow-y:scroll;">
         <asp:Repeater ID="InboxRepeater2" runat="server">
             <ItemTemplate>
                 <div class="message-wrapper">

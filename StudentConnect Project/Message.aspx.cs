@@ -61,12 +61,18 @@ namespace StudentConnect_Project
 
                 SqlConnection con2 = new SqlConnection(strcon);
                 SqlCommand cmd5 = new SqlCommand(query3, con2);
-
+                SqlCommand cmd6 = new SqlCommand(query3, con2);
                 con2.Open();
                 SqlDataReader reader5 = cmd5.ExecuteReader();
                 FormView1.DataSource = reader5;
                 FormView1.DataBind();
-                con.Close();
+                con2.Close();
+
+                con2.Open();
+                SqlDataReader reader6 = cmd6.ExecuteReader();
+                FormView2.DataSource = reader6;
+                FormView2.DataBind();
+                con2.Close();
             }
 
         }
