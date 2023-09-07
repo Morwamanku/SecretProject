@@ -19,8 +19,17 @@
 }
 
 .right-container {
-    position:absolute;
-    margin: 80px 30px;
+    height: 500px;
+    margin: 0px 30px;
+    overflow-y: auto;
+}
+
+.userimage {
+    position: relative;
+    width: 40px;
+    height: 40px;
+    overflow: hidden;
+    border-radius: 60%;
 }
 
 
@@ -66,20 +75,21 @@
     }
 
 .text-box {
-    min-width: 280px;
+    width: 100%;
     background: white;
     height: 40px;
     border-radius: 25px;
     z-index: 1;
+    display: inline-block;
 }
 .input-text {
     
-    margin: 540px 17px;
+    
     
 }
 
 .submit-button {
-    position: absolute;
+  
     width: 80px;
     background: antiquewhite;
     height: 40px;
@@ -105,7 +115,7 @@
 
 body {
     min-height: 100vh;
-    background: url(pexels-aleksandar-pasaric-4505907.jpg);
+    background: url(Images/43939.jpg);
 }
 
 .btn ul li a .icon {
@@ -211,12 +221,21 @@ body {
         margin-left: 22px;
     }
 
+
+.Topright {
+    display: block;
+    width: 100%;
+    height: 50px;
+    background: #ededed;
+    border-radius: 0px 25px 0px 0px;
+}
+
 .search_chat {
     position: relative;
     width: 100%;
-    height: 50px;
+    height: 60px;
     background: #f6f6f6;
-    display: flex;
+    
     justify-content: left;
     align-items: center;
     padding: 0 15px;
@@ -232,6 +251,8 @@ body {
         border-radius: 30px;
         font-size: 14px;
         padding-left: 15px;
+        display:inline-block;
+        width:100%;
     }
 
         .search_chat div input::placeholder {
@@ -258,6 +279,7 @@ body {
     position: relative;
     overflow-y: auto;
     display: flex;
+    height: 80px;
 }
 
 .Phoneviewcontainer {
@@ -386,10 +408,7 @@ body {
         display:none;
     }
 
-    .input-text {
-        margin: 0px;
-        position: absolute;
-    }
+    
 
     .right-container {
         position: absolute;

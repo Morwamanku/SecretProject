@@ -93,6 +93,7 @@
     <Content Include="Content\style.css" />
     <Content Include="DashboardStyle.css" />
     <Content Include="ForgotPassword.aspx" />
+    <Content Include="Images\43939.jpg" />
     <Content Include="Images\4K Photo.jpg" />
     <Content Include="Images\camera-symbol-icon-25.png" />
     <Content Include="Images\signup-img.jpg" />

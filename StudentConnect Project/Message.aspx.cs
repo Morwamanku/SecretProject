@@ -57,6 +57,16 @@ namespace StudentConnect_Project
                 con.Close();
 
 
+                string query3 = string.Format("select image from Student  left join messages on Student.StudentNumber=messages.Student where ConfirmedID='" + (string)Session["MessageConfirmID"] + "' and  NOT StudentNumber='" + (string)Session["studentnumber"] + "' ");
+
+                SqlConnection con2 = new SqlConnection(strcon);
+                SqlCommand cmd5 = new SqlCommand(query3, con2);
+
+                con2.Open();
+                SqlDataReader reader5 = cmd5.ExecuteReader();
+                FormView1.DataSource = reader5;
+                FormView1.DataBind();
+                con.Close();
             }
 
         }
@@ -98,6 +108,11 @@ namespace StudentConnect_Project
             string MessageConfirmID = ((Label)item.FindControl("ConnectConfirmed_IDLabel")).Text;
             Session["MessageConfirmID"] = MessageConfirmID;
             Response.Redirect("Message.aspx");
+
+        
+           
+                
+           
         }
 
         

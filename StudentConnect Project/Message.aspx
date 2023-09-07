@@ -11,9 +11,7 @@
 </head>
 <body>
      
-    <video autoplay loop muted plays-inline class="back-video">
-            <source src="Background-video/Spacy.mp4" type="video/mp4" />
-        </video>
+ 
     
     <form id="form1" runat="server">
          
@@ -39,7 +37,7 @@
                     <input type="text" placeholder="Search or start new chat" />
                   
               </div>
-                <ion-icon name="search-outline"></ion-icon>
+               
             </div>
             <!--chat list-->
             
@@ -68,6 +66,15 @@
 
 
         <div class="rightside">
+            <div class="Topright">
+                <div class="userimage">
+                    <asp:FormView ID="FormView1" runat="server">
+                        <ItemTemplate>
+                             <asp:Image ID="Image1" runat="server" ImageUrl='<%# Eval("image") %>' Width="50" />
+                        </ItemTemplate>
+                    </asp:FormView>
+                </div>
+            </div>
             <div class="right-container">
                 <asp:Repeater ID="InboxRepeater" runat="server">
                 <ItemTemplate>
@@ -93,10 +100,10 @@
              
                         <asp:TextBox ID="messageTextBox" CssClass="text-box" runat="server"></asp:TextBox>
                         
-                        <div class="send-btn">
-                            <asp:Button ID="SButton" class="submit-button" AutoPostBack="True" runat="server" CausesValidation="True" Text="" OnClick="SButton_Click" />
+                        
+                            <asp:Button ID="SButton" class="submit-button" AutoPostBack="True" runat="server" CausesValidation="True" Text="SEND" OnClick="SButton_Click" />
                             <i class="fa fa-paper-plane" aria-hidden="true"></i>
-                        </div>
+                        
                     </div>                  
 
 
@@ -107,7 +114,7 @@
     </div>
 
         <div class="Phoneviewcontainer">
-    <div class="header">
+    <div class="header" style="border-radius:0px;">
         <div class="userimg">
             <img src="ProfileImage/Me photo.jpg" class="cover" />
         </div>
@@ -124,12 +131,15 @@
     <!--search_bar-->
     <div class="search_chat">
         <div>
-            <input type="text" style="min-width:300px;" placeholder="Search or start new chat" />
+            <input type="text" style="margin-top:10px;" placeholder="Search or start new chat" />
           
       </div>
-        <ion-icon name="search-outline"></ion-icon>
+        
     </div>
     <!--chat list-->
+    <div class="Topright" style="border-radius:0px;">
+
+    </div>
     
     <div class="chatlist2">
         <asp:Repeater ID="ChataRepeater2" runat="server">
@@ -150,7 +160,7 @@
         </asp:Repeater>
 
     </div>
-    <div class="right-container" style="margin:0px; height:530px; position: relative; overflow-y:scroll;">
+    <div class="right-container" style="margin:0px; height: 410px; position: relative; overflow-y:scroll;">
         <asp:Repeater ID="InboxRepeater2" runat="server">
             <ItemTemplate>
                 <div class="message-wrapper">
