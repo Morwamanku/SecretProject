@@ -68,6 +68,31 @@ body {
     flex-wrap: nowrap;
 }
 
+.icon2 {
+    position: relative;
+    display: none;
+    min-width: 60px;
+    height: 30px;
+    line-height: 67px;
+    text-align: right;
+    margin-left: 150px;
+}
+
+.navigationclose {
+    width: 100%;
+    background: yellow;
+    height: 100vh;
+    z-index: 1;
+    position: absolute;
+}
+
+.icon2.active{
+    display:none;
+}
+
+.icon2 ion-icon {
+    font-size: 1.65rem;
+}
 
 .navigation {
     position: fixed;
@@ -107,9 +132,10 @@ body {
                 background: var(--white);
             }
 
-            .navigation ul li:nth-child(1) {
+            .navigation ul li:nth-child(2) {
                 margin-bottom: 40px;
                 pointer-events: none;
+
             }
 
             .navigation ul li a {
@@ -1134,9 +1160,7 @@ body {
             visibility: inherit;
         }
 
-        .navigation ul li a .title {
-            display: none;
-        }
+        
 
     .container-wrapper {
         margin-left: 0px;
@@ -1202,4 +1226,9 @@ body {
     .navigation {
         display: none;
     }
+
+    .icon2.active {
+        display: block;
+    }
+
 }

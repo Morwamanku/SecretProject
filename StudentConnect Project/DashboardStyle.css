@@ -490,9 +490,16 @@ body {
     }
 
     .navigation.active {
-        width: 80px;
-        margin-right: 20px;
+        width: 230px;
+        height: 100%;
         visibility: inherit;
+        position: fixed;
+        z-index: 1;
+        margin: 0;
+    }
+
+    .Left-Navigation ul li a .title {
+        display: block;
     }
 
 

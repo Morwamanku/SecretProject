@@ -65,18 +65,22 @@
       </div>
       <div class="text">Loading...</div>
     </div>
-    <div class="back-video">
-                <source src="Background-video/Spacy.mp4" type="video/mp4" />
-            </div>
+  
 
     <form id="form1" runat="server">
         
-        <div class="container-wrapper "  >
-            <div class="navigation">
+        <div class="container-wrapper"  >
+            <div class="navigation" >
                 <ul>
                     <li>
                         <a href="#">
-                            <span class="icon"><ion-icon name="logo-apple-ar"></ion-icon></span>
+                            <span class="icon2"><ion-icon name="close-outline"></ion-icon></span>
+    
+                        </a>  
+                    </li>
+                    <li >
+                        <a href="#">
+                            <span class="icon" ><ion-icon name="logo-apple-ar"></ion-icon></span>
                             <span class="title">Student Connect</span>
                             
                         </a>
@@ -112,7 +116,7 @@
 
                     <li>
                         <a href="Blocked.aspx">
-                            <span class="icon"><ion-icon name="close-outline"></ion-icon></span>
+                            <span class="icon"><ion-icon name="ban-outline"></ion-icon></span>
                             <span class="title">Blocked</span>                
                         </a>
                     </li>
@@ -254,7 +258,18 @@
     
     <script>
              swup = new Swup();
-   
+        let navigationclose = document.getElementById("navigationclose");
+
+        
+
+        function removenavigation() {
+            navigation.classList.remove("active");
+            main.classList.remove('active');
+            LeftNavigation.classList.remove('active');
+            LeftNavigation2.classList.remove('active');
+            row.classList.remove('active');
+            flexfilter.classList.remove('active');
+        }
 
         let toggle = document.querySelector('.toggle');
         let navigation = document.querySelector('.navigation');
@@ -263,7 +278,12 @@
         let LeftNavigation2 = document.querySelector('.Left-Navigation2');
         let row = document.querySelector('.row');
         let flexfilter = document.querySelector('.flex-filter');
+        let icon2 = document.querySelector('.icon2')
+        
 
+
+     
+        
 
         toggle.onclick = function () {
             navigation.classList.toggle('active');
@@ -272,7 +292,11 @@
             LeftNavigation2.classList.toggle('active');
             row.classList.toggle('active');
             flexfilter.classList.toggle('active');
+            icon2.classList.toggle('active');
         }
+
+     
+
     
 
         let list = document.querySelectorAll('.navigation li');
