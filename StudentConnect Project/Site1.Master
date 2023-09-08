@@ -151,28 +151,28 @@
                         </a>
                     </li>
 
-                    <li class="Phoneview-li">
+                    <li>
                         <a href="Advertise.aspx">
                             <span class="icon"><ion-icon name="rocket-outline"></ion-icon></span>
                             <span class="title">Advertise</span> 
     
                         </a>
                     </li>           
-                    <li class="Phoneview-li">
+                    <li>
                         <a href="Marketplace.aspx">
                             <span class="icon"><ion-icon name="earth-outline"></ion-icon></span>
                             <span class="title">Market Place</span>
     
                         </a>
                     </li>
-                    <li class="Phoneview-li">
+                    <li>
                         <a href="#">
                             <span class="icon"><ion-icon name="school-outline"></ion-icon></span>
                             <span class="title">Tutoring</span>
     
                         </a>
                     </li>
-                    <li class="Phoneview-li">
+                    <li>
                         <a href="#">
                             <span class="icon"><ion-icon name="ribbon-outline"></ion-icon></span>
                             <span class="title">Bursury</span>                
