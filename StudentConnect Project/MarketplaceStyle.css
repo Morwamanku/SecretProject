@@ -248,3 +248,11 @@
         display: none;
     }
 }
+
+@media(max-width: 480px) {
+   
+
+    .Left-Navigation2 {
+        display: none;
+    }
+}
