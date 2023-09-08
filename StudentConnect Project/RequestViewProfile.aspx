@@ -159,7 +159,7 @@
         }
   }
 </style>
-    <div class="bodywrapper" id="bodywrapper"></div>
+    <div class="bodywrapper" id="bodywrapper" onclick="removenavigation()"></div>
     <asp:FormView ID="FormView1" runat="server">
         <ItemTemplate>
             <div class="flex-wrapper">

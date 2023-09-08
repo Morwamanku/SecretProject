@@ -161,10 +161,10 @@
             }
       }
     </style>
-    <div class="bodywrapper" id="bodywrapper"></div>
+    <div class="bodywrapper" id="bodywrapper" ></div>
     <asp:FormView ID="FormView1" runat="server" OnPageIndexChanging="FormView1_PageIndexChanging">
         <ItemTemplate>
-            <div class="flex-wrapper">
+            <div class="flex-wrapper" onclick="removenavigation()">
                 <div class="Profile-image">
                     <asp:ImageButton ID="Image1" class="img-fluid" runat="server" ImageUrl='<%# Eval("image") %>' Height="460px" object-fit="cover"   />
                 </div>

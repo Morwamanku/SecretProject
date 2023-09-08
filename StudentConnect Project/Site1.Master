@@ -150,7 +150,34 @@
                             <span class="title">Sign Out </span>                
                         </a>
                     </li>
-                    
+
+                    <li class="Phoneview-li">
+                        <a href="Advertise.aspx">
+                            <span class="icon"><ion-icon name="rocket-outline"></ion-icon></span>
+                            <span class="title">Advertise</span> 
+    
+                        </a>
+                    </li>           
+                    <li class="Phoneview-li">
+                        <a href="Marketplace.aspx">
+                            <span class="icon"><ion-icon name="earth-outline"></ion-icon></span>
+                            <span class="title">Market Place</span>
+    
+                        </a>
+                    </li>
+                    <li class="Phoneview-li">
+                        <a href="#">
+                            <span class="icon"><ion-icon name="school-outline"></ion-icon></span>
+                            <span class="title">Tutoring</span>
+    
+                        </a>
+                    </li>
+                    <li class="Phoneview-li">
+                        <a href="#">
+                            <span class="icon"><ion-icon name="ribbon-outline"></ion-icon></span>
+                            <span class="title">Bursury</span>                
+                        </a>
+                    </li> 
                 </ul>
             </div>
             
@@ -257,7 +284,7 @@
     <script nomodule src="https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.js"></script>
     
     <script>
-             swup = new Swup();
+           
         let navigationclose = document.getElementById("navigationclose");
 
         

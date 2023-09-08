@@ -205,6 +205,10 @@ body {
                 white-space: nowrap;
             }
 
+.Phoneview-li{
+    display:none;
+}
+
 .Left-Navigation {
     width: 200px;
     height: 500px;
@@ -1231,4 +1235,22 @@ body {
         display: block;
     }
 
+}
+
+@media (max-width: 480px) {
+    .navigation.active {
+        width: 230px;
+        height: 100%;
+        visibility: inherit;
+        position: fixed;
+        z-index: 1;
+        margin: 0;
+        border-radius: 0px;
+    }
+
+    .Phoneview-li {
+        display: none;
+    }
+
+   
 }

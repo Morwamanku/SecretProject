@@ -67,7 +67,7 @@
 
         }
     </style>
-<div class="setting-container p-0">
+<div class="setting-container p-0" onclick="removenavigation()">
     <div class="setting-row">
         <div class="col-md-5 col-xl-4">
 
