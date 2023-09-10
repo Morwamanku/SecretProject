@@ -48,6 +48,7 @@
 .Profile-container p {
     margin: 10px;
     color: darkslategrey;
+    font-weight: 700;
 }
 
 .Profile-container .content {
