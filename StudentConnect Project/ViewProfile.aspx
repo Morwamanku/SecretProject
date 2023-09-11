@@ -214,7 +214,7 @@
                    <h1><asp:Label ID="Label1" runat="server"  Text='<%# Eval("Firstname") %>'></asp:Label>
                        <asp:Label ID="Label2" runat="server" Text='<%# Eval("Surname") %>'></asp:Label>
                    </h1>
-                    <p>Im a cool dude that loves good food. I love technology. I would love be a software egineer and work for Amazon one day. I like cars and sports such as UFC </p>
+                    <p style="height: 90px;">Im a cool dude that loves good food. I love technology. I would love be a software egineer and work for Amazon one day. I like cars and sports such as UFC </p>
                     <div class="content">
                         <p>StudentNumber:<asp:Label ID="StudentNumberLabel" runat="server"  Text='<%# Eval("StudentNumber") %>'></asp:Label></p>
                         <p>Name:<asp:Label ID="FirstnameLabel" runat="server"  Text='<%# Eval("Firstname") %>'></asp:Label></p>

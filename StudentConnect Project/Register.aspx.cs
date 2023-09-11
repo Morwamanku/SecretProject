@@ -8,6 +8,7 @@ using System.Web.UI;
 using System.Web.UI.WebControls;
 using System.IO;
 using System.Configuration;
+using BCrypt.Net;
 
 namespace StudentConnect_Project
 {
@@ -51,6 +52,14 @@ namespace StudentConnect_Project
 
         void signUpNewMember()
         {
+
+
+            string salt = BCrypt.Net.BCrypt.GenerateSalt(12); // You can adjust the salt's work factor (12 is a good starting point)
+
+            // Hash the password with the salt
+            string hashedPassword = BCrypt.Net.BCrypt.HashPassword(Passwordtxt.Text.Trim(), salt);
+
+
             //Response.Write("<script>alert('Testing');</script>");
             try
             {
@@ -71,7 +80,7 @@ namespace StudentConnect_Project
                 cmd.Parameters.AddWithValue("@Surname", Surnametxt.Text.Trim());
                 cmd.Parameters.AddWithValue("@Gender", GenderList.SelectedItem.Value);
                 cmd.Parameters.AddWithValue("@Hometown", HometownList.SelectedItem.Value);
-                cmd.Parameters.AddWithValue("@Password", Passwordtxt.Text.Trim());
+                cmd.Parameters.AddWithValue("@Password", hashedPassword); // Store the hashed password
                 cmd.Parameters.AddWithValue("@image", filepath);
                 cmd.Parameters.AddWithValue("@UniversityName", UniversityIDList.SelectedItem.Value);
                 cmd.Parameters.AddWithValue("@QualificationName", ddlDegree.SelectedItem.Value);

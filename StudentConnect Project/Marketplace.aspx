@@ -13,9 +13,12 @@
                             <div class="card">
                               <div class="bg">
                                   <div class="card-image">
-                                    
-                                        <asp:ImageButton ID="Image1" class="img-fluid" runat="server" ImageUrl='<%# Eval("Productimage") %>' Width="100%" Height="340px"  object-fit="cover" />
+                                        <asp:ImageButton ID="Image1" class="img-fluid" runat="server" ImageUrl='<%# Eval("Productimage") %>' Width="100%" Height="340px"  object-fit="cover" OnClick="Image1_Click" />
+                                        
                                     </div>
+                                  <div class="Card-Studentnumber">
+                                    <asp:Label ID="StudentLabel" runat="server" class="StudentNumber" Text='<%# Eval("Student") %>'></asp:Label>
+                                  </div>
                               </div>
                               <div class="blob"></div>
                             </div>

@@ -9,34 +9,28 @@ using System.Web.UI.WebControls;
 
 namespace StudentConnect_Project
 {
-    public partial class WebForm3 : System.Web.UI.Page
+    public partial class WebForm10 : System.Web.UI.Page
     {
         string strcon = ConfigurationManager.ConnectionStrings["con"].ConnectionString;
         protected void Page_Load(object sender, EventArgs e)
         {
             if (!IsPostBack)
             {
-                string query = string.Format("select Student,Productimage from Product");
+                string query = string.Format("select Student,CategoryName,Product,Productimage,Price,ProductDescription from Product Where Student ='" + (string)Session["profilestudent"] + "'");
 
                 SqlConnection con = new SqlConnection(strcon);
                 SqlCommand cmd = new SqlCommand(query, con);
 
                 con.Open();
                 SqlDataReader reader = cmd.ExecuteReader();
-                MarketPlaceRepeater.DataSource = reader;
-                MarketPlaceRepeater.DataBind();
+
+                FormView1.DataSource = reader;
+                FormView1.DataBind();
                 con.Close();
+
+
+
             }
-        }
-
-        protected void Image1_Click(object sender, ImageClickEventArgs e)
-        {
-            ImageButton btn = (ImageButton)sender;
-            RepeaterItem item = (RepeaterItem)btn.NamingContainer;
-
-            string ProfileStudent = ((Label)item.FindControl("StudentLabel")).Text;
-            Session["profilestudent"] = ProfileStudent;
-            Response.Redirect("ViewProduct.aspx");
         }
     }
 }

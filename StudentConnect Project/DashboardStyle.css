@@ -1,5 +1,4 @@
 ﻿/* Importing fonts from Google */
-@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700;800;900&display=swap');
 
 /* Reseting */
 * {
@@ -496,6 +495,7 @@ body {
         position: fixed;
         z-index: 1;
         margin: 0;
+        overflow-y:auto;
     }
 
     .Left-Navigation ul li a .title {

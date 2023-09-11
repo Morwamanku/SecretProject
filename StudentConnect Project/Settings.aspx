@@ -51,10 +51,11 @@
             }
           
             .setting-row {
-                margin-left: 70px;
+             
                 flex-wrap: wrap;
                 flex-direction: column;
-                justify-content:space-around
+                justify-content:center;
+                margin-inline:auto;
             }
 
             .card-options{
@@ -71,7 +72,7 @@
     <div class="setting-row">
         <div class="col-md-5 col-xl-4">
 
-            <div class="card-options" style="border-radius:25px; width: 300px; margin-bottom:30px;">
+            <div class="card-options" style="border-radius:25px; width: 300px; margin-bottom:30px;justify-content: center;margin-inline: auto;">
                 <div class="card-header">
                     <h5 class="card-title mb-0">Profile Settings</h5>
                 </div>
@@ -109,7 +110,7 @@
             <div class="tab-content">
                 <div class="tab-pane fade show active" id="account" role="tabpanel">
 
-                    <div class="card" style="border-radius: 25px; min-width: 300px;">
+                    <div class="card" style="border-radius: 25px; min-width: 300px; justify-content: center;margin-inline: auto;">
                         <div class="card-header">
                             <div class="card-actions float-right">
                                 <div class="dropdown show">
@@ -164,7 +165,7 @@
                         </div>
                     </div>
 
-                    <div class="card" style="border-radius: 25px; min-width: 300px;">
+                    <div class="card" style="border-radius: 25px; min-width: 300px;justify-content: center;margin-inline: auto;">
                         <div class="card-header">
                             <div class="card-actions float-right">
                                 <div class="dropdown show">
@@ -359,7 +360,7 @@
 
                 </div>
                 <div class="tab-pane fade" id="password" role="tabpanel">
-                    <div class="card" style="border-radius: 25px; width:300px;">
+                    <div class="card" style="border-radius: 25px; width:300px;justify-content: center;margin-inline: auto;">
                         <div class="card-body">
                             <h5 class="card-title">Password</h5>
 
@@ -384,7 +385,7 @@
                     </div>
                 </div>
                 <div class="tab-pane fade" id="privacy and safety" role="tabpanel">
-                    <div class="card" style="border-radius: 25px; width:300px;">
+                    <div class="card" style="border-radius: 25px; width:300px;justify-content: center;margin-inline: auto;">
                         <div class="card-body">
                             <h5 class="card-title">Privacy and safety</h5>
                                
@@ -393,7 +394,7 @@
                     </div>
                 </div>
                 <div class="tab-pane fade" id="email notifications" role="tabpanel">
-                    <div class="card" style="border-radius: 25px; width:300px;">
+                    <div class="card" style="border-radius: 25px; width:300px;justify-content: center;margin-inline: auto;">
                         <div class="card-body">
                             <h5 class="card-title">email notifications</h5>
                
@@ -402,7 +403,7 @@
                     </div>
                 </div>
                 <div class="tab-pane fade" id="web notifications" role="tabpanel">
-                    <div class="card" style="border-radius: 25px; width:400px;">
+                    <div class="card" style="border-radius: 25px; width:400px;justify-content: center;margin-inline: auto;">
                         <div class="card-body">
                             <h5 class="card-title">web notifications</h5>
                

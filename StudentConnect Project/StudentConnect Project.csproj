@@ -46,6 +46,9 @@
     <WarningLevel>4</WarningLevel>
   </PropertyGroup>
   <ItemGroup>
+    <Reference Include="BCrypt.Net, Version=0.1.4141.31969, Culture=neutral, PublicKeyToken=f3bc8f8c31beeb49, processorArchitecture=MSIL">
+      <HintPath>..\packages\BCrypt.Net.0.1.0\lib\net35\BCrypt.Net.dll</HintPath>
+    </Reference>
     <Reference Include="Microsoft.CSharp" />
     <Reference Include="System.IO" />
     <Reference Include="System.Net.Http" />
@@ -195,6 +198,7 @@
     <Content Include="RequestViewProfile.aspx" />
     <Content Include="Settings.aspx" />
     <Content Include="Marketplace.aspx" />
+    <Content Include="ViewProduct.aspx" />
   </ItemGroup>
   <ItemGroup>
     <Compile Include="Advertise.aspx.cs">
@@ -323,6 +327,13 @@
     </Compile>
     <Compile Include="Marketplace.aspx.designer.cs">
       <DependentUpon>Marketplace.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="ViewProduct.aspx.cs">
+      <DependentUpon>ViewProduct.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="ViewProduct.aspx.designer.cs">
+      <DependentUpon>ViewProduct.aspx</DependentUpon>
     </Compile>
   </ItemGroup>
   <ItemGroup>

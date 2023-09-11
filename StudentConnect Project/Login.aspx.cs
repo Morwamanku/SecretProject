@@ -32,26 +32,38 @@ namespace StudentConnect_Project
                 if (con.State == ConnectionState.Closed)
                 {
                     con.Open();
-
                 }
-                SqlCommand cmd = new SqlCommand("SELECT * FROM Student WHERE StudentNumber='" + studentnumbertxt.Text.Trim() + "' AND Password='" + Passwordtxt.Text.Trim() + "'", con);
+
+                SqlCommand cmd = new SqlCommand("SELECT Password, image, Firstname FROM Student WHERE StudentNumber=@StudentNumber", con);
+                cmd.Parameters.AddWithValue("@StudentNumber", StudentNumber);
                 SqlDataReader dr = cmd.ExecuteReader();
-                if (dr.HasRows)
+
+                if (dr.Read())
                 {
-                    while (dr.Read())
+                    string hashedPasswordFromDatabase = dr["Password"].ToString();
+                    string userEnteredPassword = Passwordtxt.Text.Trim();
+
+                    if (BCrypt.Net.BCrypt.Verify(userEnteredPassword, hashedPasswordFromDatabase))
                     {
-                        Response.Write("<script>alert('" + dr.GetValue(0).ToString() + "');</script>");
-                        Session["image"] = dr.GetValue(6).ToString();
-                        Session["Firstname"] = dr.GetValue(1).ToString();
-                        Session[""] = dr.GetValue(1).ToString();
+                        // Passwords match - login successful
+                        Session["image"] = dr["image"].ToString();
+                        Session["Firstname"] = dr["Firstname"].ToString();
+                        Response.Redirect("Dashboard.aspx");
                     }
-                    Response.Redirect("Dashboard.aspx");
+                    else
+                    {
+                        // Passwords do not match
+                        Response.Write("<script>alert('Invalid credentials');</script>");
+                    }
                 }
                 else
                 {
+                    // No user with the provided StudentNumber found
                     Response.Write("<script>alert('Invalid credentials');</script>");
                 }
 
+                dr.Close();
+                con.Close();
             }
             catch (Exception ex)
             {
