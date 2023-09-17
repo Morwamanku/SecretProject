@@ -86,6 +86,8 @@
     <Content Include="Background-video\solar_system %28720p%29.mp4" />
     <Content Include="Background-video\Spacy.mp4" />
     <Content Include="Background-video\video %282160p%29.mp4" />
+    <Content Include="BursaryImage\Absa.jpg" />
+    <Content Include="BursaryImage\BBD.png" />
     <Content Include="Chat.aspx" />
     <Content Include="Content\bootstrap-grid.css" />
     <Content Include="Content\bootstrap-grid.min.css" />
@@ -199,6 +201,8 @@
     <Content Include="Settings.aspx" />
     <Content Include="Marketplace.aspx" />
     <Content Include="ViewProduct.aspx" />
+    <Content Include="Bursary.aspx" />
+    <Content Include="ViewBursary.aspx" />
   </ItemGroup>
   <ItemGroup>
     <Compile Include="Advertise.aspx.cs">
@@ -334,6 +338,20 @@
     </Compile>
     <Compile Include="ViewProduct.aspx.designer.cs">
       <DependentUpon>ViewProduct.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Bursary.aspx.cs">
+      <DependentUpon>Bursary.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Bursary.aspx.designer.cs">
+      <DependentUpon>Bursary.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="ViewBursary.aspx.cs">
+      <DependentUpon>ViewBursary.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="ViewBursary.aspx.designer.cs">
+      <DependentUpon>ViewBursary.aspx</DependentUpon>
     </Compile>
   </ItemGroup>
   <ItemGroup>

@@ -173,7 +173,7 @@
                         </a>
                     </li>
                     <li>
-                        <a href="#">
+                        <a href="Bursary.aspx">
                             <span class="icon"><ion-icon name="ribbon-outline"></ion-icon></span>
                             <span class="title">Bursury</span>                
                         </a>
@@ -267,7 +267,7 @@
                         </li>
 
                         <li>
-                            <a href="#">
+                            <a href="Bursary.aspx">
                                 <span class="icon"><ion-icon name="ribbon-outline"></ion-icon></span>
                                 <span class="title">Bursury</span>                
                             </a>

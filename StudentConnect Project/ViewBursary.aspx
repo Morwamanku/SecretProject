@@ -1,34 +1,35 @@
-﻿<%@ Page Title="" Language="C#" MasterPageFile="~/Site1.Master" AutoEventWireup="true" CodeBehind="ViewProduct.aspx.cs" Inherits="StudentConnect_Project.WebForm10" %>
+﻿<%@ Page Title="" Language="C#" MasterPageFile="~/Site1.Master" AutoEventWireup="true" CodeBehind="ViewBursary.aspx.cs" Inherits="StudentConnect_Project.WebForm12" %>
 <asp:Content ID="Content1" ContentPlaceHolderID="head" runat="server">
     <link href="ViewProfileStyle.css" rel="stylesheet" />
 </asp:Content>
-
 <asp:Content ID="Content2" ContentPlaceHolderID="ContentPlaceHolder1" runat="server">
-    <div class="bodywrapper" id="bodywrapper" ></div>
-<asp:FormView ID="FormView1" runat="server" OnPageIndexChanging="FormView1_PageIndexChanging" >
+        <div class="bodywrapper" id="bodywrapper" ></div>
+<asp:FormView ID="FormView1" runat="server"  >
     <ItemTemplate>
         <div class="flex-wrapper" onclick="removenavigation()">
             <div class="Profile-image">
-                <asp:ImageButton ID="Image1" class="img-fluid" runat="server" ImageUrl='<%# Eval("Productimage") %>' Height="460px" object-fit="cover"   />
+                <asp:ImageButton ID="Image1" class="img-fluid" runat="server" ImageUrl='<%# Eval("BursaryImage") %>' Height="460px" object-fit="cover"   />
             </div>
             <div class="Profile-container ">
               
                   
 
-               <h1><asp:Label ID="Label1" runat="server"  Text='<%# Eval("Product") %>'></asp:Label>
+               <h1><asp:Label ID="Label1" runat="server"  Text='<%# Eval("BursaryName") %>'></asp:Label>
                   
                </h1>
-                <p><asp:Label ID="ProductDescriptionLabel2" runat="server"  Text='<%# Eval("ProductDescription") %>'></asp:Label></p>
+                <p><asp:Label ID="BursaryDescriptionLabel" runat="server"  Text='<%# Eval("Description") %>'></asp:Label></p>
                 <div class="content">
-                    <p>StudentNumber:<asp:Label ID="StudentNumberLabel" runat="server"  Text='<%# Eval("Student") %>'></asp:Label></p>
-                    <p>Category:<asp:Label ID="CategoryLabel" runat="server"  Text='<%# Eval("CategoryName") %>'></asp:Label></p>
-                    <p>Price: <asp:Label ID="PriceLabel1" runat="server" Text='<%# Eval("Price") %>'></asp:Label> </p>
                     
-                    </p>
+                    <p>Qualifications:<asp:Label ID="QualifiactionsLabel" runat="server"  Text='<%# Eval("Qualifications") %>'></asp:Label></p>
+                    <p>Year of Study: <asp:Label ID="StudyYearLabel" runat="server" Text='<%# Eval("StudyYear") %>'></asp:Label> </p>
+                    <p>Documents:<asp:Label ID="DocumentsLabel" runat="server"  Text='<%# Eval("Documents") %>'></asp:Label></p>
+                    <p>Opening Date:<asp:Label ID="OpeningDateLabel3" runat="server"  Text='<%# Eval("OpeningDate") %>'></asp:Label></p>
+                    <p>Closing Date:<asp:Label ID="ClosingDateLabel" runat="server"  Text='<%# Eval("ClosingDate") %>'></asp:Label></p>
+                    <p>Link:<asp:Label ID="LinkLabel" runat="server"  Text='<%# Eval("Link") %>'></asp:Label></p>
                 </div>
                 <div class="Profile-buttons">
-                    <asp:Button ID="Backbtn" CssClass="p-btn" runat="server" Text="Back" OnClick="Backbtn_Click"  />
-                    <button  class="p-btn" type="button" onclick="openPopup()">Negotiate</button>
+                    <asp:Button ID="Backbtn" CssClass="p-btn" runat="server" Text="Back" OnClick="Backbtn_Click"   />
+                    <button  class="p-btn" type="button" onclick="openPopup()">Apply</button>
                 </div>
             </div>
         </div>

@@ -9,14 +9,14 @@ using System.Web.UI.WebControls;
 
 namespace StudentConnect_Project
 {
-    public partial class WebForm10 : System.Web.UI.Page
+    public partial class WebForm12 : System.Web.UI.Page
     {
         string strcon = ConfigurationManager.ConnectionStrings["con"].ConnectionString;
         protected void Page_Load(object sender, EventArgs e)
         {
             if (!IsPostBack)
             {
-                string query = string.Format("select Student,CategoryName,Product,Productimage,Price,ProductDescription from Product Where Student ='" + (string)Session["profilestudent"] + "'");
+                string query = string.Format("select BursaryName,BursaryImage,Qualifications ,Description ,StudyYear ,Documents ,OpeningDate ,ClosingDate, Link from Bursary where BursaryName='"+(string)Session["Bursary"] +"'");
 
                 SqlConnection con = new SqlConnection(strcon);
                 SqlCommand cmd = new SqlCommand(query, con);
@@ -35,7 +35,7 @@ namespace StudentConnect_Project
 
         protected void Backbtn_Click(object sender, EventArgs e)
         {
-            Response.Redirect("Marketplace.aspx");
+            Response.Redirect("Bursary.aspx");
         }
     }
 }
