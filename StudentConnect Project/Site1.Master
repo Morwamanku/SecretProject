@@ -71,6 +71,7 @@
         
         <div class="container-wrapper"  >
             <div class="loader2">
+                <div class="progress-bar"></div>
                 <div class="Adimage" >
                     <img src="" alt="" id="loaderImage"/>
                 </div>
@@ -394,7 +395,10 @@
             const imageUrls = [
                 "AdImages/Marmite.jpg",
                 "AdImages/Uj ad.jpg",
-                "AdImages/Sales ad.png"
+                "AdImages/Springbok.jpg",
+                "AdImages/wimpy.jpg",
+                "AdImages/Varsity ad.jpg"
+
             ];
 
             function showLoader() {
@@ -420,8 +424,8 @@
                 setTimeout(hideLoader, 10000);
             }
 
-            // Set up a timer to show the loader every 30 seconds
-            setInterval(showLoaderFor10Seconds, 30000);
+            // Set up a timer to show the loader every 40 seconds
+            setInterval(showLoaderFor10Seconds, 50000);
         });
     </script>
    

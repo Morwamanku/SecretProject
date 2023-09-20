@@ -5,7 +5,7 @@
 
 <asp:Content ID="Content2" ContentPlaceHolderID="ContentPlaceHolder1" runat="server">
     <div class="bodywrapper" id="bodywrapper" ></div>
-<asp:FormView ID="FormView1" runat="server" OnPageIndexChanging="FormView1_PageIndexChanging" >
+<asp:FormView ID="FormView1" runat="server"  >
     <ItemTemplate>
         <div class="flex-wrapper" onclick="removenavigation()">
             <div class="Profile-image">

@@ -197,6 +197,7 @@ body {
         opacity: 0;
         transform: translateY(-40px);
         transition-delay: 0.2s;
+        margin-bottom:8px;
     }
 
     .card .card-content .QualificationName {

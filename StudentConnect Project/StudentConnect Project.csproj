@@ -82,7 +82,10 @@
   <ItemGroup>
     <Content Include="AdImages\Marmite.jpg" />
     <Content Include="AdImages\Sales ad.png" />
+    <Content Include="AdImages\Springbok.jpg" />
     <Content Include="AdImages\Uj ad.jpg" />
+    <Content Include="AdImages\Varsity ad.jpg" />
+    <Content Include="AdImages\wimpy.jpg" />
     <Content Include="Advertise.aspx" />
     <Content Include="Background-video\ad 1.mp4" />
     <Content Include="Background-video\Blue space.mp4" />
