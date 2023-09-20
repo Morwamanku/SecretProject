@@ -80,7 +80,11 @@
     </Reference>
   </ItemGroup>
   <ItemGroup>
+    <Content Include="AdImages\Marmite.jpg" />
+    <Content Include="AdImages\Sales ad.png" />
+    <Content Include="AdImages\Uj ad.jpg" />
     <Content Include="Advertise.aspx" />
+    <Content Include="Background-video\ad 1.mp4" />
     <Content Include="Background-video\Blue space.mp4" />
     <Content Include="Background-video\cyber-monday-retail-sales.jpg" />
     <Content Include="Background-video\solar_system %28720p%29.mp4" />
@@ -362,6 +366,7 @@
     <Content Include="Content\bootstrap.css.map" />
     <Content Include="Content\bootstrap.min.css.map" />
     <Content Include="Images\3D Photo.avif" />
+    <Content Include="AdImages\Mcdonalds.jpg.crdownload" />
     <None Include="Dockerfile" />
     <None Include=".dockerignore">
       <DependentUpon>Dockerfile</DependentUpon>

@@ -9,9 +9,7 @@
   </asp:Content>
 <asp:Content ID="Content2" ContentPlaceHolderID="ContentPlaceHolder1" runat="server">
     <div class="container1 transition-fade" id="swup">
-        
-        <div class="container2" onclick="removenavigation()">
-            
+        <div class="container2" onclick="removenavigation()"> 
         <div class="container" >
                 <div class="row">
                     <asp:Repeater ID="DashboardRepeater" runat="server" OnItemCommand="DashboardRepeater_ItemCommand">
@@ -285,7 +283,7 @@
             }
 
         function openPopup() {
-            popup.classList.add("open-popup");
+            popup.classList.add("open-popup");                                                             
         }
 
         function closePopup() {
@@ -363,4 +361,6 @@
             
         })
     </script>
+    
+
 </asp:Content>

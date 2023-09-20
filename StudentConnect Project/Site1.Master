@@ -70,6 +70,17 @@
     <form id="form1" runat="server">
         
         <div class="container-wrapper"  >
+            <div class="loader2">
+                <div class="Adimage" >
+                    <img src="" alt="" id="loaderImage"/>
+                </div>
+                <div class="loader-content">
+                    <!-- Add your loader content here -->
+                    
+                    <%--<div class="spinner"></div>
+                    <p>Loading...</p>--%>
+                </div>
+            </div>
             <div class="navigation" >
                 <ul>
                     <li>
@@ -371,6 +382,46 @@
                     point.classList.remove("hover");
                 });
             });
+        });
+    </script>
+
+    <script>
+        document.addEventListener("DOMContentLoaded", function () {
+            const loader = document.querySelector(".loader2");
+            const loaderImage = document.getElementById("loaderImage");
+
+            // Array of image URLs
+            const imageUrls = [
+                "AdImages/Marmite.jpg",
+                "AdImages/Uj ad.jpg",
+                "AdImages/Sales ad.png"
+            ];
+
+            function showLoader() {
+                loader.style.display = "block";
+            }
+
+            function hideLoader() {
+                loader.style.display = "none";
+            }
+
+            function randomizeImage() {
+                const randomIndex = Math.floor(Math.random() * imageUrls.length);
+                loaderImage.src = imageUrls[randomIndex];
+            }
+
+            // Initial display of the loader
+            hideLoader();
+
+            // Function to show loader for 10 seconds
+            function showLoaderFor10Seconds() {
+                randomizeImage();
+                showLoader();
+                setTimeout(hideLoader, 10000);
+            }
+
+            // Set up a timer to show the loader every 30 seconds
+            setInterval(showLoaderFor10Seconds, 30000);
         });
     </script>
    
