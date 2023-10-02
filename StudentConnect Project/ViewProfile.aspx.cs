@@ -69,7 +69,7 @@ namespace StudentConnect_Project
             else
             {
                 RequestMade();
-                Response.Redirect("ViewProfile.aspx");
+                Response.Redirect("Dashboard.aspx");
 
             }
         }

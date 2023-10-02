@@ -58,7 +58,7 @@ namespace StudentConnect_Project
             else
             {
                 ConnectionMade();
-                Response.Redirect("RequestViewProfile.aspx");
+                Response.Redirect("Request.aspx");
 
             }
         }

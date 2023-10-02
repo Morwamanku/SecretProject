@@ -4,7 +4,7 @@
     margin: 0;
     padding: 0;
     box-sizing: border-box;
-    font-family: 'open sans',sans-serif;
+    
 }
 
 .ConnectConfirmed_ID{
@@ -35,6 +35,7 @@
 
 .message-flex {
     display: flex;
+    padding: 5px;
 }
 
 
@@ -78,14 +79,14 @@
     width: 100%;
     background: white;
     height: 40px;
-    border-radius: 25px;
+    border-radius: 10px;
     z-index: 1;
     display: inline-block;
 }
 .input-text {
     
-    
-    
+    bottom: 0px;
+    width: 100%;
 }
 
 .submit-button {
@@ -93,7 +94,7 @@
     width: 80px;
     background: antiquewhite;
     height: 40px;
-    border-radius: 25px;
+    border-radius: 10px;
     cursor: pointer;
 }
 
@@ -150,13 +151,14 @@ body {
     -moz-box-shadow: 0px 3px 5px 7px rgba(0,0,0,0.49);
 }
 
+
 .leftside {
     position: relative;
     flex: 30%;
     background-color: white;
     width: 100px;
     border-right: 1px solid #000;
-    border-radius: 15px 15px 15px 15px
+    border-radius: 15px 15px 0px 15px;
 }
 
 .rightside {
@@ -235,10 +237,9 @@ body {
     width: 100%;
     height: 60px;
     background: #f6f6f6;
-    
     justify-content: left;
     align-items: center;
-    padding: 0 15px;
+    padding:10px;
 }
 
 
@@ -280,7 +281,10 @@ body {
     overflow-y: auto;
     display: flex;
     height: 80px;
+    border-bottom: 4px solid;
+    border-color: #ededed
 }
+
 
 .Phoneviewcontainer {
     position: relative;
@@ -401,7 +405,8 @@ body {
         display:none;
     }
     .Phoneviewcontainer {
-        display:block;
+        display: flex;
+        flex-direction: column;
     }
 
     .btn{
@@ -415,6 +420,8 @@ body {
        
         height: 500px;
     }
+
+
 }
 
 

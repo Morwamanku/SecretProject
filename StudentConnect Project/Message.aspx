@@ -166,7 +166,7 @@
         </asp:Repeater>
 
     </div>
-    <div class="right-container" style="margin:0px; height: 460px; position: relative; overflow-y:scroll;">
+    <div class="right-container" style="margin:0px;  position: relative; overflow-y:scroll; flex:1;">
         <asp:Repeater ID="InboxRepeater2" runat="server">
             <ItemTemplate>
                 <div class="message-wrapper">
@@ -181,7 +181,7 @@
                 </div>
             </ItemTemplate>
         </asp:Repeater>
-</div>
+    </div>
             <div class="input-text ">
                 <asp:Label ID="Label1" runat="server" class="ConnectConfirmed_ID" Text='<%# Eval("ConfirmedID") %>'></asp:Label>
                     <div class="message-flex">
