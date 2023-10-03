@@ -15,48 +15,56 @@
     <video autoplay loop muted plays-inline class="back-video">
                 <source src="Background-video/solar_system (720p).mp4" type="video/mp4" />
             </video>
-    <section class="sign-in">
-        
-        <div class="signup-container">
-            <div class="signin-content">
-                <div class="signin-image">
-                    <figure><img src="Signupimages/our logo.jpg" alt="sing up image"/></figure>
-                </div>
+    <form id="form1" runat="server">
+        <section class="sign-in">
+    
+    <div class="signup-container">
+        <div class="signin-content">
+            <div class="signin-image">
+                <figure><img src="Signupimages/our logo.jpg" alt="sing up image"/></figure>
+            </div>
 
-                <div class="signin-form">
-                    <h2 class="form-title">Forgot Password</h2>
-                    <form method="post" class="register-form" id="login-form">
-                        <div class="form-group">
-                            <label for="your_name"><i class="zmdi zmdi-account material-icons-name"></i></label>
-                            <input type="text" name="student_number1" id="student_number1" placeholder="Student Number " />
+            <div class="signin-form">
+                <h2 class="form-title">Forgot Password</h2>
+                
+                    <div class="form-group">
+                        <div class="input_wrap">
+			                <label for="StudentNumber"><i class="zmdi zmdi-account material-icons-name"></i></label>
+			                <asp:TextBox ID="studentnumbertxt" CssClass="input" placeholder="StudentNumber" AutoComplete="off" runat="server"></asp:TextBox>
                         </div>
-                        <div class="form-group">
-                            <label for="your_pass"><i class="zmdi zmdi-lock"></i></label>
-                            <input type="password" name="new_pass" id="new_pass" placeholder="Enter New Password" />
-                        </div>
-                        <div class="form-group">
-                            <label for="re-newpass"><i class="zmdi zmdi-lock-outline"></i></label>
-                            <input type="password" name="re_newpass" id="re_newpass" placeholder="Re-enter New Password" />
-                        </div>
-                        <div class="form-group form-button">
-                            <input type="submit" name="Resetpass" id="Resetpass" class="form-submit" value="Reset Password" />
-                        </div>
-                        <div class="form-group">
-                            <a href="LogIn.aspx" class="signup-image-link"  >Already have an account?</a>
-                        </div>
-                    </form>
-                    <div class="social-login">
-                        <span class="social-label">See more on our</span>
-                        <ul class="socials">
-                            <li><a href="#"><i class="fa-brands fa-instagram"></i></a></li>
-                            <li><a href="#"><i class="fa-brands fa-facebook"></i></a></li>
-                            <li><a href="#"><i class="fa-brands fa-twitter"></i></a></li>
-                            <li><a href="#"><i class="fa-brands fa-linkedin"></i></a></li>
-                        </ul>
                     </div>
+                    <div class="form-group">
+                        <label for="re-newpass"><i class="zmdi zmdi-lock-outline"></i></label>
+                        <input type="password" name="re_newpass" id="re_newpass" placeholder="Re-enter New Password" />
+                    </div>
+                    <div class="form-group">
+                        
+                        <label for="Password"><i class="zmdi zmdi-account material-icons-name"></i></label>
+                        <asp:TextBox ID="Passwordtxt1" CssClass="input" placeholder="Enter New Password" Autocomplete="off" TextMode="Password" runat="server"></asp:TextBox>
+                    </div>
+                    
+                    <div class="form-group form-button">
+                        <asp:Button ID="Resetpasswordbtn" runat="server" Text="Submit" OnClick="Resetpasswordbtn_Click" />
+                        
+                    </div>
+                    <div class="form-group">
+                        <a href="LogIn.aspx" class="signup-image-link"  >Already have an account?</a>
+                    </div>
+              
+                <div class="social-login">
+                    <span class="social-label">See more on our</span>
+                    <ul class="socials">
+                        <li><a href="#"><i class="fa-brands fa-instagram"></i></a></li>
+                        <li><a href="#"><i class="fa-brands fa-facebook"></i></a></li>
+                        <li><a href="#"><i class="fa-brands fa-twitter"></i></a></li>
+                        <li><a href="#"><i class="fa-brands fa-linkedin"></i></a></li>
+                    </ul>
                 </div>
             </div>
         </div>
-    </section>
+    </div>
+</section>
+    </form>
+    
 </body>
 </html>

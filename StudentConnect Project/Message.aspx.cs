@@ -58,10 +58,10 @@ namespace StudentConnect_Project
 
 
                 string query3 = string.Format("select image from Student  left join messages on Student.StudentNumber=messages.Student where ConfirmedID='" + (string)Session["MessageConfirmID"] + "' and  NOT StudentNumber='" + (string)Session["studentnumber"] + "' ");
-
+                string query4 = string.Format("select image,Firstname from Student  left join messages on Student.StudentNumber=messages.Student where ConfirmedID='" + (string)Session["MessageConfirmID"] + "' and  NOT StudentNumber='" + (string)Session["studentnumber"] + "' ");
                 SqlConnection con2 = new SqlConnection(strcon);
                 SqlCommand cmd5 = new SqlCommand(query3, con2);
-                SqlCommand cmd6 = new SqlCommand(query3, con2);
+                SqlCommand cmd6 = new SqlCommand(query4, con2);
                 con2.Open();
                 SqlDataReader reader5 = cmd5.ExecuteReader();
                 FormView1.DataSource = reader5;

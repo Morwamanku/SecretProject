@@ -74,7 +74,7 @@ namespace StudentConnect_Project
                 {
                     con.Open();
                 }
-                SqlCommand cmd = new SqlCommand("INSERT INTO Student(StudentNumber,Firstname,Surname,Gender,Hometown,Password,image,UniversityName,QualificationName,Yearofstudy,AccommodationID,Description,LinkedIn,Instagram,Twitter) values(@StudentNumber,@Firstname,@Surname,@Gender,@Hometown,@Password,@image,@UniversityName,@QualificationName,@Yearofstudy,@AccommodationID,@Description,@LinkedIn,@Instagram,@Twitter)", con);
+                SqlCommand cmd = new SqlCommand("INSERT INTO Student(StudentNumber,Firstname,Surname,Gender,Hometown,Password,image,UniversityName,QualificationName,Yearofstudy,AccommodationID,Description,LinkedIn,Instagram,Twitter,Tutor) values(@StudentNumber,@Firstname,@Surname,@Gender,@Hometown,@Password,@image,@UniversityName,@QualificationName,@Yearofstudy,@AccommodationID,@Description,@LinkedIn,@Instagram,@Twitter,@Tutor)", con);
                 cmd.Parameters.AddWithValue("@StudentNumber", studentnumbertxt.Text.Trim());
                 cmd.Parameters.AddWithValue("@Firstname", Firstnametxt.Text.Trim());
                 cmd.Parameters.AddWithValue("@Surname", Surnametxt.Text.Trim());
@@ -90,6 +90,7 @@ namespace StudentConnect_Project
                 cmd.Parameters.AddWithValue("@LinkedIn", LinkedIntxt.Text.Trim());
                 cmd.Parameters.AddWithValue("@Instagram", Instagramtxt.Text.Trim());
                 cmd.Parameters.AddWithValue("@Twitter", Twittertxt.Text.Trim());
+                cmd.Parameters.AddWithValue("@Tutor", TutorList1.SelectedItem.Value);
 
                 cmd.ExecuteNonQuery();
                 con.Close();

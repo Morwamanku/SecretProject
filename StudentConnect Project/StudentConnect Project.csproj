@@ -95,7 +95,6 @@
     <Content Include="Background-video\video %282160p%29.mp4" />
     <Content Include="BursaryImage\Absa.jpg" />
     <Content Include="BursaryImage\BBD.png" />
-    <Content Include="Chat.aspx" />
     <Content Include="Content\bootstrap-grid.css" />
     <Content Include="Content\bootstrap-grid.min.css" />
     <Content Include="Content\bootstrap-reboot.css" />
@@ -211,6 +210,7 @@
     <Content Include="ViewProduct.aspx" />
     <Content Include="Bursary.aspx" />
     <Content Include="ViewBursary.aspx" />
+    <Content Include="Tutor.aspx" />
   </ItemGroup>
   <ItemGroup>
     <Compile Include="Advertise.aspx.cs">
@@ -219,13 +219,6 @@
     </Compile>
     <Compile Include="Advertise.aspx.designer.cs">
       <DependentUpon>Advertise.aspx</DependentUpon>
-    </Compile>
-    <Compile Include="Chat.aspx.cs">
-      <DependentUpon>Chat.aspx</DependentUpon>
-      <SubType>ASPXCodeBehind</SubType>
-    </Compile>
-    <Compile Include="Chat.aspx.designer.cs">
-      <DependentUpon>Chat.aspx</DependentUpon>
     </Compile>
     <Compile Include="ForgotPassword.aspx.cs">
       <DependentUpon>ForgotPassword.aspx</DependentUpon>
@@ -360,6 +353,13 @@
     </Compile>
     <Compile Include="ViewBursary.aspx.designer.cs">
       <DependentUpon>ViewBursary.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Tutor.aspx.cs">
+      <DependentUpon>Tutor.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Tutor.aspx.designer.cs">
+      <DependentUpon>Tutor.aspx</DependentUpon>
     </Compile>
   </ItemGroup>
   <ItemGroup>

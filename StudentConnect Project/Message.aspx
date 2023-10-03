@@ -141,7 +141,16 @@
         <div class="userimage">
     <asp:FormView ID="FormView2" runat="server">
         <ItemTemplate>
-             <asp:Image ID="Image1" runat="server" ImageUrl='<%# Eval("image") %>' Width="50" />
+            <div class="imgbox">
+                <asp:Image ID="Image1" runat="server" ImageUrl='<%# Eval("image") %>' Width="50" />
+            </div>
+            <div class="details">
+                <div class="listHead">
+                    <h4><asp:Label ID="FirstnameLabel" runat="server"  Text='<%# Eval("Firstname") %>'></asp:Label>
+                </div>
+    
+            </div>
+             
         </ItemTemplate>
     </asp:FormView>
 </div>
@@ -200,7 +209,38 @@
 
 
         
+    <script>
+        // Get a reference to the chat list items
+        var chatListItems = document.querySelectorAll(".chatlist .block");
 
+        // Get a reference to the current chat partner div
+        var currentChatPartnerDiv = document.getElementById("currentChatPartner");
+
+        // Function to handle chat list item click
+        function handleChatItemClick(item) {
+            // Remove the "selected" class from all chat list items
+            chatListItems.forEach(function (listItem) {
+                listItem.classList.remove("selected");
+            });
+
+            // Add the "selected" class to the clicked item
+            item.classList.add("selected");
+
+            // Get the name of the chat partner from the clicked item
+            var chatPartnerName = item.querySelector(".listHead h4").textContent;
+
+            // Update the displayed name
+            currentChatPartnerDiv.textContent = chatPartnerName;
+        }
+
+        // Add a click event listener to each chat list item
+        chatListItems.forEach(function (item) {
+            item.addEventListener("click", function () {
+                handleChatItemClick(item);
+            });
+        });
+
+    </script>
     <script type="module" src="https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.esm.js"></script>
     <script  src="https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.js"></script>
 

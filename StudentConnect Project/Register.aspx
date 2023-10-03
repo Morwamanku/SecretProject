@@ -12,7 +12,7 @@
 <body>
 	
     <section class="sign-in">
-    <form id="form1" runat="server">
+    <form id="form1" runat="server" onsubmit="return validateForm()">
         <div class="wrapper" style="padding-top:0px;">
 			<img src="Signupimages/our logo.jpg" class="LoginImage" alt="Alternate Text" />
 	<div class="header">
@@ -226,6 +226,14 @@
 					<label for="Twitter"><i class="zmdi zmdi-account material-icons-name"></i></label>
 					<asp:TextBox ID="Twittertxt" CssClass="input" placeholder="Twitter" AutoComplete="off" runat="server"></asp:TextBox>
 				</div>
+				<div class="input_wrap">         
+					<label for="TutorList"><i class="zmdi zmdi-account material-icons-name"></i></label>  
+								<asp:DropDownList CssClass="input" placeholder="Are you a tutor?" ID="TutorList1" runat="server">
+									<asp:ListItem Value="" >--Are you a Tutor?--</asp:ListItem> 
+									<asp:ListItem Value="Yes" >Yes</asp:ListItem>    
+									<asp:ListItem Value="No">No</asp:ListItem> 
+								</asp:DropDownList> 
+				</div>
 		</div>
 
 		<div class="form_4 data_info" style="display: none;">
@@ -419,6 +427,21 @@
 
     shadow.addEventListener("click", function () {
         modal_wrapper.classList.remove("active");
-    })
+	})
+
+    function validateForm() {
+        // Get the student number input field
+        var studentNumber = document.getElementById('<%= studentnumbertxt.ClientID %>');
+
+        // Check if the student number is empty
+        if (studentNumber.value.trim() === "") {
+            alert("Please enter a student number.");
+            studentNumber.focus(); // Set focus on the student number field
+            return false; // Prevent form submission
+        }
+
+        // If the student number is not empty, allow form submission
+        return true;
+    }
 </script>
 </html>

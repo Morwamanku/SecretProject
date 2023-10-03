@@ -7,6 +7,21 @@
     
 }
 
+/* Style for the chat partner's name */
+.current-chat-partner {
+    font-weight: bold;
+    font-size: 18px;
+    margin-bottom: 10px;
+    color: #333; /* Change the color to your preference */
+}
+
+/* Style for the selected chat list item */
+.chatlist .block.selected {
+    background-color: #f0f0f0; /* Change the background color to your preference */
+    border-left: 5px solid #007bff; /* Change the border color to your preference */
+}
+
+
 .ConnectConfirmed_ID{
     visibility:hidden;
 }
