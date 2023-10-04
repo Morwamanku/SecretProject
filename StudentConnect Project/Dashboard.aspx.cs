@@ -17,6 +17,16 @@ namespace StudentConnect_Project
             
             if (!IsPostBack)
             {
+                // Check if the user is authenticated (logged in)
+                if (Session["studentnumber"] == null)
+                {
+                    // User is not logged in, redirect to the login page
+                    Response.Redirect("Login.aspx"); // Replace "LoginPage.aspx" with the actual login page URL
+                }
+
+                // If the user is logged in, proceed with loading the dashboard
+                // ... your existing code for loading the dashboard data ...
+
                 string query = string.Format("select StudentNumber,Firstname,Surname,QualificationName,image from Student WHERE NOT StudentNumber='" + (string)Session["studentnumber"] + "' order by NEWID()");
 
                 SqlConnection con = new SqlConnection(strcon);

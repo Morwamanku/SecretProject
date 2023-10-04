@@ -57,33 +57,34 @@ namespace StudentConnect_Project
             }
             else
             {
-                ConnectionMade();
-                Response.Redirect("Request.aspx");
-
+                if (ConnectionMade())
+                {
+                    Response.Redirect("Request.aspx");
+                }
+                else
+                {
+                    Response.Write("<script>alert('Failed to create the connection.');</script>");
+                }
             }
         }
 
         protected void Declinebtn_Click(object sender, EventArgs e)
         {
-            string StudentNumber = ((System.Web.UI.WebControls.Label)FormView1.FindControl("StudentNumberLabel")).Text;
+            string studentNumber = ((System.Web.UI.WebControls.Label)FormView1.FindControl("StudentNumberLabel")).Text;
+
             try
             {
-                SqlConnection con = new SqlConnection(strcon);
-                
-                if (con.State == ConnectionState.Closed)
+                using (SqlConnection con = new SqlConnection(strcon))
                 {
                     con.Open();
+
+                    SqlCommand deleteRequestCmd = new SqlCommand("DELETE FROM ConnectRequest WHERE Sender=@Sender AND Recipient=@Recipient", con);
+                    deleteRequestCmd.Parameters.AddWithValue("@Recipient", (string)Session["studentnumber"]);
+                    deleteRequestCmd.Parameters.AddWithValue("@Sender", studentNumber);
+                    deleteRequestCmd.ExecuteNonQuery();
+
+                    Response.Write("<script>alert('Connection Request Declined');</script>");
                 }
-
-                SqlCommand cmd2 = new SqlCommand("DELETE FROM ConnectRequest WHERE Sender=@Sender and Recipient=@Recipient", con);
-
-                cmd2.Parameters.AddWithValue("@Recipient", (string)Session["studentnumber"]);
-                cmd2.Parameters.AddWithValue("@Sender", StudentNumber);
-
-                cmd2.ExecuteNonQuery();
-                con.Close();
-
-                Response.Write("<script>alert('Connection Made');</script>");
             }
             catch (Exception ex)
             {
@@ -93,26 +94,21 @@ namespace StudentConnect_Project
 
         bool checkConnectionExists()
         {
-            string StudentNumber = ((System.Web.UI.WebControls.Label)FormView1.FindControl("StudentNumberLabel")).Text;
+            string studentNumber = ((System.Web.UI.WebControls.Label)FormView1.FindControl("StudentNumberLabel")).Text;
 
             try
             {
-                SqlConnection con = new SqlConnection(strcon);
-                if (con.State == ConnectionState.Closed)
+                using (SqlConnection con = new SqlConnection(strcon))
                 {
                     con.Open();
-                }
-                SqlCommand cmd = new SqlCommand("SELECT * FROM Connected WHERE Recipient='" + (string)Session["studentnumber"] + "' and Sender='" + StudentNumber + "' ;", con);
-                SqlDataAdapter da = new SqlDataAdapter(cmd);
-                DataTable dt = new DataTable();
-                da.Fill(dt);
-                if (dt.Rows.Count >= 1)
-                {
-                    return true;
-                }
-                else
-                {
-                    return false;
+                    SqlCommand cmd = new SqlCommand("SELECT * FROM Connected WHERE Recipient=@Recipient AND Sender=@Sender;", con);
+                    cmd.Parameters.AddWithValue("@Recipient", (string)Session["studentnumber"]);
+                    cmd.Parameters.AddWithValue("@Sender", studentNumber);
+
+                    using (SqlDataReader reader = cmd.ExecuteReader())
+                    {
+                        return reader.HasRows;
+                    }
                 }
             }
             catch (Exception ex)
@@ -122,45 +118,37 @@ namespace StudentConnect_Project
             }
         }
 
-        void ConnectionMade()
+        bool ConnectionMade()
         {
-            string StudentNumber = ((System.Web.UI.WebControls.Label)FormView1.FindControl("StudentNumberLabel")).Text;
-
-
+            string studentNumber = ((System.Web.UI.WebControls.Label)FormView1.FindControl("StudentNumberLabel")).Text;
 
             try
             {
-                SqlConnection con = new SqlConnection(strcon);
-                if (con.State == ConnectionState.Closed)
+                using (SqlConnection con = new SqlConnection(strcon))
                 {
                     con.Open();
+
+                    // Insert the connection into the "Connected" table
+                    SqlCommand insertConnectionCmd = new SqlCommand("INSERT INTO Connected (Sender, Recipient) VALUES (@Sender, @Recipient);", con);
+                    insertConnectionCmd.Parameters.AddWithValue("@Recipient", (string)Session["studentnumber"]);
+                    insertConnectionCmd.Parameters.AddWithValue("@Sender", studentNumber);
+                    insertConnectionCmd.ExecuteNonQuery();
+
+                    // Delete the connection request
+                    SqlCommand deleteRequestCmd = new SqlCommand("DELETE FROM ConnectRequest WHERE Sender=@Sender AND Recipient=@Recipient;", con);
+                    deleteRequestCmd.Parameters.AddWithValue("@Recipient", (string)Session["studentnumber"]);
+                    deleteRequestCmd.Parameters.AddWithValue("@Sender", studentNumber);
+                    deleteRequestCmd.ExecuteNonQuery();
+
+                    return true;
                 }
-                SqlCommand cmd = new SqlCommand("insert into Connected(Sender,Recipient)values(@Sender,@Recipient)", con);
-
-                cmd.Parameters.AddWithValue("@Recipient", (string)Session["studentnumber"]);
-                cmd.Parameters.AddWithValue("@Sender", StudentNumber);
-
-                cmd.ExecuteNonQuery();
-                con.Close();
-                if (con.State == ConnectionState.Closed)
-                {
-                    con.Open();
-                }
-
-                SqlCommand cmd2 = new SqlCommand("DELETE FROM ConnectRequest WHERE Sender=@Sender and Recipient=@Recipient", con);
-
-                cmd2.Parameters.AddWithValue("@Recipient", (string)Session["studentnumber"]);
-                cmd2.Parameters.AddWithValue("@Sender", StudentNumber);
-
-                cmd2.ExecuteNonQuery();
-                con.Close();
-
-                Response.Write("<script>alert('Connection Made');</script>");
             }
             catch (Exception ex)
             {
                 Response.Write("<script>alert('" + ex.Message + "');</script>");
+                return false;
             }
         }
+
     }
 }

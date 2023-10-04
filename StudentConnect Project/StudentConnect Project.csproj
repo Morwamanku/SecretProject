@@ -86,6 +86,7 @@
     <Content Include="AdImages\Uj ad.jpg" />
     <Content Include="AdImages\Varsity ad.jpg" />
     <Content Include="AdImages\wimpy.jpg" />
+    <Content Include="Advertise background.jpg" />
     <Content Include="Advertise.aspx" />
     <Content Include="Background-video\ad 1.mp4" />
     <Content Include="Background-video\Blue space.mp4" />
@@ -110,6 +111,7 @@
     <Content Include="Images\signup-img.jpg" />
     <Content Include="Login.aspx" />
     <Content Include="MarketplaceStyle.css" />
+    <Content Include="Message background.jpg" />
     <Content Include="Message.aspx" />
     <Content Include="MessageStyle.css" />
     <Content Include="MessageView.aspx" />

@@ -57,45 +57,59 @@ namespace StudentConnect_Project
         {
             Response.Redirect("Dashboard.aspx");
         }
-        
+
 
         protected void Connectbtn_Click(object sender, EventArgs e)
         {
+            // Get the student number from the session
+            string studentNumber = (string)Session["studentnumber"];
 
-            if (checkRequestExists())
+            if (string.IsNullOrEmpty(studentNumber))
+            {
+                Response.Write("<script>alert('Session expired or invalid. Please log in again.');</script>");
+                return;
+            }
+
+            // Get the recipient student number from FormView1
+            string recipientNumber = ((System.Web.UI.WebControls.Label)FormView1.FindControl("StudentNumberLabel")).Text;
+
+            if (string.IsNullOrEmpty(recipientNumber))
+            {
+                Response.Write("<script>alert('Recipient student number not found.');</script>");
+                return;
+            }
+
+            // Check if a request already exists
+            if (checkRequestExists(studentNumber, recipientNumber))
             {
                 Response.Write("<script>alert('Request is already made');</script>");
             }
             else
             {
-                RequestMade();
-                Response.Redirect("Dashboard.aspx");
-
-            }
-        }
-
-        bool checkRequestExists()
-        {
-            string StudentNumber = ((System.Web.UI.WebControls.Label)FormView1.FindControl("StudentNumberLabel")).Text;
-
-            try
-            {
-                SqlConnection con = new SqlConnection(strcon);
-                if (con.State == ConnectionState.Closed)
+                // Make a new request
+                if (RequestMade(studentNumber, recipientNumber))
                 {
-                    con.Open();
-                }
-                SqlCommand cmd = new SqlCommand("SELECT * FROM ConnectRequest WHERE Sender='"+(string)Session["studentnumber"]+ "' and Recipient='"+ StudentNumber + "' ;", con);
-                SqlDataAdapter da = new SqlDataAdapter(cmd);
-                DataTable dt = new DataTable();
-                da.Fill(dt);
-                if (dt.Rows.Count >= 1)
-                {
-                    return true;
+                    Response.Redirect("Dashboard.aspx");
                 }
                 else
                 {
-                    return false;
+                    Response.Write("<script>alert('Failed to make the request. Please try again later.');</script>");
+                }
+            }
+        }
+
+        bool checkRequestExists(string sender, string recipient)
+        {
+            try
+            {
+                using (SqlConnection con = new SqlConnection(strcon))
+                {
+                    con.Open();
+                    SqlCommand cmd = new SqlCommand("SELECT COUNT(*) FROM ConnectRequest WHERE Sender=@Sender AND Recipient=@Recipient", con);
+                    cmd.Parameters.AddWithValue("@Sender", sender);
+                    cmd.Parameters.AddWithValue("@Recipient", recipient);
+                    int count = (int)cmd.ExecuteScalar();
+                    return count >= 1;
                 }
             }
             catch (Exception ex)
@@ -105,33 +119,27 @@ namespace StudentConnect_Project
             }
         }
 
-        void RequestMade()
+        bool RequestMade(string sender, string recipient)
         {
-            string StudentNumber = ((System.Web.UI.WebControls.Label)FormView1.FindControl("StudentNumberLabel")).Text;
-
-
-
             try
             {
-                SqlConnection con = new SqlConnection(strcon);
-                if (con.State == ConnectionState.Closed)
+                using (SqlConnection con = new SqlConnection(strcon))
                 {
                     con.Open();
+                    SqlCommand cmd = new SqlCommand("INSERT INTO ConnectRequest (Sender, Recipient) VALUES (@Sender, @Recipient)", con);
+                    cmd.Parameters.AddWithValue("@Sender", sender);
+                    cmd.Parameters.AddWithValue("@Recipient", recipient);
+                    int rowsAffected = cmd.ExecuteNonQuery();
+                    return rowsAffected > 0;
                 }
-                SqlCommand cmd = new SqlCommand("insert into ConnectRequest(Sender,Recipient)values(@Sender,@Recipient)", con);
-
-                cmd.Parameters.AddWithValue("@Recipient", StudentNumber);
-                cmd.Parameters.AddWithValue("@Sender", (string)Session["studentnumber"]);
-
-                cmd.ExecuteNonQuery();
-                con.Close();
-                Response.Write("<script>alert('Request Made');</script>");
             }
             catch (Exception ex)
             {
                 Response.Write("<script>alert('" + ex.Message + "');</script>");
+                return false;
             }
         }
+
 
 
     }

@@ -18,9 +18,9 @@
             <div class="container">
         <div class="leftside">
             <div class="header">
-                <div class="userimg">
+                <%--<div class="userimg">
                     <img src="ProfileImage/Me photo.jpg" class="cover" />
-                </div>
+                </div>--%>
                 <ul class="nav_icons">
                     <li><ion-icon name="menu-outline"></ion-icon></li>
                     <li>

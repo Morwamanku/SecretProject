@@ -9,7 +9,7 @@
 	<meta name="viewport" content="width=device-width, initial-scale=1.0"/>
     <link href="RegisterStyle.css" rel="stylesheet" />
 </head>
-<body style="background-image:url(https://tse1.mm.bing.net/th?id=OIP.mVnNSk8zSypnEqmYzwlqLAHaE8&amp;pid=Api&amp;P=0&amp;h=180)">
+<body style="background-image:url('Advertise background.jpg')">
     <section class="sign-in">
     <form id="form1" runat="server">
         <div class="wrapper">
