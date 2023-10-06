@@ -16,6 +16,11 @@ namespace StudentConnect_Project
             string strcon = ConfigurationManager.ConnectionStrings["con"].ConnectionString;
             if (!IsPostBack)
             {
+                if (Session["studentnumber"] == null)
+                {
+                    // User is not logged in, redirect to the login page
+                    Response.Redirect("Login.aspx"); // Replace "LoginPage.aspx" with the actual login page URL
+                }
                 string query = string.Format("select StudentNumber,Firstname,Surname,QualificationName,image from Student left join Connected on Student.StudentNumber=Connected.Sender or Student.StudentNumber=Connected.Recipient WHERE NOT StudentNumber='" + (string)Session["studentnumber"] + "' and Sender='" + (string)Session["studentnumber"] + "' or NOT StudentNumber='" + (string)Session["studentnumber"] + "' and Recipient='" + (string)Session["studentnumber"] + "'");
 
                 SqlConnection con = new SqlConnection(strcon);

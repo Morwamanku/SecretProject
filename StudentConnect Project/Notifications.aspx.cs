@@ -16,6 +16,11 @@ namespace StudentConnect_Project
         {
             if (!IsPostBack)
             {
+                if (Session["studentnumber"] == null)
+                {
+                    // User is not logged in, redirect to the login page
+                    Response.Redirect("Login.aspx"); // Replace "LoginPage.aspx" with the actual login page URL
+                }
                 string query = string.Format("select Connected.ConnectConfirmed_ID,message,messages.Student,image,Student.Firstname from Connected left join messages on Connected.ConnectConfirmed_ID=messages.ConfirmedID left join Student on messages.Student=Student.StudentNumber where Recipient='" + (string)Session["studentnumber"] + "' and messages.Student!='" + (string)Session["studentnumber"] + "' or Sender='" + (string)Session["studentnumber"] + "' and messages.Student!='" + (string)Session["studentnumber"] + "' group by Connected.ConnectConfirmed_ID,message,messages.Student,image,Student.Firstname");
 
                 SqlConnection con = new SqlConnection(strcon);

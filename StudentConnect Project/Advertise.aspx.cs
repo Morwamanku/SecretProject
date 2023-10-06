@@ -16,7 +16,11 @@ namespace StudentConnect_Project
         string strcon = ConfigurationManager.ConnectionStrings["con"].ConnectionString;
         protected void Page_Load(object sender, EventArgs e)
         {
-
+            if (Session["studentnumber"] == null)
+            {
+                // User is not logged in, redirect to the login page
+                Response.Redirect("Login.aspx"); // Replace "LoginPage.aspx" with the actual login page URL
+            }
         }
 
         protected void Submitbtn_Click(object sender, EventArgs e)

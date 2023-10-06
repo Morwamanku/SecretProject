@@ -16,6 +16,11 @@ namespace StudentConnect_Project
         {
             if (!IsPostBack)
             {
+                if (Session["studentnumber"] == null)
+                {
+                    // User is not logged in, redirect to the login page
+                    Response.Redirect("Login.aspx"); // Replace "LoginPage.aspx" with the actual login page URL
+                }
                 string query = string.Format("select StudentNumber,Firstname,Surname,QualificationName,image from Student WHERE Tutor='Yes' and NOT StudentNumber='" + (string)Session["studentnumber"] + "' order by NEWID()");
 
                 SqlConnection con = new SqlConnection(strcon);

@@ -20,6 +20,11 @@ namespace StudentConnect_Project
             
             if (!IsPostBack)
             {
+                if (Session["studentnumber"] == null)
+                {
+                    // User is not logged in, redirect to the login page
+                    Response.Redirect("Login.aspx"); // Replace "LoginPage.aspx" with the actual login page URL
+                }
                 string query = string.Format("select StudentNumber,Firstname,Surname,Hometown,UniversityName,QualificationName,image from Student Where StudentNumber ='" + (string)Session["profilestudentnumber"] + "'");
 
                 SqlConnection con = new SqlConnection(strcon);

@@ -16,6 +16,11 @@ namespace StudentConnect_Project
         {
             if (!IsPostBack)
             {
+                if (Session["studentnumber"] == null)
+                {
+                    // User is not logged in, redirect to the login page
+                    Response.Redirect("Login.aspx"); // Replace "LoginPage.aspx" with the actual login page URL
+                }
                 string query = string.Format("select BursaryName,BursaryImage,Qualifications ,Description ,StudyYear ,Documents ,OpeningDate ,ClosingDate, Link from Bursary where BursaryName='"+(string)Session["Bursary"] +"'");
 
                 SqlConnection con = new SqlConnection(strcon);
