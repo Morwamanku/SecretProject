@@ -257,4 +257,21 @@
         modal_wrapper.classList.remove("active");
     })
 </script>
+<script type="text/javascript">
+    // Attach an event listener to the TextBox for input
+    document.getElementById('<%= ProductDescription.ClientID %>').addEventListener('input', function () {
+        var textBox = this;
+        var maxWords = 100; // Change this to your desired word limit
+
+        // Split the text by spaces to count the words
+        var words = textBox.value.trim().split(/\s+/);
+        var wordCount = words.length;
+
+        if (wordCount > maxWords) {
+            // If the word count exceeds the limit, trim the text
+            textBox.value = words.slice(0, maxWords).join(' ');
+        }
+    });
+</script>
+
 </html>

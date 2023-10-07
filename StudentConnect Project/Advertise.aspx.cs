@@ -27,28 +27,38 @@ namespace StudentConnect_Project
         {
             try
             {
-                string filepath = "~/ProductImage/boity.jpg";
-                string filename = Path.GetFileName(FileUpload1.PostedFile.FileName);
-                FileUpload1.SaveAs(Server.MapPath("ProductImage/" + filename));
-                filepath = "~/ProductImage/" + filename;
+                string uploadFolder = Server.MapPath("~/ProductImage/");
+                string fileName = Path.GetFileName(FileUpload1.PostedFile.FileName);
+                string filePath = Path.Combine(uploadFolder, fileName);
 
+                // Check if the file has a valid extension (e.g., restrict to images only)
+                string fileExtension = Path.GetExtension(fileName).ToLower();
+                string[] allowedExtensions = { ".jpg", ".jpeg", ".png", ".gif" }; // Add more if needed
+                if (!allowedExtensions.Contains(fileExtension))
+                {
+                    Response.Write("<script>alert('Invalid file format');</script>");
+                    return;
+                }
 
-                SqlConnection con = new SqlConnection(strcon);
-                if (con.State == ConnectionState.Closed)
+                FileUpload1.SaveAs(filePath);
+
+                using (SqlConnection con = new SqlConnection(strcon))
                 {
                     con.Open();
-                }
-                SqlCommand cmd = new SqlCommand("INSERT INTO Product(Student,CategoryName,Product,Productimage,Price,ProductDescription) values(@Student,@CategoryName,@Product,@Productimage,@Price,@ProductDescription)", con);
-                cmd.Parameters.AddWithValue("@Student", (string)Session["studentnumber"]);
-                cmd.Parameters.AddWithValue("@CategoryName", CategoryList.Text.Trim());
-                cmd.Parameters.AddWithValue("@Product", ProductName.Text.Trim());
-                cmd.Parameters.AddWithValue("@Productimage", filepath);
-                cmd.Parameters.AddWithValue("@Price", Pricetxt.Text.Trim());
-                cmd.Parameters.AddWithValue("@ProductDescription", ProductDescription.Text.Trim());
+                    using (SqlCommand cmd = new SqlCommand("INSERT INTO Product (Student, CategoryName, Product, Productimage, Price, ProductDescription) VALUES (@Student, @CategoryName, @Product, @Productimage, @Price, @ProductDescription)", con))
+                    {
+                        cmd.Parameters.AddWithValue("@Student", Session["studentnumber"]);
+                        cmd.Parameters.AddWithValue("@CategoryName", CategoryList.Text.Trim());
+                        cmd.Parameters.AddWithValue("@Product", ProductName.Text.Trim());
+                        cmd.Parameters.AddWithValue("@Productimage", "~/ProductImage/" + fileName);
+                        cmd.Parameters.AddWithValue("@Price", Pricetxt.Text.Trim());
+                        cmd.Parameters.AddWithValue("@ProductDescription", ProductDescription.Text.Trim());
 
-                cmd.ExecuteNonQuery();
-                con.Close();
-                Response.Write("<script>alert('Sign Up Successful. Go to User Login to Login');</script>");
+                        cmd.ExecuteNonQuery();
+                    }
+                }
+
+                Response.Write("<script>alert('Item successfully added');</script>");
                 Response.Redirect("Dashboard.aspx");
             }
             catch (Exception ex)
