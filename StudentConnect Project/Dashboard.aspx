@@ -89,7 +89,7 @@
                     <i class="fa-solid fa-sliders" style="    position: absolute;color: white;font-size: 25px;padding: 12px;cursor:pointer;"></i>
                    <asp:Button class="symbol" style="min-width: 55px;"  ID="Default" runat="server" Text="" OnClick="Default_Click" />
                 </div>
-                <span class="optionname">Default</span>  
+                <span class="optionname">Blocked</span>  
               </div>
               <div class="icon">
                   <div class="btn-flex">    

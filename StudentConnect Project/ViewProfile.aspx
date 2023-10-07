@@ -174,10 +174,11 @@
                         
                         <div class="icons">
                           <div class="icon">
-                            <span class="symbol">
-                              <i class="fa-sharp fa-solid fa-ban"></i>
-                            </span>
-                            <span class="optionname">Blocked</span>
+                              <div class="btn-flex">
+                                <i class="fa-sharp fa-solid fa-ban" style="    position: absolute;color: white;font-size: 25px;padding: 12px;cursor:pointer;"></i>
+                               <asp:Button class="symbol" style="min-width: 55px;"  ID="Blockedbtn" runat="server" Text=""  />
+                            </div>
+                            <span class="optionname">Blocked</span> 
                           </div>
                           <div class="icon">
                             <span class="symbol">
