@@ -150,5 +150,81 @@ namespace StudentConnect_Project
             }
         }
 
+        protected void Blockedbtn_Click(object sender, EventArgs e)
+        {
+            if (checkBlockedExists())
+            {
+                Response.Write("<script>alert('Already Blocked');</script>");
+            }
+            else
+            {
+                if (BlockedMade())
+                {
+                    Response.Redirect("Request.aspx");
+                }
+                else
+                {
+                    Response.Write("<script>alert('Failed to Block');</script>");
+                }
+            }
+        }
+
+        bool checkBlockedExists()
+        {
+            string studentNumber = ((System.Web.UI.WebControls.Label)FormView1.FindControl("StudentNumberLabel")).Text;
+
+            try
+            {
+                using (SqlConnection con = new SqlConnection(strcon))
+                {
+                    con.Open();
+                    SqlCommand cmd = new SqlCommand("SELECT * FROM Blocked WHERE Recipient=@Recipient AND Sender=@Sender;", con);
+                    cmd.Parameters.AddWithValue("@Recipient", (string)Session["studentnumber"]);
+                    cmd.Parameters.AddWithValue("@Sender", studentNumber);
+
+                    using (SqlDataReader reader = cmd.ExecuteReader())
+                    {
+                        return reader.HasRows;
+                    }
+                }
+            }
+            catch (Exception ex)
+            {
+                Response.Write("<script>alert('" + ex.Message + "');</script>");
+                return false;
+            }
+        }
+
+        bool BlockedMade()
+        {
+            string studentNumber = ((System.Web.UI.WebControls.Label)FormView1.FindControl("StudentNumberLabel")).Text;
+
+            try
+            {
+                using (SqlConnection con = new SqlConnection(strcon))
+                {
+                    con.Open();
+
+                    // Insert the connection into the "Blocked" table
+                    SqlCommand insertConnectionCmd = new SqlCommand("INSERT INTO Blocked (Sender, Recipient) VALUES (@Sender, @Recipient);", con);
+                    insertConnectionCmd.Parameters.AddWithValue("@Recipient", (string)Session["studentnumber"]);
+                    insertConnectionCmd.Parameters.AddWithValue("@Sender", studentNumber);
+                    insertConnectionCmd.ExecuteNonQuery();
+
+                    // Delete the connection request
+                    SqlCommand deleteRequestCmd = new SqlCommand("DELETE FROM ConnectRequest WHERE Sender=@Sender AND Recipient=@Recipient;", con);
+                    deleteRequestCmd.Parameters.AddWithValue("@Recipient", (string)Session["studentnumber"]);
+                    deleteRequestCmd.Parameters.AddWithValue("@Sender", studentNumber);
+                    deleteRequestCmd.ExecuteNonQuery();
+
+                    return true;
+                }
+            }
+            catch (Exception ex)
+            {
+                Response.Write("<script>alert('" + ex.Message + "');</script>");
+                return false;
+            }
+        }
     }
 }

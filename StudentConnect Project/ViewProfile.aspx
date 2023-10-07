@@ -176,7 +176,7 @@
                           <div class="icon">
                               <div class="btn-flex">
                                 <i class="fa-sharp fa-solid fa-ban" style="    position: absolute;color: white;font-size: 25px;padding: 12px;cursor:pointer;"></i>
-                               <asp:Button class="symbol" style="min-width: 55px;"  ID="Blockedbtn" runat="server" Text=""  />
+                               <asp:Button class="symbol" style="min-width: 55px;"  ID="Blockedbtn" runat="server" Text="" OnClick="Blockedbtn_Click"  />
                             </div>
                             <span class="optionname">Blocked</span> 
                           </div>
@@ -251,7 +251,7 @@
 
     </asp:FormView>
     
-
+    
     <div class="modal_wrapper">
 	<div class="shadow"></div>
 	    <div class="success_wrap">

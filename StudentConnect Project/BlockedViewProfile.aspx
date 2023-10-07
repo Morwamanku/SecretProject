@@ -1,4 +1,4 @@
-﻿<%@ Page Title="" Language="C#" MasterPageFile="~/Site1.Master" AutoEventWireup="true" CodeBehind="RequestViewProfile.aspx.cs" Inherits="StudentConnect_Project.WebForm9" %>
+﻿<%@ Page Title="" Language="C#" MasterPageFile="~/Site1.Master" AutoEventWireup="true" CodeBehind="BlockedViewProfile.aspx.cs" Inherits="StudentConnect_Project.WebForm14" %>
 <asp:Content ID="Content1" ContentPlaceHolderID="head" runat="server">
         <link href="ViewProfileStyle.css" rel="stylesheet" />
         <link
@@ -176,7 +176,7 @@
                             <div class="icon">
                                 <div class="btn-flex">
                                   <i class="fa-sharp fa-solid fa-ban" style="    position: absolute;color: white;font-size: 25px;padding: 12px;cursor:pointer;"></i>
-                                  <asp:Button class="symbol" style="min-width: 55px;"  ID="Blockedbtn" runat="server" Text="" OnClick="Blockedbtn_Click" />
+                                  <asp:Button class="symbol" style="min-width: 55px;"  ID="Blockedbtn" runat="server" Text="" />
                               </div>
                               <span class="optionname">Blocked</span> 
                             </div>
@@ -224,9 +224,9 @@
                         </p>
                     </div>
                     <div class="Profile-buttons">
-                        <asp:Button ID="Backbtn" CssClass="p-btn" runat="server" Text="Back" OnClick="Backbtn_Click" />
-                        <button  class="p-btn" type="button" onclick="openPopup()">Connect</button>
-                        <asp:Button ID="Declinebtn" CssClass="p-btn" runat="server"  BackColor="Red" Text="Decline" OnClick="Declinebtn_Click" />
+                        <asp:Button ID="Backbtn" CssClass="p-btn" runat="server" Text="Back"  />
+                        <button  class="p-btn" type="button" onclick="openPopup()">Unblock</button>
+                        
                     </div>
                 </div>
             </div>
@@ -236,11 +236,11 @@
         <ItemTemplate>
             <div class="popup" id="popup">
             <asp:ImageButton ID="Image1" class="popup-img" runat="server" ImageUrl='<%# Eval("image") %>'  object-fit="cover"   />
-            <h3>Are you sure you would like to connect</h3>
+            <h3>Are you sure you would like to Unblock</h3>
         
             <div class="Profile-buttons">
                 <button class="p-btn" type="button" onclick="closePopup()">Back</button>
-                <asp:Button ID="Connectbtn" CssClass="p-btn" runat="server" Text="Connect" OnClick="Connectbtn_Click" />
+                <asp:Button ID="Unblockbtn" CssClass="p-btn" runat="server" Text="Unblock" OnClick="Unblockbtn_Click"  />
             </div>
         
             </div>

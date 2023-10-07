@@ -84,10 +84,13 @@ namespace StudentConnect_Project
                 return;
             }
 
-            // Check if a request already exists
             if (checkRequestExists(studentNumber, recipientNumber))
             {
                 Response.Write("<script>alert('Request is already made');</script>");
+            }
+            else if (checkBlockedExists(studentNumber, recipientNumber))
+            {
+                Response.Write("<script>alert('You are blocked from making this request.');</script>");
             }
             else
             {
@@ -101,6 +104,7 @@ namespace StudentConnect_Project
                     Response.Write("<script>alert('Failed to make the request. Please try again later.');</script>");
                 }
             }
+
         }
 
         bool checkRequestExists(string sender, string recipient)
@@ -145,7 +149,91 @@ namespace StudentConnect_Project
             }
         }
 
+        protected void Blockedbtn_Click(object sender, EventArgs e)
+        {
+            // Get the student number from the session
+            string studentNumber = (string)Session["studentnumber"];
 
+           
 
+            // Get the recipient student number from FormView1
+            string recipientNumber = ((System.Web.UI.WebControls.Label)FormView1.FindControl("StudentNumberLabel")).Text;
+
+            if (string.IsNullOrEmpty(recipientNumber))
+            {
+                Response.Write("<script>alert('Recipient student number not found.');</script>");
+                return;
+            }
+
+            if (checkBlockedExists(studentNumber, recipientNumber))
+            {
+                Response.Write("<script>alert('Already Blocked');</script>");
+            }
+            else
+            {
+                if (BlockedMade(studentNumber, recipientNumber))
+                {
+                    Response.Redirect("ViewProfile.aspx");
+                }
+                else
+                {
+                    Response.Write("<script>alert('Failed to Block');</script>");
+                }
+            }
+        }
+
+        bool checkBlockedExists(string sender, string recipient)
+        {
+            string studentNumber = ((System.Web.UI.WebControls.Label)FormView1.FindControl("StudentNumberLabel")).Text;
+
+            try
+            {
+                using (SqlConnection con = new SqlConnection(strcon))
+                {
+                    con.Open();
+                    SqlCommand cmd = new SqlCommand("SELECT * FROM Blocked WHERE Recipient=@Recipient AND Sender=@Sender;", con);
+                    cmd.Parameters.AddWithValue("@Recipient", (string)Session["studentnumber"]);
+                    cmd.Parameters.AddWithValue("@Sender", studentNumber);
+
+                    using (SqlDataReader reader = cmd.ExecuteReader())
+                    {
+                        return reader.HasRows;
+                    }
+                }
+            }
+            catch (Exception ex)
+            {
+                Response.Write("<script>alert('" + ex.Message + "');</script>");
+                return false;
+            }
+        }
+
+        bool BlockedMade(string sender, string recipient)
+        {
+            string studentNumber = ((System.Web.UI.WebControls.Label)FormView1.FindControl("StudentNumberLabel")).Text;
+
+            try
+            {
+                using (SqlConnection con = new SqlConnection(strcon))
+                {
+                    con.Open();
+
+                    // Insert the connection into the "Blocked" table
+                    SqlCommand insertConnectionCmd = new SqlCommand("INSERT INTO Blocked (Sender, Recipient) VALUES (@Sender, @Recipient);", con);
+                    insertConnectionCmd.Parameters.AddWithValue("@Recipient", (string)Session["studentnumber"]);
+                    insertConnectionCmd.Parameters.AddWithValue("@Sender", studentNumber);
+                    insertConnectionCmd.ExecuteNonQuery();
+
+                    
+
+                    return true;
+                }
+            }
+            catch (Exception ex)
+            {
+                Response.Write("<script>alert('" + ex.Message + "');</script>");
+                return false;
+            }
+        }
     }
 }

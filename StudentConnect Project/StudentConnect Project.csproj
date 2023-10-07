@@ -222,6 +222,7 @@
     <Content Include="Bursary.aspx" />
     <Content Include="ViewBursary.aspx" />
     <Content Include="Tutor.aspx" />
+    <Content Include="BlockedViewProfile.aspx" />
   </ItemGroup>
   <ItemGroup>
     <Compile Include="Advertise.aspx.cs">
@@ -371,6 +372,13 @@
     </Compile>
     <Compile Include="Tutor.aspx.designer.cs">
       <DependentUpon>Tutor.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="BlockedViewProfile.aspx.cs">
+      <DependentUpon>BlockedViewProfile.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="BlockedViewProfile.aspx.designer.cs">
+      <DependentUpon>BlockedViewProfile.aspx</DependentUpon>
     </Compile>
   </ItemGroup>
   <ItemGroup>
