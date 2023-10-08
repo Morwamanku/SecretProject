@@ -84,10 +84,16 @@
         cursor: pointer;
       }
       .folder.close {
-        width: 50px;
-        height: 50px;
-        border-radius: 6mm;
         padding: 5px;
+        position: absolute;
+        margin-bottom: 20px;
+        background-color: #ddd;
+        display: flex;
+        align-items: center;
+        height: 1.9rem;
+        width: 4.2rem;
+        cursor: pointer;
+        border-radius: 25px;
       }
       .folder.close .preview {
             width: 100%;
@@ -135,6 +141,15 @@
         left: 0;
         
       }
+      
+
+      .folder.open ion-icon {
+            display:none;
+      }
+
+      .folder.open .folder-title {
+          display:none;
+      }
       .folder.open .icons {
         animation: displayIcons 0.5s ease;
       }
@@ -169,8 +184,8 @@
                 <div class="Profile-container ">
                   
                       <div class="folder close">
+                        <div class="folder-title">Option</div><ion-icon name="build-outline"></ion-icon>
                         
-                        <div class="title">My Folder</div>
                         
                         <div class="icons">
                           <div class="icon">
@@ -180,12 +195,7 @@
                             </div>
                             <span class="optionname">Blocked</span> 
                           </div>
-                          <div class="icon">
-                            <span class="symbol">
-                              <i class="fa-solid fa-envelope"></i>
-                            </span>
-                            <span class="optionname">Mail</span>
-                          </div>
+                          
                           <div class="icon">
                             <span class="symbol">
                               <i class="fa-brands fa-linkedin"></i>

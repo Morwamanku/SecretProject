@@ -241,6 +241,7 @@
                         
                     
                 </div>
+
             <button  class="filter sent" type="button" onclick="openPopup()"><span style="font-size:17px">Sent</span><ion-icon name="navigate-outline" style="font-size:17px; margin-top:3px;"></ion-icon></button>
                 <button  class="filter" type="button" onclick="openPopup()"><span style="font-size:17px">Filter</span><ion-icon name="funnel-outline" style="font-size:17px; margin-top:3px;"></ion-icon></button>
             </div>
