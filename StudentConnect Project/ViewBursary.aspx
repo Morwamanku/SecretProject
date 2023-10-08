@@ -29,7 +29,7 @@
                 </div>
                 <div class="Profile-buttons">
                     <asp:Button ID="Backbtn" CssClass="p-btn" runat="server" Text="Back" OnClick="Backbtn_Click"   />
-                    <button  class="p-btn" type="button" onclick="openPopup()">Apply</button>
+                   
                 </div>
             </div>
         </div>

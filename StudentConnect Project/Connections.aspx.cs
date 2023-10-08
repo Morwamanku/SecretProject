@@ -44,5 +44,61 @@ namespace StudentConnect_Project
             Session["profilestudentnumber"] = ProfileStudentNumber;
             Response.Redirect("ConnectionViewProfile.aspx");
         }
+
+        protected void University_Click(object sender, EventArgs e)
+        {
+            string query = string.Format("select StudentNumber,Firstname,Surname,QualificationName,image from Student left join Connected on Student.StudentNumber=Connected.Sender or Student.StudentNumber=Connected.Recipient WHERE NOT StudentNumber='" + (string)Session["studentnumber"] + "' and Sender='" + (string)Session["studentnumber"] + "' or NOT StudentNumber='" + (string)Session["studentnumber"] + "' and Recipient='" + (string)Session["studentnumber"] + "' and  UniversityName='" + UniversityNameList.Text + "'");
+
+            SqlConnection con = new SqlConnection(strcon);
+            SqlCommand cmd = new SqlCommand(query, con);
+
+            con.Open();
+            SqlDataReader reader = cmd.ExecuteReader();
+            ConnectionRepeater.DataSource = reader;
+            ConnectionRepeater.DataBind();
+            con.Close();
+        }
+
+        protected void Accommodationbtn_Click(object sender, EventArgs e)
+        {
+            string query = string.Format("select StudentNumber,Firstname,Surname,QualificationName,image from Student left join Connected on Student.StudentNumber=Connected.Sender or Student.StudentNumber=Connected.Recipient WHERE NOT StudentNumber='" + (string)Session["studentnumber"] + "' and Sender='" + (string)Session["studentnumber"] + "' or NOT StudentNumber='" + (string)Session["studentnumber"] + "' and Recipient='" + (string)Session["studentnumber"] + "' and AccommodationID='" + AccommodationIDList.Text + "'");
+
+            SqlConnection con = new SqlConnection(strcon);
+            SqlCommand cmd = new SqlCommand(query, con);
+
+            con.Open();
+            SqlDataReader reader = cmd.ExecuteReader();
+            ConnectionRepeater.DataSource = reader;
+            ConnectionRepeater.DataBind();
+            con.Close();
+        }
+
+        protected void Hometown_Click(object sender, EventArgs e)
+        {
+            string query = string.Format("select StudentNumber,Firstname,Surname,QualificationName,image from Student left join Connected on Student.StudentNumber=Connected.Sender or Student.StudentNumber=Connected.Recipient WHERE NOT StudentNumber='" + (string)Session["studentnumber"] + "' and Sender='" + (string)Session["studentnumber"] + "' or NOT StudentNumber='" + (string)Session["studentnumber"] + "' and Recipient='" + (string)Session["studentnumber"] + "' and  Hometown='" + HometownList.Text + "'");
+
+            SqlConnection con = new SqlConnection(strcon);
+            SqlCommand cmd = new SqlCommand(query, con);
+
+            con.Open();
+            SqlDataReader reader = cmd.ExecuteReader();
+            ConnectionRepeater.DataSource = reader;
+            ConnectionRepeater.DataBind();
+            con.Close();
+        }
+
+        protected void Default_Click(object sender, EventArgs e)
+        {
+            string query = string.Format("select StudentNumber,Firstname,Surname,QualificationName,image from Student left join Connected on Student.StudentNumber=Connected.Sender or Student.StudentNumber=Connected.Recipient WHERE NOT StudentNumber='" + (string)Session["studentnumber"] + "' and Sender='" + (string)Session["studentnumber"] + "' or NOT StudentNumber='" + (string)Session["studentnumber"] + "' and Recipient='" + (string)Session["studentnumber"] + "'");
+
+            SqlConnection con = new SqlConnection(strcon);
+            SqlCommand cmd = new SqlCommand(query, con);
+
+            con.Open();
+            SqlDataReader reader = cmd.ExecuteReader();
+            ConnectionRepeater.DataSource = reader;
+            ConnectionRepeater.DataBind();
+            con.Close();
+        }
     }
 }

@@ -70,7 +70,6 @@
 							<asp:ListItem Value="Video games">Video games</asp:ListItem>
 							<asp:ListItem Value="Collectibles">Collectibles</asp:ListItem>
 							<asp:ListItem Value="Outdoor play equipment">Outdoor play equipment</asp:ListItem>
-						
 							<asp:ListItem Value="CDs and vinyl records">CDs and vinyl records</asp:ListItem>
 							<asp:ListItem Value="DVDs and Blu-rays">DVDs and Blu-rays</asp:ListItem>
 							<asp:ListItem Value="E-books">E-books</asp:ListItem>

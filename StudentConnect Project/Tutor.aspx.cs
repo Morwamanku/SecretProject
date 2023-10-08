@@ -43,5 +43,68 @@ namespace StudentConnect_Project
             Session["profilestudentnumber"] = ProfileStudentNumber;
             Response.Redirect("ViewProfile.aspx");
         }
+
+        protected void Accommodationbtn_Click(object sender, EventArgs e)
+        {
+            string query = string.Format("select StudentNumber,Firstname,Surname,QualificationName,image from Student WHERE Tutor='Yes' and NOT StudentNumber='" + (string)Session["studentnumber"] + "' and AccommodationID='" + AccommodationIDList.Text + "'");
+
+            SqlConnection con = new SqlConnection(strcon);
+            SqlCommand cmd = new SqlCommand(query, con);
+
+            con.Open();
+            SqlDataReader reader = cmd.ExecuteReader();
+            TutorRepeater.DataSource = reader;
+            TutorRepeater.DataBind();
+            con.Close();
+        }
+
+        protected void Coursebtn_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        protected void University_Click(object sender, EventArgs e)
+        {
+            string query = string.Format("select StudentNumber,Firstname,Surname,QualificationName,image from Student WHERE Tutor='Yes' and NOT StudentNumber='" + (string)Session["studentnumber"] + "' and UniversityName='" + UniversityNameList.Text + "'");
+
+            SqlConnection con = new SqlConnection(strcon);
+            SqlCommand cmd = new SqlCommand(query, con);
+
+            con.Open();
+            SqlDataReader reader = cmd.ExecuteReader();
+            TutorRepeater.DataSource = reader;
+            TutorRepeater.DataBind();
+            con.Close();
+        }
+
+
+
+        protected void Hometown_Click(object sender, EventArgs e)
+        {
+            string query = string.Format("select StudentNumber,Firstname,Surname,QualificationName,image from Student WHERE Tutor='Yes' and NOT StudentNumber='" + (string)Session["studentnumber"] + "' and where Hometown='" + HometownList.Text + "'");
+
+            SqlConnection con = new SqlConnection(strcon);
+            SqlCommand cmd = new SqlCommand(query, con);
+
+            con.Open();
+            SqlDataReader reader = cmd.ExecuteReader();
+            TutorRepeater.DataSource = reader;
+            TutorRepeater.DataBind();
+            con.Close();
+        }
+
+        protected void Default_Click(object sender, EventArgs e)
+        {
+            string query = string.Format("select StudentNumber,Firstname,Surname,QualificationName,image from Student WHERE Tutor='Yes' and NOT StudentNumber='\" + (string)Session[\"studentnumber\"] + \"' and");
+
+            SqlConnection con = new SqlConnection(strcon);
+            SqlCommand cmd = new SqlCommand(query, con);
+
+            con.Open();
+            SqlDataReader reader = cmd.ExecuteReader();
+            TutorRepeater.DataSource = reader;
+            TutorRepeater.DataBind();
+            con.Close();
+        }
     }
 }
