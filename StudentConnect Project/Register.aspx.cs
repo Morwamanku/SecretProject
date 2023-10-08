@@ -74,6 +74,9 @@ namespace StudentConnect_Project
                 {
                     con.Open();
                 }
+
+                string description = string.IsNullOrEmpty(Biotxt.Text) ? "Hey, I'm using Student Connect, want to connect and make the most of our student community?" : Biotxt.Text.Trim();
+
                 SqlCommand cmd = new SqlCommand("INSERT INTO Student(StudentNumber,Firstname,Surname,Gender,Hometown,Password,image,UniversityName,QualificationName,Yearofstudy,AccommodationID,Description,LinkedIn,Instagram,Twitter,Tutor) values(@StudentNumber,@Firstname,@Surname,@Gender,@Hometown,@Password,@image,@UniversityName,@QualificationName,@Yearofstudy,@AccommodationID,@Description,@LinkedIn,@Instagram,@Twitter,@Tutor)", con);
                 cmd.Parameters.AddWithValue("@StudentNumber", studentnumbertxt.Text.Trim());
                 cmd.Parameters.AddWithValue("@Firstname", Firstnametxt.Text.Trim());

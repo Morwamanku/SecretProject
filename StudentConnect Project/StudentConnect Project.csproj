@@ -115,6 +115,16 @@
     <Content Include="Message.aspx" />
     <Content Include="MessageStyle.css" />
     <Content Include="MessageView.aspx" />
+    <Content Include="Motivation\Motivation post.jpg" />
+    <Content Include="Motivation\Motivation post10.jpg" />
+    <Content Include="Motivation\Motivation post2.jpg" />
+    <Content Include="Motivation\Motivation post3.jpg" />
+    <Content Include="Motivation\Motivation post4.jpg" />
+    <Content Include="Motivation\Motivation post5.jpg" />
+    <Content Include="Motivation\Motivation post6.jpg" />
+    <Content Include="Motivation\Motivation post7.jpg" />
+    <Content Include="Motivation\Motivation post8.jpg" />
+    <Content Include="Motivation\Motivation post9.jpg" />
     <Content Include="Notificationstyle.css" />
     <Content Include="pexels-aleksandar-pasaric-4505907.jpg" />
     <Content Include="pexels-alexander-kovalev-2847648.jpg" />

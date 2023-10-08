@@ -250,7 +250,7 @@
             </div>
             <div class="Left-Navigation">
                 <div class="advertise-container">
-                    <img src="https://tse2.mm.bing.net/th?id=OIP.GqS38d_qf8A4c1RGOs8AUgHaKF&amp;pid=Api&amp;P=0&amp;h=180" />
+                    <img src="" alt="" id="leftloaderImage" />
                 </div>
 
                  <ul>
@@ -426,6 +426,52 @@
 
             // Set up a timer to show the loader every 40 seconds
             setInterval(showLoaderFor10Seconds, 50000);
+        });
+    </script>
+    <script>
+        document.addEventListener("DOMContentLoaded", function () {
+            const advertisecontainer = document.querySelector(".advertise-container");
+            const leftloaderImage = document.getElementById("leftloaderImage");
+
+            // Array of image URLs
+            const imageUrls = [
+                "Motivation/Motivation post.jpg",
+                "Motivation/Motivation post2.jpg",
+                "Motivation/Motivation post3.jpg",
+                "Motivation/Motivation post4.jpg",
+                "Motivation/Motivation post5.jpg",
+                "Motivation/Motivation post6.jpg",
+                "Motivation/Motivation post7.jpg",
+                "Motivation/Motivation post8.jpg",
+                "Motivation/Motivation post9.jpg",
+                "Motivation/Motivation post10.jpg",
+            ];
+
+            function showLoader() {
+                leftloaderImage.style.display = "block";
+            }
+
+            function hideLoader() {
+                leftloaderImage.style.display = "none";
+            }
+
+            function randomizeImage() {
+                const randomIndex = Math.floor(Math.random() * imageUrls.length);
+                leftloaderImage.src = imageUrls[randomIndex];
+            }
+
+            // Initial display of the loader
+            hideLoader();
+
+            // Function to show loader for 10 seconds
+            function showLoaderFor10Seconds() {
+                randomizeImage();
+                showLoader();
+                
+            }
+
+            // Set up a timer to show the loader every 10 seconds
+            setInterval(showLoaderFor10Seconds, 10000);
         });
     </script>
    

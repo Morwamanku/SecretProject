@@ -173,13 +173,13 @@
                           <div class="title">My Folder</div>
       
                           <div class="icons">
-                            <div class="icon">
+                            <%--<div class="icon">
                                 <div class="btn-flex">
                                   <i class="fa-sharp fa-solid fa-ban" style="    position: absolute;color: white;font-size: 25px;padding: 12px;cursor:pointer;"></i>
-                                  <asp:Button class="symbol" style="min-width: 55px;"  ID="Blockedbtn" runat="server" Text="" />
+                                  <asp:Button class="symbol" style="min-width: 55px;"  ID="Unblockbtn" runat="server" Text="" />
                               </div>
                               <span class="optionname">Blocked</span> 
-                            </div>
+                            </div>--%>
                             <div class="icon">
                               <span class="symbol">
                                 <i class="fa-solid fa-envelope"></i>
@@ -212,7 +212,7 @@
                    <h1><asp:Label ID="Label1" runat="server"  Text='<%# Eval("Firstname") %>'></asp:Label>
                        <asp:Label ID="Label2" runat="server" Text='<%# Eval("Surname") %>'></asp:Label>
                    </h1>
-                    <p>Im a cool dude that loves good food. I love technology. I would love be a software egineer and work for Amazon one day. I like cars and sports such as UFC </p>
+                     <p style="height: 90px;"><asp:Label ID="DescriptionLabel" runat="server"  Text='<%# Eval("Description") %>'></asp:Label></p>
                     <div class="content">
                         <p>StudentNumber:<asp:Label ID="StudentNumberLabel" runat="server"  Text='<%# Eval("StudentNumber") %>'></asp:Label></p>
                         <p>Name:<asp:Label ID="FirstnameLabel" runat="server"  Text='<%# Eval("Firstname") %>'></asp:Label></p>
@@ -224,7 +224,7 @@
                         </p>
                     </div>
                     <div class="Profile-buttons">
-                        <asp:Button ID="Backbtn" CssClass="p-btn" runat="server" Text="Back"  />
+                        <asp:Button ID="Backbtn" CssClass="p-btn" runat="server" Text="Back" OnClick="Backbtn_Click"  />
                         <button  class="p-btn" type="button" onclick="openPopup()">Unblock</button>
                         
                     </div>
