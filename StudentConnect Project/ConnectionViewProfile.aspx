@@ -236,11 +236,11 @@
                         <p>Hometown:<asp:Label ID="HometownLabel" runat="server" class="Hometown" Text='<%# Eval("Hometown") %>'></asp:Label> </p>
                         <p>Institution: <asp:Label ID="UniversityNameLabel" runat="server" class="UniversityName" Text='<%# Eval("UniversityName") %>'></asp:Label> </p>
                         <p>Degree: <asp:Label ID="QualificationNameLabel1" runat="server" class="QualificationName" Text='<%# Eval("QualificationName") %>'></asp:Label></p>
-                        <p>LinkedIn: www.LinkedIn.Phogole.com
+                        <p>LinkedIn: www.LinkedIn.Default.com
                         </p>
                     </div>
                     <div class="Profile-buttons">
-                        <asp:Button ID="Backbtn" CssClass="p-btn" runat="server" Text="Back"  />
+                        <asp:Button ID="Backbtn" CssClass="p-btn" runat="server" Text="Back" OnClick="Backbtn_Click"  />
                         <button  class="p-btn" type="button" onclick="openPopup()">Disconnect</button>
                     </div>
                 </div>
