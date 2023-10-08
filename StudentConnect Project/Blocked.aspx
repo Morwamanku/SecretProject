@@ -3,6 +3,11 @@
     <link href="DashboardStyle.css" rel="stylesheet" />
 </asp:Content>
 <asp:Content ID="Content2" ContentPlaceHolderID="ContentPlaceHolder1" runat="server">
+        <style>
+            .sent{
+                display:none;
+            }
+        </style>
        <div class="container1 transition-fade" id="swup">
        <div class="container2" onclick="removenavigation()">
            

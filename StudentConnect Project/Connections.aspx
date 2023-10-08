@@ -3,18 +3,23 @@
     <link href="DashboardStyle.css" rel="stylesheet" />
 </asp:Content>
 <asp:Content ID="Content2" ContentPlaceHolderID="ContentPlaceHolder1" runat="server">
+    <style>
+        .sent{
+            display:none;
+        }
+    </style>
     <div class="container1 transition-fade" id="swup">
         <div class="container2" onclick="removenavigation()">
             
             
         <div class="container">
                 <div class="row">
-                    <asp:Repeater ID="RequestRepeater" runat="server" >
+                    <asp:Repeater ID="ConnectionRepeater" runat="server" >
                         <ItemTemplate>
                             <div class="col-lg-4">
                         <div class="card p-0">
                             <div class="card-image">
-                                <asp:ImageButton ID="Image1" class="img-fluid" runat="server" ImageUrl='<%# Eval("image") %>' Width="100%" Height="340px"  object-fit="cover"  />
+                                <asp:ImageButton ID="Image1" class="img-fluid" runat="server" ImageUrl='<%# Eval("image") %>' Width="100%" Height="340px"  object-fit="cover" OnClick="Image1_Click"  />
                             </div>
                             <div class="card-content d-flex flex-column align-items-center">
                                 <div class="Fullname">

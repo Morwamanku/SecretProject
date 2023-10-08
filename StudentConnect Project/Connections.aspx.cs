@@ -11,9 +11,10 @@ namespace StudentConnect_Project
 {
     public partial class WebForm4 : System.Web.UI.Page
     {
+        string strcon = ConfigurationManager.ConnectionStrings["con"].ConnectionString;
         protected void Page_Load(object sender, EventArgs e)
         {
-            string strcon = ConfigurationManager.ConnectionStrings["con"].ConnectionString;
+            
             if (!IsPostBack)
             {
                 if (Session["studentnumber"] == null)
@@ -28,10 +29,20 @@ namespace StudentConnect_Project
 
                 con.Open();
                 SqlDataReader reader = cmd.ExecuteReader();
-                RequestRepeater.DataSource = reader;
-                RequestRepeater.DataBind();
+                ConnectionRepeater.DataSource = reader;
+                ConnectionRepeater.DataBind();
                 con.Close();
             }
+        }
+
+        protected void Image1_Click(object sender, ImageClickEventArgs e)
+        {
+            ImageButton btn = (ImageButton)sender;
+            RepeaterItem item = (RepeaterItem)btn.NamingContainer;
+
+            string ProfileStudentNumber = ((Label)item.FindControl("StudentNumberLabel")).Text;
+            Session["profilestudentnumber"] = ProfileStudentNumber;
+            Response.Redirect("ConnectionViewProfile.aspx");
         }
     }
 }

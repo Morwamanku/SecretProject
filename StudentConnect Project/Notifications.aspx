@@ -7,6 +7,11 @@
     <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js"></script>
 </asp:Content>
 <asp:Content ID="Content2" ContentPlaceHolderID="ContentPlaceHolder1" runat="server">
+    <style>
+        .sent{
+            display:none;
+        }
+    </style>
      <div class="notification-container">
     <div class="notification-ui_dd-content">
         <asp:Repeater ID="NotifactionRepeater" runat="server">

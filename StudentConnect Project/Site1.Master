@@ -231,14 +231,18 @@
             </div>--%>
             <div class="flex-filter">
                 <div class="dark-mode">
-                    <span class="material-icons-sharp active">
+                    
+                    <ion-icon class="active" name="sunny-outline">
                         light_mode
-                    </span>
-                    <span class="material-icons-sharp">
-                        dark_mode
-                    </span>
+                    </ion-icon>
+                        <ion-icon name="moon-outline">
+                            dark_mode
+                        </ion-icon>
+                        
+                    
                 </div>
-            <button  class="filter" type="button" onclick="openPopup()"><span style="font-size:17px">Filter</span><ion-icon name="funnel-outline" style="font-size:17px; margin-top:3px;"></ion-icon></button>
+            <button  class="filter sent" type="button" onclick="openPopup()"><span style="font-size:17px">Sent</span><ion-icon name="navigate-outline" style="font-size:17px; margin-top:3px;"></ion-icon></button>
+                <button  class="filter" type="button" onclick="openPopup()"><span style="font-size:17px">Filter</span><ion-icon name="funnel-outline" style="font-size:17px; margin-top:3px;"></ion-icon></button>
             </div>
 
            

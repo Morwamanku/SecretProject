@@ -6,6 +6,11 @@
 <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css" />
 </asp:Content>
 <asp:Content ID="Content2" ContentPlaceHolderID="ContentPlaceHolder1" runat="server">
+    <style>
+        .sent{
+            display:none;
+        }
+    </style>
         <div class="container1 transition-fade" id="swup">
         
         <div class="container2" onclick="removenavigation()">
